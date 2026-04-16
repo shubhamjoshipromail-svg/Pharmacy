@@ -256,7 +256,7 @@ async def normalize_drug_name(raw_input: str, db: Session) -> NormalizationResul
 
             resolved_candidates.sort(key=lambda item: (-item["score"], item["rank"], item["preferred_name"]))
             top_candidate = resolved_candidates[0]
-            if len(resolved_candidates) == 1 and top_candidate["score"] > 85:
+            if top_candidate["score"] > 8:
                 get_or_create_drug(top_candidate["rxcui"], top_candidate["preferred_name"], top_candidate["tty"], db)
                 add_alias(top_candidate["rxcui"], cleaned, "misspelling", db)
                 db.commit()
@@ -269,7 +269,7 @@ async def normalize_drug_name(raw_input: str, db: Session) -> NormalizationResul
                     is_placeholder=False,
                 )
 
-            if 60 <= top_candidate["score"] <= 85:
+            if 4 <= top_candidate["score"] <= 8:
                 return NormalizationResult(
                     rxcui=None,
                     preferred_name=None,
