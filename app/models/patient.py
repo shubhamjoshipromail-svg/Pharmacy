@@ -6,6 +6,7 @@ from decimal import Decimal
 from typing import Optional
 
 from sqlalchemy import Boolean, CheckConstraint, Date, DateTime, ForeignKey, Index, Integer, Numeric, String, UniqueConstraint
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.session import Base
@@ -15,7 +16,7 @@ from app.models.enums import NormalizationStatus, sql_enum
 class User(Base):
     __tablename__ = "users"
 
-    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=lambda: str(uuid.uuid4()))
     email: Mapped[str] = mapped_column(String, nullable=False, unique=True)
     full_name: Mapped[str] = mapped_column(String, nullable=False)
     license_number: Mapped[Optional[str]] = mapped_column(String, nullable=True)
@@ -32,12 +33,12 @@ class User(Base):
 class Patient(Base):
     __tablename__ = "patients"
 
-    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=lambda: str(uuid.uuid4()))
     sex_at_birth: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     date_of_birth: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     weight_kg: Mapped[Optional[Decimal]] = mapped_column(Numeric(5, 2), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
-    created_by: Mapped[Optional[str]] = mapped_column(ForeignKey("users.id"), nullable=True)
+    created_by: Mapped[Optional[str]] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=True)
     is_synthetic: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
 
     identifiers = relationship("PatientIdentifier", back_populates="patient", uselist=False, cascade="all, delete-orphan")
@@ -55,6 +56,7 @@ class PatientIdentifier(Base):
     __tablename__ = "patient_identifiers"
 
     patient_id: Mapped[str] = mapped_column(
+        UUID(as_uuid=False),
         ForeignKey("patients.id", ondelete="CASCADE"),
         primary_key=True,
     )
@@ -71,7 +73,7 @@ class PatientCondition(Base):
     __tablename__ = "patient_conditions"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    patient_id: Mapped[str] = mapped_column(ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
+    patient_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
     condition_id: Mapped[int] = mapped_column(ForeignKey("conditions.id"), nullable=False)
     onset_date: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     resolved_date: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
@@ -89,8 +91,8 @@ class PatientCondition(Base):
 class PatientMedication(Base):
     __tablename__ = "patient_medications"
 
-    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    patient_id: Mapped[str] = mapped_column(ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=lambda: str(uuid.uuid4()))
+    patient_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
     rxcui: Mapped[str] = mapped_column(ForeignKey("drugs.rxcui"), nullable=False)
     raw_input: Mapped[str] = mapped_column(String, nullable=False)
     normalization_status: Mapped[NormalizationStatus] = mapped_column(
@@ -105,7 +107,7 @@ class PatientMedication(Base):
     started_on: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     ended_on: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
-    added_by: Mapped[Optional[str]] = mapped_column(ForeignKey("users.id"), nullable=True)
+    added_by: Mapped[Optional[str]] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=True)
     added_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     notes: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
