@@ -1,0 +1,51 @@
+ddinter_id,drug_a_name,drug_b_name,interaction_level,mechanism,management,interaction_type
+DDI001,warfarin,aspirin,Major,Additive antiplatelet and anticoagulant effects increase bleeding risk.,Avoid combination or monitor closely for bleeding and INR changes.,DDI
+DDI002,warfarin,ciprofloxacin,Major,Ciprofloxacin may inhibit warfarin metabolism and potentiate anticoagulation.,Monitor INR closely and reduce warfarin dose if needed.,DDI
+DDI003,warfarin,clarithromycin,Major,Clarithromycin can increase warfarin exposure and bleeding risk.,Avoid if possible or intensify INR monitoring.,DDI
+DDI004,amiodarone,warfarin,Major,Amiodarone inhibits warfarin clearance and increases anticoagulant effect.,Lower warfarin dose and monitor INR frequently.,DDI
+DDI005,digoxin,clarithromycin,Major,Macrolides may raise digoxin concentrations through gut flora and P-gp effects.,Check digoxin levels and watch for toxicity.,DDI
+DDI006,simvastatin,clarithromycin,Contraindicated,Strong CYP3A4 inhibition can sharply increase simvastatin exposure.,Avoid combination because of rhabdomyolysis risk.,DDI
+DDI007,simvastatin,amiodarone,Contraindicated,Amiodarone increases simvastatin concentration and myopathy risk.,Avoid or switch to a safer statin.,DDI
+DDI008,clopidogrel,omeprazole,Major,Omeprazole may reduce CYP2C19-mediated activation of clopidogrel.,Use an alternative acid suppressant when possible.,DDI
+DDI009,fluoxetine,tramadol,Major,Serotonergic effects and CYP2D6 inhibition increase serotonin syndrome and seizure risk.,Avoid combination or monitor for neurologic toxicity.,DDI
+DDI010,sertraline,tramadol,Major,Combined serotonergic activity may precipitate serotonin toxicity.,Use another analgesic if possible.,DDI
+DDI011,lithium,lisinopril,Major,ACE inhibitors can reduce lithium clearance and increase serum lithium.,Check lithium levels and renal function closely.,DDI
+DDI012,clozapine,ciprofloxacin,Contraindicated,Ciprofloxacin inhibits CYP1A2 and may cause toxic clozapine levels.,Avoid combination or use a noninteracting antibiotic.,DDI
+DDI013,haloperidol,clarithromycin,Contraindicated,Both agents prolong QT interval and can trigger torsades de pointes.,Avoid combination because of high arrhythmia risk.,DDI
+DDI014,tacrolimus,clarithromycin,Contraindicated,CYP3A4 inhibition can cause markedly elevated tacrolimus concentrations.,Avoid and monitor tacrolimus very closely if unavoidable.,DDI
+DDI015,metformin,ciprofloxacin,Moderate,Fluoroquinolones may alter glucose control in patients taking metformin.,Monitor blood glucose during coadministration.,DDI
+DDI016,metoprolol,fluoxetine,Moderate,Fluoxetine inhibits CYP2D6 and may increase metoprolol exposure.,Monitor for bradycardia and lower metoprolol dose if needed.,DDI
+DDI017,metoprolol,sertraline,Moderate,Sertraline can modestly increase beta-blocker concentrations.,Monitor heart rate and blood pressure.,DDI
+DDI018,digoxin,omeprazole,Moderate,Changes in gastric pH and transport may increase digoxin exposure.,Watch for digoxin toxicity symptoms.,DDI
+DDI019,phenytoin,omeprazole,Moderate,Omeprazole may reduce phenytoin clearance and increase serum levels.,Monitor phenytoin levels and clinical response.,DDI
+DDI020,carbamazepine,clarithromycin,Major,Clarithromycin inhibits carbamazepine metabolism and can precipitate toxicity.,Avoid or check carbamazepine levels closely.,DDI
+DDI021,codeine,fluoxetine,Moderate,CYP2D6 inhibition may reduce conversion of codeine to morphine.,Consider an alternative analgesic if pain control is poor.,DDI
+DDI022,codeine,sertraline,Moderate,Sertraline may blunt codeine activation through CYP2D6 inhibition.,Monitor analgesic response.,DDI
+DDI023,clopidogrel,fluoxetine,Moderate,Fluoxetine may impair clopidogrel activation and augment bleeding risk.,Monitor bleeding and antiplatelet effect clinically.,DDI
+DDI024,aspirin,sertraline,Moderate,SSRIs impair platelet aggregation and increase aspirin-related bleeding risk.,Use gastroprotection and monitor for bleeding.,DDI
+DDI025,amiodarone,metoprolol,Moderate,Additive AV nodal suppression may cause symptomatic bradycardia.,"Monitor heart rate, ECG, and blood pressure.",DDI
+DDI026,lisinopril,tadalafil,Moderate,Combined vasodilatory effects may produce hypotension.,Counsel patients on dizziness and monitor blood pressure.,DDI
+DDI027,lisinopril,sildenafil,Moderate,Additive blood pressure lowering can increase orthostasis risk.,Start with lower PDE5 inhibitor doses and monitor symptoms.,DDI
+DDI028,warfarin,sertraline,Minor,Sertraline may slightly increase bleeding tendency in anticoagulated patients.,Counsel on bruising and monitor if symptoms occur.,DDI
+DDI029,metformin,lisinopril,Minor,ACE inhibitor initiation may modestly improve insulin sensitivity and alter glucose readings.,Observe blood glucose after regimen changes.,DDI
+DDI030,atorvastatin,aspirin,Minor,No major pharmacokinetic interaction; additive dyspepsia may occur.,Use routine monitoring only.,DDI
+DDI031,omeprazole,lisinopril,Minor,"Clinically significant interaction is unlikely, but mild dizziness may occur in some patients.",Continue usual care and reassess if symptoms develop.,DDI
+DDI032,metoprolol,aspirin,Minor,NSAID-like attenuation of antihypertensive effect is minimal with low-dose aspirin.,Monitor blood pressure with chronic use.,DDI
+DDI033,warfarin,grapefruit,Moderate,Grapefruit may alter metabolism and dietary consistency can destabilize anticoagulation.,Keep diet consistent and monitor INR if intake changes.,DFI
+DDI034,simvastatin,grapefruit,Contraindicated,Grapefruit inhibits intestinal CYP3A4 and can markedly increase simvastatin levels.,Avoid grapefruit products during therapy.,DFI
+DDI035,metformin,alcohol,Major,Alcohol can potentiate lactic acidosis risk with metformin.,Avoid heavy alcohol intake and counsel patients carefully.,DFI
+DDI036,warfarin,leafy greens,Moderate,Vitamin K rich foods can reduce anticoagulant effect.,Maintain consistent vitamin K intake and monitor INR.,DFI
+DDI037,tacrolimus,grapefruit,Contraindicated,Grapefruit may greatly increase tacrolimus exposure through CYP3A4 inhibition.,Avoid grapefruit and monitor tacrolimus levels.,DFI
+DDI038,lisinopril,renal impairment,Major,Reduced renal reserve increases risk of ACE inhibitor-associated hyperkalemia and renal injury.,Use cautiously and monitor creatinine and potassium.,DDSI
+DDI039,metformin,renal impairment,Contraindicated,Renal dysfunction increases metformin accumulation and lactic acidosis risk.,Avoid metformin in severe renal impairment.,DDSI
+DDI040,warfarin,pregnancy,Contraindicated,Warfarin crosses the placenta and can cause fetal harm.,Avoid in pregnancy and switch to safer anticoagulation.,DDSI
+DDI041,haloperidol,QT prolongation,Contraindicated,Baseline QT prolongation heightens torsades risk with haloperidol.,Avoid use or choose a non-QT-prolonging alternative.,DDSI
+DDI042,sildenafil,hypotension,Major,Underlying hypotension increases risk of symptomatic blood pressure collapse.,Use only with careful blood pressure assessment.,DDSI
+DDI043,fluoxetine,clozapine,Major,CYP inhibition can elevate clozapine concentrations and toxicity risk.,Monitor clozapine levels and adverse effects closely.,DDI
+DDI044,atorvastatin,clarithromycin,Major,Macrolide inhibition of CYP3A4 may increase atorvastatin exposure.,Hold atorvastatin temporarily or use another antibiotic.,DDI
+DDI045,tacrolimus,fluoxetine,Moderate,Combined CYP interactions may increase tacrolimus concentration variability.,Check tacrolimus troughs after antidepressant changes.,DDI
+DDI046,digoxin,amiodarone,Major,Amiodarone can inhibit P-gp and raise digoxin concentrations.,Reduce digoxin dose and monitor levels.,DDI
+DDI047,phenytoin,warfarin,Moderate,Protein binding displacement and enzyme effects can destabilize anticoagulation.,Monitor INR closely when starting or stopping either drug.,DDI
+DDI048,carbamazepine,warfarin,Moderate,Enzyme induction can reduce warfarin effect and lower INR.,Increase INR monitoring and adjust dose as needed.,DDI
+DDI049,tramadol,haloperidol,Major,Combined seizure threshold lowering and QT effects increase adverse event risk.,Avoid when possible or monitor neurologic and cardiac status.,DDI
+DDI050,tadalafil,metoprolol,Minor,Mild additive blood pressure lowering may occur.,Counsel patients about dizziness on initiation.,DDI
