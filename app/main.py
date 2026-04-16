@@ -14,15 +14,21 @@ from app.models import *  # noqa: F401,F403
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title=settings.APP_NAME, debug=settings.DEBUG)
-app.include_router(patients_router, prefix="/api/v1")
-app.include_router(interactions_router, prefix="/api/v1")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://pharmacy-production-f226.up.railway.app",
+        "http://localhost:5173",
+        "http://localhost:8000",
+        "*",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(patients_router, prefix="/api/v1")
+app.include_router(interactions_router, prefix="/api/v1")
 
 
 @app.on_event("startup")
