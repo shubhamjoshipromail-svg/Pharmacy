@@ -78,6 +78,7 @@ class PatientCondition(Base):
     notes: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
     patient = relationship("Patient", back_populates="conditions")
+    condition = relationship("Condition")
 
     __table_args__ = (
         UniqueConstraint("patient_id", "condition_id", "onset_date", name="uq_patient_conditions_patient_condition_onset"),

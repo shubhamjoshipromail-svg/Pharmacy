@@ -40,10 +40,14 @@ export default function PatientDetail() {
   const { patientId } = useParams()
   const location = useLocation()
   const [patient, setPatient] = useState(null)
+  const [conditions, setConditions] = useState([])
   const [patientLoading, setPatientLoading] = useState(true)
   const [checkLoading, setCheckLoading] = useState(false)
   const [result, setResult] = useState(location.state?.initialResult || readLastResult(patientId))
   const [removingId, setRemovingId] = useState('')
+  const [conditionInput, setConditionInput] = useState('')
+  const [conditionSaving, setConditionSaving] = useState(false)
+  const [removingConditionId, setRemovingConditionId] = useState('')
   const [error, setError] = useState('')
 
   const patientName = useMemo(() => {
@@ -60,8 +64,12 @@ export default function PatientDetail() {
     setPatientLoading(true)
     setError('')
     try {
-      const response = await api.get(`/patients/${patientId}`)
-      setPatient(response.data)
+      const [patientResponse, conditionsResponse] = await Promise.all([
+        api.get(`/patients/${patientId}`),
+        api.get(`/patients/${patientId}/conditions`),
+      ])
+      setPatient(patientResponse.data)
+      setConditions(conditionsResponse.data)
     } catch (requestError) {
       setError(requestError.response?.data?.detail || 'Unable to load patient details.')
     } finally {
@@ -114,6 +122,38 @@ export default function PatientDetail() {
     await runCheck()
   }
 
+  const handleConditionAdd = async (event) => {
+    event.preventDefault()
+    if (!conditionInput.trim()) {
+      return
+    }
+
+    setConditionSaving(true)
+    setError('')
+    try {
+      await api.post(`/patients/${patientId}/conditions`, { condition_name: conditionInput.trim() })
+      setConditionInput('')
+      await loadPatient()
+    } catch (requestError) {
+      setError(requestError.response?.data?.detail || 'Unable to add condition.')
+    } finally {
+      setConditionSaving(false)
+    }
+  }
+
+  const handleConditionRemove = async (conditionId) => {
+    setRemovingConditionId(String(conditionId))
+    setError('')
+    try {
+      await api.delete(`/patients/${patientId}/conditions/${conditionId}`)
+      await loadPatient()
+    } catch (requestError) {
+      setError(requestError.response?.data?.detail || 'Unable to remove condition.')
+    } finally {
+      setRemovingConditionId('')
+    }
+  }
+
   if (patientLoading) {
     return <div className="p-10 text-sm text-slate-400">Loading patient…</div>
   }
@@ -123,9 +163,9 @@ export default function PatientDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 px-8 py-8">
-      <div className="mx-auto grid max-w-7xl gap-6 xl:grid-cols-[minmax(340px,40%)_minmax(520px,60%)]">
-        <div className="space-y-6">
+    <div className="flex h-full overflow-hidden bg-stone-50">
+      <div className="w-2/5 min-w-[340px] max-w-[520px] h-full overflow-y-auto border-r border-slate-100 p-6">
+        <div className="space-y-6 pb-6">
           <section className="rounded-3xl border border-slate-200 bg-white p-6">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-slate-600">
@@ -138,6 +178,49 @@ export default function PatientDetail() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section className="rounded-3xl border border-slate-200 bg-white p-4">
+            <div className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-400">Conditions</div>
+            {conditions.length ? (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {conditions.map((condition) => (
+                  <span
+                    key={condition.id}
+                    className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5 text-sm text-slate-600"
+                  >
+                    {condition.condition_name}
+                    <button
+                      type="button"
+                      onClick={() => handleConditionRemove(condition.condition_id)}
+                      disabled={removingConditionId === String(condition.condition_id)}
+                      className="text-slate-400 transition hover:text-slate-700 disabled:opacity-60"
+                      aria-label={`Remove ${condition.condition_name}`}
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-3 text-sm text-slate-400">No conditions recorded</div>
+            )}
+
+            <form className="mt-4 flex items-center gap-2" onSubmit={handleConditionAdd}>
+              <input
+                value={conditionInput}
+                onChange={(event) => setConditionInput(event.target.value)}
+                placeholder="Add condition..."
+                className="h-10 flex-1 rounded-xl border border-slate-200 px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-300 focus:ring-4 focus:ring-indigo-50"
+              />
+              <button
+                type="submit"
+                disabled={conditionSaving}
+                className="h-10 rounded-xl border border-slate-200 px-4 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 disabled:opacity-60"
+              >
+                {conditionSaving ? 'Adding…' : 'Add'}
+              </button>
+            </form>
           </section>
 
           <section className="space-y-3">
@@ -170,8 +253,10 @@ export default function PatientDetail() {
 
           {error ? <div className="text-sm text-red-600">{error}</div> : null}
         </div>
+      </div>
 
-        <div>
+      <div className="w-3/5 min-w-0 h-full overflow-y-auto p-6">
+        <div className="pb-6">
           {!result ? (
             <div className="flex min-h-[720px] items-center justify-center rounded-3xl border border-dashed border-slate-200 bg-white p-12 text-center">
               <div>

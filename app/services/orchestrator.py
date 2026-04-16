@@ -15,7 +15,7 @@ from app.models.check import InteractionCheckFinding, InteractionCheckRun
 from app.models.drug import Drug
 from app.models.enums import InteractionSource, InteractionType, SeverityLevel
 from app.models.interaction import Interaction, InteractionSourceAssertion
-from app.models.patient import PatientMedication
+from app.models.patient import PatientCondition, PatientMedication
 from app.schemas import InteractionSummary, build_summary
 from app.services.checks import get_hub_scores
 
@@ -120,16 +120,33 @@ async def run_interaction_check(
             ).all()
         )
 
-    non_ddi_interactions = list(
+    dfi_interactions = list(
         db.scalars(
             select(Interaction)
             .options(*interaction_options)
             .where(Interaction.drug_a_rxcui.in_(active_rxcuis))
-            .where(Interaction.interaction_type.in_([InteractionType.DFI, InteractionType.DDSI]))
+            .where(Interaction.interaction_type == InteractionType.DFI)
         ).all()
     )
 
-    interactions = ddi_interactions + non_ddi_interactions
+    ddsi_interactions = list(
+        db.scalars(
+            select(Interaction)
+            .options(*interaction_options)
+            .where(Interaction.interaction_type == InteractionType.DDSI)
+            .where(Interaction.drug_a_rxcui.in_(active_rxcuis))
+            .where(
+                Interaction.condition_id.in_(
+                    select(PatientCondition.condition_id).where(
+                        PatientCondition.patient_id == patient_id,
+                        PatientCondition.resolved_date.is_(None),
+                    )
+                )
+            )
+        ).all()
+    )
+
+    interactions = ddi_interactions + dfi_interactions + ddsi_interactions
     interaction_ids = [interaction.id for interaction in interactions]
 
     assertions_by_interaction: dict[str, list[InteractionSourceAssertion]] = defaultdict(list)

@@ -45,6 +45,23 @@ class MedicationCandidateResponse(BaseModel):
     candidates: list[dict]
 
 
+class ConditionAdd(BaseModel):
+    condition_name: str
+    icd10_code: Optional[str] = None
+    onset_date: Optional[date] = None
+    notes: Optional[str] = None
+
+
+class PatientConditionResponse(BaseModel):
+    id: int
+    condition_id: int
+    condition_name: str
+    icd10_code: Optional[str] = None
+    onset_date: Optional[date] = None
+    resolved_date: Optional[date] = None
+    notes: Optional[str] = None
+
+
 class PatientCreate(BaseModel):
     given_name: Optional[str] = None
     family_name: Optional[str] = None

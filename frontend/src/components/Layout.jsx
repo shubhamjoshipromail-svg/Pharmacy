@@ -2,8 +2,8 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-stone-50 text-slate-900">
-      <aside className="fixed inset-y-0 left-0 flex w-[220px] flex-col border-r border-slate-200 bg-white px-5 py-6">
+    <div className="flex h-screen overflow-hidden bg-stone-50 text-slate-900">
+      <aside className="flex h-full w-[220px] shrink-0 flex-col border-r border-slate-200 bg-white px-5 py-6">
         <div>
           <div className="text-[18px] font-semibold tracking-tight text-slate-950">RxCheck</div>
           <p className="mt-1 text-sm text-slate-400">Drug interaction tracker</p>
@@ -31,7 +31,7 @@ export default function Layout() {
         </div>
       </aside>
 
-      <main className="ml-[220px] min-h-screen bg-white">
+      <main className="min-w-0 flex-1 h-full overflow-hidden bg-white">
         <Outlet />
       </main>
     </div>

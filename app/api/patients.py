@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import date, datetime
 from decimal import Decimal
 from typing import Optional
 
@@ -13,14 +13,17 @@ from sqlalchemy.orm import Session, selectinload
 from app.db.session import get_db
 from app.models.check import InteractionCheckFinding, InteractionCheckRun
 from app.models.drug import Drug
-from app.models.patient import Patient, PatientIdentifier, PatientMedication, User
+from app.models.interaction import Condition
+from app.models.patient import Patient, PatientCondition, PatientIdentifier, PatientMedication, User
 from app.schemas.patient import (
     CheckRunHistoryResponse,
     CheckRunRequest,
+    ConditionAdd,
     MedicationAdd,
     MedicationCandidateResponse,
     MedicationCreateResponse,
     MedicationResponse,
+    PatientConditionResponse,
     PatientCreate,
     PatientListResponse,
     PatientResponse,
@@ -76,6 +79,95 @@ def medication_to_response(medication: PatientMedication) -> MedicationResponse:
         frequency=medication.frequency,
         is_active=medication.is_active,
         added_at=medication.added_at,
+    )
+
+
+def patient_condition_to_response(patient_condition: PatientCondition) -> PatientConditionResponse:
+    return PatientConditionResponse(
+        id=patient_condition.id,
+        condition_id=patient_condition.condition_id,
+        condition_name=patient_condition.condition.name,
+        icd10_code=patient_condition.condition.icd10_code,
+        onset_date=patient_condition.onset_date,
+        resolved_date=patient_condition.resolved_date,
+        notes=patient_condition.notes,
+    )
+
+
+def get_or_create_condition(condition_name: str, db: Session, icd10_code: str | None = None) -> Condition:
+    normalized_name = condition_name.strip().lower()
+    condition = db.scalar(select(Condition).where(func.lower(Condition.name) == normalized_name))
+    if condition is not None:
+        if icd10_code and not condition.icd10_code:
+            condition.icd10_code = icd10_code
+            db.flush()
+        return condition
+
+    condition = Condition(name=condition_name.strip(), icd10_code=icd10_code)
+    db.add(condition)
+    db.flush()
+    return condition
+
+
+def upsert_patient_condition(
+    patient_id: str,
+    payload: ConditionAdd,
+    db: Session,
+) -> PatientCondition:
+    condition = get_or_create_condition(payload.condition_name, db, icd10_code=payload.icd10_code)
+
+    active = db.scalar(
+        select(PatientCondition)
+        .options(selectinload(PatientCondition.condition))
+        .where(
+            PatientCondition.patient_id == patient_id,
+            PatientCondition.condition_id == condition.id,
+            PatientCondition.resolved_date.is_(None),
+        )
+    )
+    if active is not None:
+        if payload.notes is not None:
+            active.notes = payload.notes
+        if payload.onset_date is not None:
+            active.onset_date = payload.onset_date
+        db.commit()
+        return db.scalar(
+            select(PatientCondition)
+            .options(selectinload(PatientCondition.condition))
+            .where(PatientCondition.id == active.id)
+        )
+
+    reusable = db.scalar(
+        select(PatientCondition)
+        .options(selectinload(PatientCondition.condition))
+        .where(
+            PatientCondition.patient_id == patient_id,
+            PatientCondition.condition_id == condition.id,
+            PatientCondition.onset_date == payload.onset_date,
+        )
+    )
+    if reusable is not None:
+        reusable.resolved_date = None
+        reusable.notes = payload.notes
+        db.commit()
+        return db.scalar(
+            select(PatientCondition)
+            .options(selectinload(PatientCondition.condition))
+            .where(PatientCondition.id == reusable.id)
+        )
+
+    patient_condition = PatientCondition(
+        patient_id=patient_id,
+        condition_id=condition.id,
+        onset_date=payload.onset_date,
+        notes=payload.notes,
+    )
+    db.add(patient_condition)
+    db.commit()
+    return db.scalar(
+        select(PatientCondition)
+        .options(selectinload(PatientCondition.condition))
+        .where(PatientCondition.id == patient_condition.id)
     )
 
 
@@ -206,6 +298,51 @@ def get_patient(patient_id: str, db: Session = Depends(get_db)) -> PatientRespon
     )
 
 
+@router.get("/patients/{patient_id}/conditions", response_model=list[PatientConditionResponse])
+def list_patient_conditions(patient_id: str, db: Session = Depends(get_db)) -> list[PatientConditionResponse]:
+    get_patient_or_404(patient_id, db)
+    conditions = db.scalars(
+        select(PatientCondition)
+        .options(selectinload(PatientCondition.condition))
+        .where(
+            PatientCondition.patient_id == patient_id,
+            PatientCondition.resolved_date.is_(None),
+        )
+        .order_by(PatientCondition.id.asc())
+    ).all()
+    return [patient_condition_to_response(condition) for condition in conditions]
+
+
+@router.post("/patients/{patient_id}/conditions", response_model=PatientConditionResponse, status_code=status.HTTP_201_CREATED)
+def add_patient_condition(
+    patient_id: str,
+    payload: ConditionAdd,
+    db: Session = Depends(get_db),
+) -> PatientConditionResponse:
+    get_patient_or_404(patient_id, db)
+    if not payload.condition_name.strip():
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="condition_name is required")
+    patient_condition = upsert_patient_condition(patient_id, payload, db)
+    return patient_condition_to_response(patient_condition)
+
+
+@router.delete("/patients/{patient_id}/conditions/{condition_id}", status_code=status.HTTP_204_NO_CONTENT)
+def resolve_patient_condition(patient_id: str, condition_id: int, db: Session = Depends(get_db)) -> Response:
+    get_patient_or_404(patient_id, db)
+    patient_condition = db.scalar(
+        select(PatientCondition).where(
+            PatientCondition.patient_id == patient_id,
+            PatientCondition.condition_id == condition_id,
+            PatientCondition.resolved_date.is_(None),
+        )
+    )
+    if patient_condition is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Condition not found")
+    patient_condition.resolved_date = date.today()
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
 @router.post(
     "/patients/{patient_id}/medications",
     response_model=MedicationCreateResponse,
@@ -314,5 +451,9 @@ async def seed_demo_patient(db: Session = Depends(get_db)) -> InteractionCheckRe
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail=f"Seed medication {drug_name} could not be auto-resolved",
             )
+
+    conditions_to_add = ["renal impairment", "pregnancy", "QT prolongation"]
+    for condition_name in conditions_to_add:
+        upsert_patient_condition(patient.id, ConditionAdd(condition_name=condition_name), db)
 
     return await run_interaction_check(patient.id, default_user.id, db)
