@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import Optional
 
 from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Index, Integer, String, UniqueConstraint
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.session import Base
@@ -89,7 +90,7 @@ class UnresolvedDrugEntry(Base):
     occurrences: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     last_seen_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     resolved_to_rxcui: Mapped[Optional[str]] = mapped_column(ForeignKey("drugs.rxcui"), nullable=True)
-    resolved_by: Mapped[Optional[str]] = mapped_column(String(36), nullable=True)
+    resolved_by: Mapped[Optional[str]] = mapped_column(UUID(as_uuid=False), nullable=True)
     resolved_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 
     resolved_drug = relationship("Drug", back_populates="unresolved_entries")

@@ -1,8 +1,13 @@
+import os
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = "sqlite:///./drug_checker.db"
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL",
+        "postgresql://postgres:QYgkiqCSPhykgsPfYRMkkrPrZMsVyhkG@nozomi.proxy.rlwy.net:49544/railway",
+    )
     APP_NAME: str = "Drug Interaction Tracker"
     DEBUG: bool = True
     ANTHROPIC_API_KEY: str = ""

@@ -4,7 +4,8 @@ import uuid
 from datetime import datetime
 from typing import Any, Optional
 
-from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Index, Integer, JSON, String, UniqueConstraint
+from sqlalchemy import Boolean, CheckConstraint, DateTime, ForeignKey, Index, Integer, String, UniqueConstraint
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.session import Base
@@ -33,7 +34,7 @@ class Condition(Base):
 class Interaction(Base):
     __tablename__ = "interactions"
 
-    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=lambda: str(uuid.uuid4()))
     interaction_type: Mapped[InteractionType] = mapped_column(
         sql_enum(InteractionType, "interaction_type"),
         nullable=False,
@@ -114,7 +115,7 @@ class InteractionSourceAssertion(Base):
     evidence_url: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     source_record_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     imported_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
-    raw_payload: Mapped[Any] = mapped_column(JSON, nullable=True)
+    raw_payload: Mapped[Any] = mapped_column(JSONB, nullable=True)
 
     interaction = relationship("Interaction", back_populates="assertions")
 

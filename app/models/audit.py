@@ -3,7 +3,8 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any, Optional
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, JSON, String, UniqueConstraint
+from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, String, UniqueConstraint
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.session import Base
@@ -14,9 +15,9 @@ class InteractionAcknowledgment(Base):
     __tablename__ = "interaction_acknowledgments"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    patient_id: Mapped[str] = mapped_column(ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
-    interaction_id: Mapped[str] = mapped_column(ForeignKey("interactions.id"), nullable=False)
-    acknowledged_by: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    patient_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("patients.id", ondelete="CASCADE"), nullable=False)
+    interaction_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("interactions.id"), nullable=False)
+    acknowledged_by: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
     acknowledged_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     severity_at_ack: Mapped[SeverityLevel] = mapped_column(
         sql_enum(SeverityLevel, "ack_severity_level"),
@@ -40,7 +41,7 @@ class InteractionOverride(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     finding_id: Mapped[int] = mapped_column(ForeignKey("interaction_check_findings.id"), nullable=False)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    user_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False)
     action: Mapped[OverrideAction] = mapped_column(
         sql_enum(OverrideAction, "override_action"),
         nullable=False,
@@ -65,11 +66,11 @@ class AuditEvent(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     occurred_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
-    user_id: Mapped[Optional[str]] = mapped_column(ForeignKey("users.id"), nullable=True)
+    user_id: Mapped[Optional[str]] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=True)
     event_type: Mapped[str] = mapped_column(String, nullable=False)
     target_type: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     target_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
-    payload: Mapped[Any] = mapped_column(JSON, nullable=True)
+    payload: Mapped[Any] = mapped_column(JSONB, nullable=True)
     ip_address: Mapped[Optional[str]] = mapped_column(String(45), nullable=True)
     user_agent: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
