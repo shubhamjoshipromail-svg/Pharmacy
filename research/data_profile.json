@@ -1,0 +1,130 @@
+{
+  "assertions_per_interaction": {
+    "average": 1.1332,
+    "maximum": 9
+  },
+  "claims_not_supported": [
+    "The database provides complete DDI coverage.",
+    "The imported interactions are clinically validated by this profiling procedure.",
+    "Hub ranking identifies the most dangerous drugs.",
+    "The source-conflict count measures clinical disagreement quality or correctness.",
+    "The database profile demonstrates FDA clearance, HIPAA compliance, or clinical effectiveness."
+  ],
+  "counts": {
+    "drug_aliases": 1934,
+    "drug_external_ids": 5,
+    "drugs": 1967,
+    "interactions": 152416,
+    "research_fixture_assertions": 6,
+    "research_fixture_interactions": 5,
+    "source_assertions": 172714,
+    "unresolved_drug_entries": 71
+  },
+  "ddi_rows": 152413,
+  "ddinter_import": {
+    "expected_columns": [
+      "DDInterID_A",
+      "Drug_A",
+      "DDInterID_B",
+      "Drug_B",
+      "Level"
+    ],
+    "limitations": [
+      "The current importer is tailored to eight locally named DDInter CSV partitions.",
+      "It imports DDI pairs and severity labels but the listed files do not supply mechanism or management text.",
+      "Drug-name resolution depends on aliases and preferred names already present in the database.",
+      "Unresolved names are quarantined rather than imported as verified interactions.",
+      "This profile does not establish completeness, clinical validity, or equivalence to the full DDInter release.",
+      "Source coverage checks are append-only in the current bulk importer and are not profiled as unique evidence records."
+    ],
+    "represented_interaction_type": "DDI",
+    "supported_files": [
+      "ddinter_downloads_code_A.csv",
+      "ddinter_downloads_code_B.csv",
+      "ddinter_downloads_code_D.csv",
+      "ddinter_downloads_code_H.csv",
+      "ddinter_downloads_code_L.csv",
+      "ddinter_downloads_code_P.csv",
+      "ddinter_downloads_code_R.csv",
+      "ddinter_downloads_code_V.csv"
+    ]
+  },
+  "ddsi_rows": 2,
+  "dfi_rows": 1,
+  "generated_at": "2026-06-09T19:59:39.927169+00:00",
+  "interaction_type_distribution": {
+    "DDI": 152413,
+    "DDSI": 2,
+    "DFI": 1
+  },
+  "manuscript_safe_claims": [
+    "The configured prototype database contains the reported counts at the recorded generation time.",
+    "The repository includes a bulk importer for eight named DDInter CSV partitions with DDI severity mapping.",
+    "Interaction records can retain one or more source assertions, enabling descriptive source-conflict detection.",
+    "Hub counts are database-derived interaction-degree counts and are not a measure of clinical risk."
+  ],
+  "scope": "Current configured RxCheck database; descriptive architecture/data profile only.",
+  "severity_distribution_by_assertion": {
+    "major": 28605,
+    "minor": 8323,
+    "moderate": 105973,
+    "unknown": 29813
+  },
+  "source_conflict_count": 174,
+  "source_distribution_by_assertion": {
+    "DDInter": 172713,
+    "manual": 1
+  },
+  "top_hub_drugs": [
+    {
+      "interaction_count": 896,
+      "preferred_name": "dexamethasone",
+      "rxcui": "3264"
+    },
+    {
+      "interaction_count": 853,
+      "preferred_name": "Warfarin",
+      "rxcui": "11289"
+    },
+    {
+      "interaction_count": 845,
+      "preferred_name": "Tacrolimus",
+      "rxcui": "42316"
+    },
+    {
+      "interaction_count": 817,
+      "preferred_name": "Promethazine",
+      "rxcui": "8745"
+    },
+    {
+      "interaction_count": 805,
+      "preferred_name": "Clarithromycin",
+      "rxcui": "21212"
+    },
+    {
+      "interaction_count": 801,
+      "preferred_name": "cyclosporine",
+      "rxcui": "3008"
+    },
+    {
+      "interaction_count": 787,
+      "preferred_name": "Prednisone",
+      "rxcui": "8640"
+    },
+    {
+      "interaction_count": 775,
+      "preferred_name": "Fluconazole",
+      "rxcui": "4450"
+    },
+    {
+      "interaction_count": 765,
+      "preferred_name": "Thalidomide",
+      "rxcui": "10432"
+    },
+    {
+      "interaction_count": 762,
+      "preferred_name": "Methotrexate",
+      "rxcui": "6851"
+    }
+  ]
+}
