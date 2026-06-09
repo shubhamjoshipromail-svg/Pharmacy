@@ -1,0 +1,105 @@
+{
+  "limitations": [
+    "Uses synthetic fixtures rather than clinical cases.",
+    "Does not evaluate clinical correctness or source coverage completeness.",
+    "Does not call RxNorm, OpenFDA, or Anthropic.",
+    "Writes synthetic evaluation rows to the configured database."
+  ],
+  "metadata": {
+    "database": "configured SQLAlchemy DATABASE_URL",
+    "evaluation_scope": "architecture behavior, not clinical effectiveness",
+    "external_free_apis_called": false,
+    "external_paid_apis_called": false,
+    "fixtures": {
+      "condition_id": 6,
+      "ddi_interaction_id": "adb911af-0b12-49e7-92ed-560d51049f5e",
+      "ddsi_interaction_id": "ea2e0a1b-ae28-4166-8baf-924377a47fd1",
+      "drug_a_rxcui": "eval-2ff631e92d-a",
+      "drug_b_rxcui": "eval-2ff631e92d-b",
+      "label": "eval-2ff631e92d",
+      "patient_id": "9b5855bd-649d-40db-aff2-81587d90af53",
+      "placeholder_rxcui": "eval-2ff631e92d-placeholder",
+      "user_id": "412dbb59-54e0-49ce-b5a9-aa4fb18c1b4e"
+    },
+    "generated_at": "2026-06-09T19:14:19.617255Z"
+  },
+  "scenarios": [
+    {
+      "evidence": {
+        "ddi_interaction_id": "adb911af-0b12-49e7-92ed-560d51049f5e",
+        "run_id": "b415baca-3bbf-4f1f-836c-6c2d8106547b"
+      },
+      "expected": "Known DDI fixture appears in check result.",
+      "name": "deterministic_ddi_check",
+      "observed": "Interaction types returned: ['DDI']",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "placeholder_rxcui": "eval-2ff631e92d-placeholder"
+      },
+      "expected": "Two non-placeholder medications and one DDI pair are checked despite three active medication rows.",
+      "name": "canonical_pair_and_placeholder_exclusion",
+      "observed": "total_medications=2, total_pairs_checked=1",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "condition_id": 6,
+        "ddsi_interaction_id": "ea2e0a1b-ae28-4166-8baf-924377a47fd1"
+      },
+      "expected": "DDSI fixture is absent before matching patient condition is recorded.",
+      "name": "ddsi_absent_without_condition",
+      "observed": "DDSI present before condition: False",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "condition_id": 6,
+        "run_id": "af6c5284-009b-41ef-af56-4c1c34069444"
+      },
+      "expected": "DDSI fixture appears after matching active patient condition is recorded.",
+      "name": "ddsi_present_with_active_condition",
+      "observed": "DDSI present after condition: True",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "run_id": "0785e5bb-8bc2-4146-9182-59211d7f8721",
+        "suppressed_count": 1
+      },
+      "expected": "Acknowledged DDI remains in result but is marked suppressed.",
+      "name": "acknowledgment_suppression",
+      "observed": "DDI suppressed=True",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "finding_id": 326,
+        "override_id": 2
+      },
+      "expected": "Override row is persisted for a finding.",
+      "name": "override_persistence",
+      "observed": "override_persisted=True",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "finding_ids": [
+          326,
+          327
+        ],
+        "run_id": "0785e5bb-8bc2-4146-9182-59211d7f8721"
+      },
+      "expected": "Findings exist before any LLM explanation is requested.",
+      "name": "llm_separate_from_interaction_existence",
+      "observed": "finding_count=2, all_llm_explanation_id_none=True",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "passed": 7,
+    "total_scenarios": 7
+  }
+}
