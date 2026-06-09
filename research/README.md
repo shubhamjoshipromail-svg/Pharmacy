@@ -7,6 +7,7 @@ This folder contains design science research-support artifacts for the current R
 | File | Purpose | Manuscript Section Supported |
 |---|---|---|
 | `claim_evidence_matrix.md` | Maps defensible claims to code evidence and safe wording | Design artifact description, validity boundaries |
+| `architecture_inventory.md` | Catalogs architecture and design decisions with code/evaluation evidence and manuscript placement | Artifact architecture, design rationale, discussion, limitations |
 | `failure_mode_analysis.md` | Documents likely failure modes, current behavior, evidence, and improvements | Risk analysis, discussion, limitations |
 | `cost_constrained_design.md` | Frames RxCheck as a cost-conscious architecture without claiming cost-effectiveness | Design rationale, implementation context |
 | `evaluation_plan.md` | Defines reproducible formative evaluation scenarios | Evaluation methodology |
