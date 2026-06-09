@@ -1,0 +1,14 @@
+flowchart TD
+    A["InteractionCheckFinding exists"] --> B["User requests explanation"]
+    B --> C["Load interaction and assertions"]
+    C --> D["Fetch optional OpenFDA label excerpts"]
+    D --> E["Build structured RAG context"]
+    E --> F["Call Anthropic"]
+    F --> G["Parse JSON output"]
+    G --> H["Validate required fields"]
+    H --> I["Cross-check drug mentions"]
+    I --> J["Persist LlmExplanation"]
+    J --> K["Return explanation"]
+
+    X["No existing finding"] --> Y["No explanation generated"]
+    Y --> Z["LLM cannot create interaction existence"]

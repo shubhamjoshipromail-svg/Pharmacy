@@ -1,0 +1,16 @@
+flowchart TD
+    A["Patient ID"] --> B["Load active patient_medications"]
+    B --> C["Join drugs"]
+    C --> D["Filter is_placeholder = false"]
+    D --> E{"At least 2 medications?"}
+    E -->|No| F["Return warning: insufficient medications"]
+    E -->|Yes| G["Generate canonical DDI pairs"]
+    G --> H["Batch query interactions for DDI pairs"]
+    H --> I["Query DFI for active drugs"]
+    I --> J["Query DDSI for active drugs AND active patient conditions"]
+    J --> K["Load source assertions"]
+    K --> L["Build InteractionSummary objects"]
+    L --> M["Rank by severity, source conflict, hub score"]
+    M --> N["Apply acknowledgment suppression"]
+    N --> O["Persist check run and findings"]
+    O --> P["Return InteractionCheckResult"]

@@ -1,0 +1,13 @@
+flowchart LR
+    Pharmacist["Pharmacist / Demo User"] --> UI["React + Vite Frontend"]
+    UI -->|Axios /api/v1| API["FastAPI Backend"]
+    API --> DB[("Postgres")]
+
+    DDInter["DDInter CSV files"] --> Importer["scripts/import_ddinter.py"]
+    Importer --> DB
+
+    API -->|Medication normalization| RxNorm["NIH RxNorm REST API"]
+    API -->|Optional label context| OpenFDA["OpenFDA Drug Label API"]
+    API -->|Optional explanation| Anthropic["Anthropic Claude"]
+
+    API -->|Static files| FrontendDist["frontend/dist"]

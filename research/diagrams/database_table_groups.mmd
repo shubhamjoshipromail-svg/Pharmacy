@@ -1,0 +1,49 @@
+flowchart TB
+    subgraph DrugIdentity["Drug identity"]
+        drugs["drugs"]
+        aliases["drug_aliases"]
+        external["drug_external_ids"]
+        unresolved["unresolved_drug_entries"]
+    end
+
+    subgraph InteractionKnowledge["Interaction knowledge"]
+        foods["foods"]
+        conditions["conditions"]
+        interactions["interactions"]
+        assertions["interaction_source_assertions"]
+        coverage["source_coverage_checks"]
+    end
+
+    subgraph PatientWorkflow["Patient workflow"]
+        users["users"]
+        patients["patients"]
+        identifiers["patient_identifiers"]
+        patient_conditions["patient_conditions"]
+        patient_medications["patient_medications"]
+    end
+
+    subgraph CheckingAndAudit["Checks, explanation, audit"]
+        runs["interaction_check_runs"]
+        findings["interaction_check_findings"]
+        explanations["llm_explanations"]
+        acknowledgments["interaction_acknowledgments"]
+        overrides["interaction_overrides"]
+        audit["audit_events"]
+    end
+
+    drugs --> aliases
+    drugs --> external
+    drugs --> patient_medications
+    patients --> patient_medications
+    patients --> patient_conditions
+    conditions --> patient_conditions
+    drugs --> interactions
+    foods --> interactions
+    conditions --> interactions
+    interactions --> assertions
+    patients --> runs
+    runs --> findings
+    interactions --> findings
+    interactions --> acknowledgments
+    findings --> overrides
+    interactions --> explanations
