@@ -6,6 +6,8 @@
 ![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwindcss&logoColor=white)
 ![Anthropic](https://img.shields.io/badge/Anthropic-Claude-D97706)
+![Evaluation](https://img.shields.io/badge/Formative_Evaluation-26%2F26_passed-2E8B57)
+![Research](https://img.shields.io/badge/Design_Science-Research_Prototype-334155)
 
 RxCheck is a pharmacist-facing drug interaction review prototype. It lets a user create a synthetic patient, add medications and conditions, run an interaction check, review findings grouped by severity, acknowledge alerts, override findings with a note, and optionally request an AI-generated explanation for a deterministic database finding.
 
@@ -20,10 +22,33 @@ Interaction detection is deterministic and database-backed. RxCheck does not ask
 
 > Prototype only. RxCheck is not FDA-cleared, not HIPAA-compliant, and not intended for real patient care. It currently has no authentication or authorization, limited automated tests, and incomplete clinical validation.
 
+## Current Project Snapshot
+
+The latest committed research outputs describe the project at the following state:
+
+| Measure | Current recorded result |
+|---|---:|
+| Formative architecture scenarios | 26 passed / 26 total |
+| Paid APIs called during architecture evaluation | 0 |
+| Free external APIs called during architecture evaluation | 0 |
+| Interaction records in profiled database | 152,416 |
+| Source assertions in profiled database | 172,714 |
+| Drugs | 1,967 |
+| Drug aliases | 1,934 |
+| Unresolved drug entries | 71 |
+| DDI rows | 152,413 |
+| DFI rows | 1 |
+| DDSI rows | 2 |
+| Interactions with multiple asserted severities | 174 |
+| Focused pytest checks | 3 passed |
+
+These are timestamped prototype observations from `research/evaluation_results.md`, `research/data_profile.md`, and `research/pytest_results.md`. They are not evidence of clinical accuracy, complete source coverage, pharmacist usability, or patient-safety benefit. The profile includes explicitly labeled synthetic research fixtures.
+
 ---
 
 ## Table Of Contents
 
+- [Current Project Snapshot](#current-project-snapshot)
 - [What Exists Today](#what-exists-today)
 - [Visual Architecture](#visual-architecture)
 - [Frontend User Journey](#frontend-user-journey)
@@ -40,8 +65,13 @@ Interaction detection is deterministic and database-backed. RxCheck does not ask
 - [Deployment](#deployment)
 - [Local Development](#local-development)
 - [Testing](#testing)
+- [Research Evaluation](#research-evaluation)
+- [Research Artifacts](#research-artifacts)
+- [Manuscript](#manuscript)
 - [Security And Compliance Limitations](#security-and-compliance-limitations)
+- [What Claims Are Safe To Make](#what-claims-are-safe-to-make)
 - [Roadmap](#roadmap)
+- [Repository Layout](#repository-layout)
 
 ---
 
@@ -67,6 +97,10 @@ Interaction detection is deterministic and database-backed. RxCheck does not ask
 | Override workflow | Overrides are persisted and audit events are written | `app/api/interactions.py`, `app/models/audit.py` |
 | Frontend | React/Vite/Tailwind patient workflow and result review UI | `frontend/src/` |
 | Deployment | Railway single-service deployment, including frontend build and FastAPI static serving | `railway.toml`, `app/main.py` |
+| Research evaluation | Reproducible 26-scenario synthetic architecture evaluation without paid or free external API calls | `research/evaluate_rxcheck.py`, `research/evaluation_results.*` |
+| Data profiling | Read-only Postgres profiling of interactions, assertions, severities, sources, conflicts, and hub drugs | `research/profile_data.py`, `research/data_profile.*` |
+| Research documentation | Claim/evidence mapping, architecture inventory, failure modes, cost analysis, diagrams, and LLM rubric | `research/` |
+| Manuscript | Versioned design science manuscript draft | `paper/rxcheck_manuscript_0.1v.md` |
 
 ### Partially Implemented
 
@@ -77,7 +111,7 @@ Interaction detection is deterministic and database-backed. RxCheck does not ask
 | LLM validation | JSON parse checks and drug-name cross-checking | No full schema validator, clinical factuality evaluator, prompt-injection sanitizer, or citation-level verification |
 | OpenFDA citations | Label snippets can be fetched and placed in LLM context | No persistent SPL document table and no frontend citation panel |
 | DDInter source support | Real DDI CSV importer exists | Current real-file importer does not import DFI/DDSI files or rich mechanism/management text |
-| Test coverage | `/health` endpoint test exists | Clinical logic, import, frontend, LLM, and audit flows are not covered |
+| Test coverage | Three focused pytest checks plus a 26-scenario architecture evaluator | Most API, import, frontend, normalization, external-service, and security paths are not covered by isolated automated tests |
 
 ### Not Implemented
 
@@ -88,7 +122,7 @@ Interaction detection is deterministic and database-backed. RxCheck does not ask
 - EHR, FHIR, or SMART-on-FHIR integration.
 - Production-grade secret management.
 - Formal source-versioning for imported interaction datasets.
-- Comprehensive frontend or backend automated tests.
+- Comprehensive frontend, API, import, and security test suites.
 
 ---
 
@@ -828,7 +862,7 @@ Example `.env`:
 ```dotenv
 DATABASE_URL=postgresql://postgres:password@host:5432/railway
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
-ANTHROPIC_MODEL=claude-sonnet-4-20250514
+ANTHROPIC_MODEL=claude-sonnet-4-6
 DEBUG=True
 APP_NAME=Drug Interaction Tracker
 ```
@@ -879,13 +913,27 @@ http://localhost:8000
 
 ## Testing
 
-Run:
+Run the focused pytest suite:
 
 ```bash
-pytest
+python -m pytest -q
 ```
 
-Current committed pytest coverage is minimal. The existing test verifies only the `/health` endpoint.
+The latest recorded run is:
+
+```text
+3 passed, 3 warnings in 4.91s
+```
+
+Committed tests:
+
+| Test | What it checks |
+|---|---|
+| `tests/test_health.py::test_health_check` | FastAPI imports and `/health` returns the expected response |
+| `tests/test_interaction_summary.py::test_build_summary_uses_max_severity_and_marks_source_conflict` | Maximum severity selection and source-conflict flagging |
+| `tests/test_interaction_summary.py::test_build_summary_uses_condition_name_for_ddsi` | DDSI summaries display the associated condition |
+
+The warnings are dependency/framework deprecations involving Starlette `TestClient` and FastAPI startup events. They did not fail the tests.
 
 Manual verification scripts:
 
@@ -895,19 +943,145 @@ Manual verification scripts:
 | `scripts/import_ddinter.py` | Import DDInter files and print import summary |
 | `scripts/test_llm.py` | Start a seed/explain workflow against a running local server |
 
-Recommended next tests:
+Important test gaps:
 
 - RxNorm normalization fixtures.
-- Placeholder-drug exclusion from checks.
-- DDI canonical pair ordering.
-- DDSI condition filtering.
-- DFI behavior independent of patient conditions.
-- Acknowledgment suppression and severity escalation.
-- Override creation and audit event creation.
+- Isolated pytest coverage for orchestrator behavior already exercised by the research evaluator.
 - DDInter import idempotency.
 - OpenFDA fetch failure handling.
 - LLM JSON validation and failed-output handling.
 - Frontend smoke tests for demo seed, add/remove medication, add/remove condition, explanation, review, and override.
+- Authentication, authorization, security, concurrency, and migration behavior.
+
+---
+
+## Research Evaluation
+
+RxCheck includes a reproducible formative evaluation focused on architecture behavior rather than clinical effectiveness.
+
+### Run The 26-Scenario Evaluation
+
+```bash
+python research/evaluate_rxcheck.py --allow-live-db
+```
+
+The explicit flag is required because the evaluator writes uniquely named synthetic patients, medications, interactions, assertions, runs, findings, acknowledgments, and overrides to the configured database.
+
+Generated outputs:
+
+```text
+research/evaluation_results.json
+research/evaluation_results.md
+```
+
+The current recorded result is **26/26 scenarios passed**. The evaluator does not call Anthropic, OpenFDA, or RxNorm. External-service boundary scenarios replace those functions with failing sentinels and verify that core checking still completes.
+
+Scenario groups include:
+
+- Deterministic DDI lookup from stored rows.
+- Canonical drug-pair ordering.
+- Inactive medication exclusion.
+- Placeholder visibility and check exclusion.
+- Missing-interaction behavior.
+- DFI behavior.
+- DDSI absent/present/resolved condition behavior.
+- Severity ranking.
+- Source severity conflict detection.
+- Source assertion and raw-payload preservation.
+- Check-run and finding snapshots.
+- Duplicate-medication behavior.
+- Acknowledgment suppression and severity escalation.
+- Override persistence and non-suppression semantics.
+- Existing-finding requirement for LLM explanations.
+- Core-check independence from Anthropic, OpenFDA, and RxNorm at check time.
+
+The duplicate-medication scenario has an important nuance: duplicate active medication rows did not duplicate the DDI finding, but the pair-count metric can include a same-RxCUI self-pair. The result is not evidence of complete duplicate-medication normalization.
+
+### Run The Data Profile
+
+```bash
+python research/profile_data.py
+```
+
+Generated outputs:
+
+```text
+research/data_profile.json
+research/data_profile.md
+```
+
+The profiler is read-only. It records current interaction/source distributions, source conflicts, assertions per interaction, top hub drugs, normalization-table counts, supported import files, and manuscript-safe data claims. Database totals include identifiable research fixtures, which are reported separately.
+
+### What The Evaluation Supports
+
+The evaluation supports statements about the tested implementation boundaries under synthetic fixtures. It does not support claims about:
+
+- Clinical accuracy, sensitivity, or specificity.
+- Pharmacist decision quality or usability.
+- Reduced alert fatigue.
+- Patient outcomes or medication safety impact.
+- Complete DDI, DFI, or DDSI coverage.
+- LLM clinical correctness.
+- FDA clearance, HIPAA compliance, or production readiness.
+- Formal cost-effectiveness.
+
+---
+
+## Research Artifacts
+
+The `research/` directory is a research-support package for a design science article.
+
+| Artifact | Purpose |
+|---|---|
+| `research/README.md` | Index and execution guide for all research artifacts |
+| `research/architecture_inventory.md` | Catalog of 75 architecture/design decisions with problem, implementation, evidence, manuscript placement, and safe wording |
+| `research/claim_evidence_matrix.md` | Maps defensible manuscript claims to exact repository evidence and limitations |
+| `research/evaluation_plan.md` | Defines the formative architecture evaluation protocol and scenario matrix |
+| `research/evaluate_rxcheck.py` | Executes the controlled 26-scenario evaluation |
+| `research/evaluation_results.json` | Machine-readable evaluation evidence |
+| `research/evaluation_results.md` | Human-readable 26/26 evaluation report |
+| `research/profile_data.py` | Generates the current database/source profile |
+| `research/data_profile.json` | Machine-readable data profile |
+| `research/data_profile.md` | Human-readable profile and safe data-source claims |
+| `research/failure_mode_analysis.md` | Documents LLM, OpenFDA, RxNorm, placeholder, coverage, suppression, override, prompt-injection, auth, and database failure modes |
+| `research/cost_constrained_design.md` | Analyzes the cost-conscious architecture without claiming cost-effectiveness |
+| `research/explanation_quality_rubric.md` | Ten-criterion, 0–2 rubric for LLM evidence-boundary adherence |
+| `research/explanation_eval_template.md` | Template for later scoring of 10–20 generated explanations |
+| `research/pytest_results.md` | Reproducible pytest run summary and interpretation |
+| `research/diagrams/overall_architecture.mmd` | Overall system architecture |
+| `research/diagrams/deterministic_interaction_checking_flow.mmd` | Core deterministic checker flow |
+| `research/diagrams/llm_explanation_boundary.mmd` | LLM/evidence separation |
+| `research/diagrams/database_table_groups.mmd` | Database table group map |
+| `research/diagrams/evaluation_workflow.mmd` | Research evaluation workflow |
+
+The explanation rubric evaluates schema validity, drug-name consistency, severity preservation, unsupported claims/instructions, evidence grounding, uncertainty, readability, source use, and prompt-injection handling. It is not a clinical-validation instrument.
+
+---
+
+## Manuscript
+
+The current paper draft is:
+
+```text
+paper/rxcheck_manuscript_0.1v.md
+```
+
+Title:
+
+> **Architecting Frugal, Evidence-Bound AI for Drug Interaction Review: A Design Science Prototype for Budget-Constrained Pharmacy Decision Support**
+
+The manuscript includes:
+
+- Abstract and research question.
+- Background and related-work placeholders.
+- Nine design requirements.
+- Full-stack, normalization, evidence-model, orchestrator, alert-workflow, audit, LLM, and deployment architecture.
+- Evaluation methods and 26-scenario results.
+- Timestamped database-profile findings.
+- Discussion of evidence-bound AI, explicit non-resolution, provenance, context gating, alert burden, and service separation.
+- Conservative limitations and future work.
+
+Citation placeholders such as `[CITE: RxNorm/NLM]`, `[CITE: DDInter]`, and `[CITE: design science]` remain to be replaced with formal references before submission.
 
 ---
 
@@ -978,7 +1152,8 @@ Do not claim:
 
 - Rotate/remove committed database secrets and rely only on environment variables.
 - Add authentication and route-level authorization.
-- Add tests around the orchestrator, DDSI filtering, normalization, and audit flows.
+- Convert the architecture evaluator's orchestrator, DDSI, placeholder, acknowledgment, and override scenarios into isolated transactional pytest fixtures.
+- Add normalization, API, import, LLM-boundary, and frontend tests.
 - Add frontend audit-history views.
 - Persist OpenFDA label documents in a dedicated table.
 - Add better error handling and retries around RxNorm, OpenFDA, and Anthropic calls.
@@ -1007,6 +1182,9 @@ Do not claim:
 
 ```text
 drug-checker/
+├── alembic/
+│   ├── versions/
+│   └── env.py
 ├── app/
 │   ├── api/
 │   │   ├── interactions.py
@@ -1033,17 +1211,46 @@ drug-checker/
 │   │   └── orchestrator.py
 │   └── main.py
 ├── frontend/
+│   ├── public/
 │   ├── src/
-│   └── dist/
+│   │   ├── components/
+│   │   ├── api.js
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── dist/               # Committed production build; regenerated by Railway
+│   ├── package.json
+│   └── vite.config.js
+├── paper/
+│   └── rxcheck_manuscript_0.1v.md
+├── research/
+│   ├── diagrams/
+│   ├── README.md
+│   ├── architecture_inventory.md
+│   ├── claim_evidence_matrix.md
+│   ├── cost_constrained_design.md
+│   ├── data_profile.json
+│   ├── data_profile.md
+│   ├── evaluate_rxcheck.py
+│   ├── evaluation_plan.md
+│   ├── evaluation_results.json
+│   ├── evaluation_results.md
+│   ├── explanation_eval_template.md
+│   ├── explanation_quality_rubric.md
+│   ├── failure_mode_analysis.md
+│   ├── profile_data.py
+│   └── pytest_results.md
 ├── scripts/
 │   ├── import_ddinter.py
 │   ├── init_db.py
 │   └── test_llm.py
 ├── tests/
-│   └── test_health.py
+│   ├── test_health.py
+│   └── test_interaction_summary.py
+├── .env.example
+├── alembic.ini
+├── Procfile
 ├── requirements.txt
 ├── railway.toml
-├── Procfile
 └── README.md
 ```
 
