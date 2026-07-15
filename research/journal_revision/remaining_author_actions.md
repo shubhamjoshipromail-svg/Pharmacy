@@ -25,7 +25,7 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 ## Highest-priority feasible research actions
 
 1. [x] **Audit structured-output and hallucination-resistance checks.** Evidence 02 executed 30 cases. The implementation failed: 15 invalid cases were accepted and 7 raised unhandled exceptions.
-2. [ ] **Recover source-data provenance from repository and history.** Determine whether the exact DDInter release, named files, checksums, download records, import logs, and quarantine accounting can be recovered without using the unsafe live database.
+2. [x] **Recover source-data provenance from repository and history.** Evidence 03 recovered the exact eight-file manifest, acquisition timestamps, official origins, hashes, and raw profile. Exact semantic release and transformation lineage remain unavailable.
 3. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
 4. [ ] **Measure core-check latency and repeatability.** Use a specified synthetic workload, warm-up policy, sufficient repetitions, and distribution statistics. Do not generalize to production capacity.
 5. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
@@ -49,8 +49,12 @@ Under the current file-preservation rules, the application source was not modifi
 - [ ] Replace the empty migration with a complete, reviewed migration or schema bootstrap artifact without changing the preserved application baseline.
 - [ ] Pin Python and frontend dependencies in a new reproducibility package.
 - [ ] Automate PostgreSQL and Python prerequisite setup or provide a container workflow.
-- [ ] Record the exact DDInter release, access date, license, and source checksums.
-- [ ] Reconstruct import accounting and separate source-derived records from fixtures.
+- [x] Record DDInter source filenames, acquisition date, official origin, source checksums, and current byte identity.
+- [x] Record the official DDInter license/terms URL and CC BY-NC-SA 4.0 status.
+- [ ] Obtain a publisher-defined semantic release identifier; do not infer one from the 2021 server timestamp.
+- [ ] Reconstruct import accounting and separate source-derived records from fixtures. Evidence 03 shows this cannot be recovered from current artifacts.
+- [ ] Freeze or hash the alias/preferred-name mapping used by each import.
+- [ ] Persist deduplicated input counts, cross-file membership, quarantine rows/reasons, inserted-vs-conflicted counts, and a run ID.
 - [ ] Obtain an independent rerun on a second machine or by a second researcher.
 
 ## External or author-supplied items

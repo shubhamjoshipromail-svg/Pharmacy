@@ -15,6 +15,7 @@
 | Preparation | Complete and pushed | 2026-07-14 | Preserve the six-file journal-readiness review package | Commit `63fb4c0` on the remote research branch | Establishes the review baseline | Author-facing planning materials | Review conclusions still require executed evidence | Execute the highest-priority reproducibility task |
 | Evidence 01 | Complete and pushed | 2026-07-15 | Reproduce the 26-scenario architecture evaluation from fresh local PostgreSQL databases | Commit `db6cd98`; three repetitions passed 26/26; identical outcomes; no external APIs reported | Clean-database architecture reproducibility and deterministic/generative boundary | Methods, Results, Threats to Validity, Data/Code Availability | Self-authored synthetic scenarios; empty migration; unpinned dependencies; no real data reconstruction | Audit the LLM output-validation boundary with malformed and adversarial structured outputs |
 | Evidence 02 | Complete; implementation failed contract | 2026-07-15 | Audit LLM response-validator conformance | 3/3 valid controls accepted; only 5/27 invalid cases cleanly rejected; 15 false accepts; 7 unhandled exceptions | Schema validation, source/severity consistency, grounding, hallucination resistance, prompt-injection handling | Methods, Results, Discussion, Limitations, Future Work | No live model/clinical assessment; finite project-defined cases; no remediation tested | Recover source-data provenance from repository/history, then decide whether a credible independent validation set is feasible |
+| Evidence 03 | Partial; full lineage failed | 2026-07-15 | Recover DDInter source provenance and reconcile data claims | Eight official files found and hashed; all byte-identical to current downloads; 222,383 rows, 160,235 unique, 62,148 duplicates; no semantic release or reconstructable import accounting | Data provenance, database counts, DDInter version/coverage, data availability | Data/Implementation Context, Methods, Results, Limitations, Availability | Missing alias snapshot, quarantine rows, import log, semantic release, database row-level reconciliation | Benchmark core-check latency/repeatability in the isolated synthetic environment; list independent clinical/reference validation as externally blocked |
 
 ## Evidence 01 execution record
 
@@ -50,4 +51,22 @@ research/journal_revision/evidence/02_llm_validator_conformance/scripts/run_vali
 
 ## Current selection rationale
 
-The next highest-value feasible task is recovery-oriented source-data provenance auditing. Exact DDInter release/files/checksums and import accounting remain submission-critical, and repository/history inspection can determine what is recoverable now versus what requires author-supplied source files.
+The next highest-value feasible task is a prespecified core-check latency and repeatability benchmark in the isolated synthetic environment. It is explicitly requested by the author-action checklist, requires no external services, and can add a bounded operational result without making clinical or production-capacity claims. A genuinely independent clinical/reference validation set remains blocked on an external reviewer or independently curated authoritative cases.
+
+## Evidence 03 execution record
+
+- Files: `research/journal_revision/evidence/03_ddinter_provenance_recovery/`.
+- Command:
+
+```bash
+/tmp/rxcheck-evidence-venv/bin/python \
+research/journal_revision/evidence/03_ddinter_provenance_recovery/scripts/audit_ddinter_provenance.py \
+  --source-dir /Users/shubhamjoshi/Desktop/pharmacy/ddinter \
+  --live-verify-dir /tmp/ddinter-live-verify-20260715 \
+  --output research/journal_revision/evidence/03_ddinter_provenance_recovery/raw_results/provenance_inventory.json
+```
+
+- Pass/fail: PARTIAL / full-provenance FAIL (runner exit 1 by prespecified criterion).
+- Files created: protocol, streaming audit script, manifest, raw JSON, HTTP metadata, verification logs, results, limitations, and manuscript notes.
+- Claim impact: source-file identity/acquisition/hashes are now supported; semantic release and database transformation counts remain unsupported.
+- Residual risk: source CSVs remain external to Git; license review and a fresh manifest-driven reimport are still required.

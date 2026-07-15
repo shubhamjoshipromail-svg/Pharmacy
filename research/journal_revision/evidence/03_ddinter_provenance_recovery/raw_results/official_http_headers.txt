@@ -1,0 +1,49 @@
+retrieved_at=2026-07-15T04:12:36Z
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_A.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 3343434
+last-modified: Sat, 26 Jun 2021 02:28:21 GMT
+etag: "60d690c5-33044a"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_B.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 867726
+last-modified: Sat, 26 Jun 2021 02:28:21 GMT
+etag: "60d690c5-d3d8e"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_D.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 1520704
+last-modified: Sat, 26 Jun 2021 02:28:22 GMT
+etag: "60d690c6-173440"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_H.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 705088
+last-modified: Sat, 26 Jun 2021 02:28:36 GMT
+etag: "60d690d4-ac240"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_L.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 3885702
+last-modified: Sat, 26 Jun 2021 02:28:21 GMT
+etag: "60d690c5-3b4a86"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_P.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 317460
+last-modified: Sat, 26 Jun 2021 02:28:21 GMT
+etag: "60d690c5-4d814"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_R.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 1793766
+last-modified: Sat, 26 Jun 2021 02:28:17 GMT
+etag: "60d690c1-1b5ee6"
+url=https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_V.csv
+HTTP/2 200
+content-type: application/octet-stream
+content-length: 700777
+last-modified: Sat, 26 Jun 2021 02:28:15 GMT
+etag: "60d690bf-ab169"

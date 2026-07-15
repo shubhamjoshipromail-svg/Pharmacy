@@ -1,0 +1,484 @@
+{
+  "combined_profile": {
+    "conflicting_id_name_examples": {},
+    "distinct_canonical_ddinter_id_pairs": 160235,
+    "distinct_drug_ids": 1939,
+    "drug_ids_with_multiple_names": 0,
+    "duplicate_pair_rows": 62148,
+    "empty_cell_counts": {
+      "DDInterID_A": 0,
+      "DDInterID_B": 0,
+      "Drug_A": 0,
+      "Drug_B": 0,
+      "Level": 0
+    },
+    "exact_duplicate_rows": 62148,
+    "pairs_with_multiple_severity_labels": 0,
+    "self_pair_rows": 0,
+    "severity_distribution": {
+      "major": 33896,
+      "minor": 10938,
+      "moderate": 130367,
+      "unknown": 47182
+    },
+    "total_rows": 222383,
+    "unexpected_severity_rows": 0,
+    "unique_exact_rows": 160235,
+    "unknown_severity_rows": 47182
+  },
+  "committed_database_profile": {
+    "counts": {
+      "drug_aliases": 1934,
+      "drug_external_ids": 5,
+      "drugs": 1967,
+      "interactions": 152416,
+      "research_fixture_assertions": 6,
+      "research_fixture_interactions": 5,
+      "source_assertions": 172714,
+      "unresolved_drug_entries": 71
+    },
+    "ddi_rows": 152413,
+    "ddinter_assertions": 172713,
+    "generated_at": "2026-06-09T19:59:39.927169+00:00",
+    "path": "research/data_profile.json",
+    "profile_limitations": [
+      "The current importer is tailored to eight locally named DDInter CSV partitions.",
+      "It imports DDI pairs and severity labels but the listed files do not supply mechanism or management text.",
+      "Drug-name resolution depends on aliases and preferred names already present in the database.",
+      "Unresolved names are quarantined rather than imported as verified interactions.",
+      "This profile does not establish completeness, clinical validity, or equivalence to the full DDInter release.",
+      "Source coverage checks are append-only in the current bulk importer and are not profiled as unique evidence records."
+    ],
+    "scope": "Current configured RxCheck database; descriptive architecture/data profile only.",
+    "sha256": "dc4a6a6980ed5088e7d84db5f9bae6ad0a6658520988058be1aa8e7cd8ccebfc"
+  },
+  "files": [
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_A.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:24.447984+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:46.101810+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:46+00:00",
+      "row_count": 56367,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 4906,
+        "minor": 3637,
+        "moderate": 33057,
+        "unknown": 14767
+      },
+      "sha256": "a22ca451d2b755ca2331886f7e00540c86f555f9f55704a59a19c691251f52e0",
+      "size_bytes": 3343434,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 14767,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_A.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_B.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:25.115546+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:26.880434+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:26+00:00",
+      "row_count": 15140,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 2739,
+        "minor": 800,
+        "moderate": 7359,
+        "unknown": 4242
+      },
+      "sha256": "76de5115a55587f0e822e1096b684fd3ddde058fbefcbb19896df58820ace130",
+      "size_bytes": 867726,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 4242,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_B.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_D.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:27.235234+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:34.782021+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:34+00:00",
+      "row_count": 25681,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 2314,
+        "minor": 2015,
+        "moderate": 13519,
+        "unknown": 7833
+      },
+      "sha256": "c0627ec39965dbe27829e4934cd20d71eb079f4e373287678737bba9423a306a",
+      "size_bytes": 1520704,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 7833,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_D.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_H.csv",
+      "filesystem_birth_time": "2026-04-16T16:44:08.379666+00:00",
+      "filesystem_modified_time": "2026-04-16T16:44:09.522504+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:44:09+00:00",
+      "row_count": 11727,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 1203,
+        "minor": 707,
+        "moderate": 7051,
+        "unknown": 2766
+      },
+      "sha256": "f0f925f0ba1ee68c4668d3e7a6732719b34623b22a0f5d017f9090e59f63c88e",
+      "size_bytes": 705088,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 2766,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_H.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_L.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:29.209129+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:50.837611+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:50+00:00",
+      "row_count": 65389,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 15915,
+        "minor": 2076,
+        "moderate": 39985,
+        "unknown": 7413
+      },
+      "sha256": "f54f4486cc00344f8c86508c31c2ca3fad6d1d37ec3af5bcf609b4bbda5507ef",
+      "size_bytes": 3885702,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 7413,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_L.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_P.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:31.529689+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:35.085371+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:35+00:00",
+      "row_count": 5492,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 1278,
+        "minor": 278,
+        "moderate": 3270,
+        "unknown": 666
+      },
+      "sha256": "83f8c0edb20d09ef29b8500b48f9623e208379525688ade9e70a7df2d8749d55",
+      "size_bytes": 317460,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 666,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_P.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_R.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:31.950421+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:47.733093+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:47+00:00",
+      "row_count": 30563,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 2617,
+        "minor": 1138,
+        "moderate": 19675,
+        "unknown": 7133
+      },
+      "sha256": "1c39c3d4a6e41659b7a988538d7f363867592abc6f41a815de8746f6e2150574",
+      "size_bytes": 1793766,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 7133,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_R.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    },
+    {
+      "empty_cell_counts": {
+        "DDInterID_A": 0,
+        "DDInterID_B": 0,
+        "Drug_A": 0,
+        "Drug_B": 0,
+        "Level": 0
+      },
+      "exact_duplicate_rows_within_file": 0,
+      "filename": "ddinter_downloads_code_V.csv",
+      "filesystem_birth_time": "2026-04-16T16:43:33.500720+00:00",
+      "filesystem_modified_time": "2026-04-16T16:43:44.050582+00:00",
+      "header": [
+        "DDInterID_A",
+        "Drug_A",
+        "DDInterID_B",
+        "Drug_B",
+        "Level"
+      ],
+      "header_matches_expected": true,
+      "quarantine_agent": "Chrome",
+      "quarantine_timestamp": "2026-04-16T16:43:44+00:00",
+      "row_count": 12024,
+      "self_pair_rows": 0,
+      "severity_distribution": {
+        "major": 2924,
+        "minor": 287,
+        "moderate": 6451,
+        "unknown": 2362
+      },
+      "sha256": "353973fb300453946aea95733e8fb52338e4b59426d2ce6ca318363d4f84f10a",
+      "size_bytes": 700777,
+      "unexpected_severity_rows": 0,
+      "unknown_severity_rows": 2362,
+      "where_from_urls": [
+        "https://ddinter.scbdd.com/static/media/download/ddinter_downloads_code_V.csv",
+        "https://ddinter.scbdd.com/download/"
+      ]
+    }
+  ],
+  "full_provenance_passed": false,
+  "git_inventory": {
+    "historical_data_paths": [
+      "scripts/ddinter_synthetic.csv"
+    ],
+    "historical_keyword_paths": [
+      "research/data_profile.json",
+      "research/data_profile.md",
+      "scripts/ddinter_synthetic.csv",
+      "scripts/import_ddinter.py"
+    ],
+    "importer_history": [
+      "c33c6581f5b577f10af421e4ebfd311add281317\t2026-04-16T16:37:34-04:00\tMigrate to Postgres, bulk DDInter import (152k interactions), Railway deployment config",
+      "40965a8d53969bc2e5daa12d8cb61193a0da70c2\t2026-04-16T03:44:45-04:00\tInitial commit: RxCheck drug interaction tracker"
+    ],
+    "reachable_ref_names": [
+      "refs/heads/main",
+      "refs/heads/research/journal-ready-paper",
+      "refs/remotes/origin/HEAD",
+      "refs/remotes/origin/main",
+      "refs/remotes/origin/research/journal-ready-paper"
+    ],
+    "real_source_files_in_git_history": [],
+    "tags": []
+  },
+  "interpretation_guardrails": [
+    "Raw source rows cannot be subtracted from database assertions and labeled quarantine rows without the historical alias map and import log.",
+    "Filesystem/download metadata does not provide a semantic DDInter release identifier.",
+    "Byte identity with the current official download establishes file identity, not clinical completeness or validity.",
+    "The committed database profile contains research fixtures and is not a source-release manifest."
+  ],
+  "lineage_artifact_candidates": {
+    "alias_mapping_snapshots": [],
+    "import_logs": [],
+    "quarantine_artifacts": []
+  },
+  "live_official_comparison": {
+    "all_files_byte_identical": true,
+    "files": [
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_A.csv",
+        "present": true,
+        "sha256": "a22ca451d2b755ca2331886f7e00540c86f555f9f55704a59a19c691251f52e0"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_B.csv",
+        "present": true,
+        "sha256": "76de5115a55587f0e822e1096b684fd3ddde058fbefcbb19896df58820ace130"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_D.csv",
+        "present": true,
+        "sha256": "c0627ec39965dbe27829e4934cd20d71eb079f4e373287678737bba9423a306a"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_H.csv",
+        "present": true,
+        "sha256": "f0f925f0ba1ee68c4668d3e7a6732719b34623b22a0f5d017f9090e59f63c88e"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_L.csv",
+        "present": true,
+        "sha256": "f54f4486cc00344f8c86508c31c2ca3fad6d1d37ec3af5bcf609b4bbda5507ef"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_P.csv",
+        "present": true,
+        "sha256": "83f8c0edb20d09ef29b8500b48f9623e208379525688ade9e70a7df2d8749d55"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_R.csv",
+        "present": true,
+        "sha256": "1c39c3d4a6e41659b7a988538d7f363867592abc6f41a815de8746f6e2150574"
+      },
+      {
+        "byte_identical": true,
+        "filename": "ddinter_downloads_code_V.csv",
+        "present": true,
+        "sha256": "353973fb300453946aea95733e8fb52338e4b59426d2ce6ca318363d4f84f10a"
+      }
+    ],
+    "retrieval_date": "2026-07-15"
+  },
+  "metadata": {
+    "database_connections": 0,
+    "evaluated_source_commit": "5038106ada9c66fb2cd1fc0e33c8322553b4d699",
+    "generated_at": "2026-07-15T04:12:01.532320+00:00",
+    "platform": "macOS-15.7.7-arm64-arm-64bit",
+    "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]",
+    "repository_head_at_execution": "8730bb7e9ae54088e6e9ff622ebfa047628e7aa4",
+    "runner_sha256": "445371dbd5691765f90e8d57bde47bf41ed5e174e9d748588a8f72e0da6cef2a",
+    "source_data_copied_into_repository": false
+  },
+  "observable_checks": {
+    "acquisition_timestamp_for_all_files": true,
+    "all_eight_source_files_present": true,
+    "all_headers_match_expected": true,
+    "all_source_files_byte_identical_to_2026_07_15_official_download": true,
+    "all_source_sha256_computed": true,
+    "complete_import_execution_log_present": false,
+    "exact_semantic_release_label_present_in_source_filenames_or_headers": false,
+    "historical_alias_mapping_snapshot_present": false,
+    "official_origin_metadata_for_all_files": true,
+    "persisted_quarantine_rows_present": false,
+    "raw_to_database_accounting_reconstructable": false,
+    "real_source_files_committed_in_git_history": false
+  },
+  "source_directory": "/Users/shubhamjoshi/Desktop/pharmacy/ddinter"
+}
