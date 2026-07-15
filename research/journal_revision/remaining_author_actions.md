@@ -27,7 +27,7 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 1. [x] **Audit structured-output and hallucination-resistance checks.** Evidence 02 executed 30 cases. The implementation failed: 15 invalid cases were accepted and 7 raised unhandled exceptions.
 2. [x] **Recover source-data provenance from repository and history.** Evidence 03 recovered the exact eight-file manifest, acquisition timestamps, official origins, hashes, and raw profile. Exact semantic release and transformation lineage remain unavailable.
 3. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
-4. [ ] **Measure core-check latency and repeatability.** Use a specified synthetic workload, warm-up policy, sufficient repetitions, and distribution statistics. Do not generalize to production capacity.
+4. [x] **Measure core-check latency and repeatability.** Evidence 04 completed 720 correct calls across eight workloads; all met the local p95/repeatability rules. The result is not a production SLA or clinical validation.
 5. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
 6. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
 

@@ -1,0 +1,296 @@
+{
+  "exceptions": [],
+  "limitations": [
+    "Synthetic single-machine warm-cache benchmark; not a production SLA.",
+    "Background interaction/assertion topology is uniform and not DDInter-distribution matched.",
+    "No concurrency, HTTP, frontend, user, clinical, or cold-start behavior is measured.",
+    "History rows are cleaned after every measured call outside the timed interval.",
+    "Schema creation uses model metadata because the committed migration is empty."
+  ],
+  "metadata": {
+    "cache_condition": "five warm-ups per workload; warm local benchmark",
+    "concurrency": 1,
+    "database": {
+      "credentials_recorded": false,
+      "host": "127.0.0.1",
+      "name": "rxcheck_benchmark",
+      "port": 64693,
+      "server_address": "127.0.0.1",
+      "server_version": "16.14"
+    },
+    "environment": {
+      "machine": "arm64",
+      "packages": {
+        "fastapi": "0.139.0",
+        "psycopg2-binary": "2.9.12",
+        "pydantic": "2.13.4",
+        "sqlalchemy": "2.0.51"
+      },
+      "platform": "macOS-15.7.7-arm64-arm-64bit",
+      "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]"
+    },
+    "evaluated_source_commit": "c33c6581f5b577f10af421e4ebfd311add281317",
+    "external_api_calls": 0,
+    "generated_at": "2026-07-15T04:24:27.998889+00:00",
+    "repository_head_at_execution": "1cd6b29ae976247e87a2cc55165270039b3ca4d4",
+    "runner_sha256": "49c17aef004b77b961883132746fabff6042465dbc0adaa856925efb6b9557d6",
+    "schema_setup": "SQLAlchemy Base.metadata.create_all (not Alembic)",
+    "source_sha256": {
+      "app/models/check.py": "c59d32579b76cbfdd1b5b7e8f888189b5881b19472bcbbd72c551237cc81af9f",
+      "app/models/interaction.py": "9061d9182564417d962515ad3f5614c4f030413269d26685259f9aeebfef9228",
+      "app/models/patient.py": "f1fb6f7a43f0222d8f4481e98bce3c21548c0ab4a8fa6080c3d2ceec7ac44d96",
+      "app/schemas/interaction.py": "5dee8a045cb642965bce57c2429496868b9475bac4a12c48189ca147da0d0ee1",
+      "app/services/checks.py": "92326944a2698133595099180fce5a518f3eb84dc65eb0d564b40e3be5965d31",
+      "app/services/orchestrator.py": "8db8736a50b205558a72dad87ad14160f1d17709a3000f74891ab4ec6659451c"
+    },
+    "timed_scope": "run_interaction_check call including its database commit"
+  },
+  "protocol_parameters": {
+    "absolute_pass_median_range_limit_ms": 2.0,
+    "background_assertions": 150000,
+    "background_drugs": 600,
+    "background_interactions": 150000,
+    "expected_measured_calls": 720,
+    "iterations_per_pass": 30,
+    "p95_threshold_ms": 1000.0,
+    "passes": 3,
+    "percentile_method": "linear interpolation over ordered observations",
+    "relative_pass_median_range_limit": 0.25,
+    "warmups_per_workload": 5
+  },
+  "seed_metadata": {
+    "relation_size_bytes": {
+      "interaction_source_assertions": 60792832,
+      "interactions": 31637504
+    },
+    "seed_duration_seconds": 4.79973,
+    "table_counts": {
+      "drugs": 774,
+      "interaction_source_assertions": 150159,
+      "interactions": 150159,
+      "patient_medications": 174,
+      "patients": 8
+    }
+  },
+  "summary": {
+    "all_workloads_passed": true,
+    "benchmark_passed": true,
+    "completed_measured_calls": 720,
+    "correct_measured_calls": 720,
+    "exception_count": 0,
+    "expected_measured_calls": 720,
+    "external_api_calls": 0,
+    "remaining_check_runs_after_cleanup": 0,
+    "remaining_findings_after_cleanup": 0
+  },
+  "workload_summaries": [
+    {
+      "correct_calls": 90,
+      "density": "zero",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 0,
+      "max_ms": 4.088417,
+      "mean_application_duration_ms": 1.111111,
+      "mean_ms": 2.211918,
+      "measured_calls": 90,
+      "median_ms": 2.237333,
+      "medication_count": 2,
+      "min_ms": 1.760166,
+      "p95_ms": 2.586227,
+      "pair_count": 1,
+      "pass_median_absolute_range_ms": 0.491833,
+      "pass_median_relative_range": 0.220924,
+      "pass_medians_ms": [
+        2.392562,
+        2.22625,
+        1.900729
+      ],
+      "population_stdev_ms": 0.326188,
+      "repeatability_passed": true,
+      "workload_id": "n2_zero",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "ten_percent",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 1,
+      "max_ms": 3.20825,
+      "mean_application_duration_ms": 2,
+      "mean_ms": 2.993187,
+      "measured_calls": 90,
+      "median_ms": 3.006979,
+      "medication_count": 2,
+      "min_ms": 2.766,
+      "p95_ms": 3.174475,
+      "pair_count": 1,
+      "pass_median_absolute_range_ms": 0.039229,
+      "pass_median_relative_range": 0.013043,
+      "pass_medians_ms": [
+        3.00775,
+        2.96975,
+        3.008979
+      ],
+      "population_stdev_ms": 0.111273,
+      "repeatability_passed": true,
+      "workload_id": "n2_ten_percent",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "zero",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 0,
+      "max_ms": 4.985833,
+      "mean_application_duration_ms": 2.088889,
+      "mean_ms": 3.112941,
+      "measured_calls": 90,
+      "median_ms": 3.07648,
+      "medication_count": 10,
+      "min_ms": 2.744375,
+      "p95_ms": 3.509623,
+      "pair_count": 45,
+      "pass_median_absolute_range_ms": 0.124626,
+      "pass_median_relative_range": 0.040815,
+      "pass_medians_ms": [
+        2.985104,
+        3.053458,
+        3.10973
+      ],
+      "population_stdev_ms": 0.30108,
+      "repeatability_passed": true,
+      "workload_id": "n10_zero",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "ten_percent",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 5,
+      "max_ms": 21.418166,
+      "mean_application_duration_ms": 4.644444,
+      "mean_ms": 5.731579,
+      "measured_calls": 90,
+      "median_ms": 5.447958,
+      "medication_count": 10,
+      "min_ms": 4.935791,
+      "p95_ms": 6.035154,
+      "pair_count": 45,
+      "pass_median_absolute_range_ms": 0.718667,
+      "pass_median_relative_range": 0.122061,
+      "pass_medians_ms": [
+        5.182771,
+        5.901438,
+        5.887771
+      ],
+      "population_stdev_ms": 1.70671,
+      "repeatability_passed": true,
+      "workload_id": "n10_ten_percent",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "zero",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 0,
+      "max_ms": 20.080458,
+      "mean_application_duration_ms": 16.577778,
+      "mean_ms": 17.671536,
+      "measured_calls": 90,
+      "median_ms": 17.719709,
+      "medication_count": 25,
+      "min_ms": 16.746709,
+      "p95_ms": 18.786629,
+      "pair_count": 300,
+      "pass_median_absolute_range_ms": 0.635625,
+      "pass_median_relative_range": 0.035689,
+      "pass_medians_ms": [
+        17.8315,
+        17.810249,
+        17.195875
+      ],
+      "population_stdev_ms": 0.651665,
+      "repeatability_passed": true,
+      "workload_id": "n25_zero",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "ten_percent",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 30,
+      "max_ms": 28.1995,
+      "mean_application_duration_ms": 24.044444,
+      "mean_ms": 25.303056,
+      "measured_calls": 90,
+      "median_ms": 25.135666,
+      "medication_count": 25,
+      "min_ms": 23.746292,
+      "p95_ms": 26.492506,
+      "pair_count": 300,
+      "pass_median_absolute_range_ms": 0.506209,
+      "pass_median_relative_range": 0.020164,
+      "pass_medians_ms": [
+        25.104416,
+        25.374667,
+        24.868458
+      ],
+      "population_stdev_ms": 0.697552,
+      "repeatability_passed": true,
+      "workload_id": "n25_ten_percent",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "zero",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 0,
+      "max_ms": 211.843209,
+      "mean_application_duration_ms": 203.711111,
+      "mean_ms": 205.312526,
+      "measured_calls": 90,
+      "median_ms": 204.722291,
+      "medication_count": 50,
+      "min_ms": 199.7455,
+      "p95_ms": 209.953302,
+      "pair_count": 1225,
+      "pass_median_absolute_range_ms": 2.210605,
+      "pass_median_relative_range": 0.010788,
+      "pass_medians_ms": [
+        205.990042,
+        203.779437,
+        204.914938
+      ],
+      "population_stdev_ms": 2.951297,
+      "repeatability_passed": true,
+      "workload_id": "n50_zero",
+      "workload_passed": true
+    },
+    {
+      "correct_calls": 90,
+      "density": "ten_percent",
+      "latency_threshold_passed": true,
+      "matched_interaction_count": 123,
+      "max_ms": 251.869083,
+      "mean_application_duration_ms": 230.688889,
+      "mean_ms": 232.65411,
+      "measured_calls": 90,
+      "median_ms": 231.768313,
+      "medication_count": 50,
+      "min_ms": 225.922208,
+      "p95_ms": 245.124231,
+      "pair_count": 1225,
+      "pass_median_absolute_range_ms": 2.452126,
+      "pass_median_relative_range": 0.010577,
+      "pass_medians_ms": [
+        231.841938,
+        230.75427,
+        233.206396
+      ],
+      "population_stdev_ms": 4.926185,
+      "repeatability_passed": true,
+      "workload_id": "n50_ten_percent",
+      "workload_passed": true
+    }
+  ]
+}
