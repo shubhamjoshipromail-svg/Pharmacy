@@ -1,0 +1,737 @@
+{
+  "cases": [
+    {
+      "case_id": "E01",
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_source_rxcui": "1191",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "1191"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "aspirin",
+          "rxcui": "1191",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "aspirin",
+      "source_hits": [
+        "1191"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E02",
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_source_rxcui": "11289",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "11289"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "warfarin",
+          "rxcui": "11289",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "warfarin",
+      "source_hits": [
+        "11289"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E03",
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_source_rxcui": "161",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "161"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "acetaminophen",
+          "rxcui": "161",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "acetaminophen",
+      "source_hits": [
+        "161"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E04",
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_source_rxcui": "5640",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "5640"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "ibuprofen",
+          "rxcui": "5640",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "ibuprofen",
+      "source_hits": [
+        "5640"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E05",
+      "expected_ingredient_rxcuis": [
+        "29046"
+      ],
+      "expected_source_rxcui": "29046",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "29046"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "lisinopril",
+          "rxcui": "29046",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "lisinopril",
+      "source_hits": [
+        "29046"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E06",
+      "expected_ingredient_rxcuis": [
+        "6809"
+      ],
+      "expected_source_rxcui": "6809",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "6809"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "metformin",
+          "rxcui": "6809",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "metformin",
+      "source_hits": [
+        "6809"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E07",
+      "expected_ingredient_rxcuis": [
+        "4493"
+      ],
+      "expected_source_rxcui": "4493",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "4493"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "fluoxetine",
+          "rxcui": "4493",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "fluoxetine",
+      "source_hits": [
+        "4493"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "E08",
+      "expected_ingredient_rxcuis": [
+        "36567"
+      ],
+      "expected_source_rxcui": "36567",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "36567"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "simvastatin",
+          "rxcui": "36567",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "simvastatin",
+      "source_hits": [
+        "36567"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B01",
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_source_rxcui": "202421",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "11289"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "warfarin",
+          "rxcui": "11289",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Coumadin",
+      "source_hits": [
+        "202421"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B02",
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_source_rxcui": "202433",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "161"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "acetaminophen",
+          "rxcui": "161",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Tylenol",
+      "source_hits": [
+        "202433"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B03",
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_source_rxcui": "153010",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "5640"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "ibuprofen",
+          "rxcui": "5640",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Advil",
+      "source_hits": [
+        "153010"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B04",
+      "expected_ingredient_rxcuis": [
+        "4493"
+      ],
+      "expected_source_rxcui": "58827",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "4493"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "fluoxetine",
+          "rxcui": "4493",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Prozac",
+      "source_hits": [
+        "58827"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B05",
+      "expected_ingredient_rxcuis": [
+        "36567"
+      ],
+      "expected_source_rxcui": "196503",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "36567"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "simvastatin",
+          "rxcui": "36567",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Zocor",
+      "source_hits": [
+        "196503"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B06",
+      "expected_ingredient_rxcuis": [
+        "32968"
+      ],
+      "expected_source_rxcui": "174742",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "32968"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "clopidogrel",
+          "rxcui": "32968",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Plavix",
+      "source_hits": [
+        "174742"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "B07",
+      "expected_ingredient_rxcuis": [
+        "7646"
+      ],
+      "expected_source_rxcui": "203345",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "7646"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "omeprazole",
+          "rxcui": "7646",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "Prilosec",
+      "source_hits": [
+        "203345"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "M01",
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_source_rxcui": "1191",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "1191"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "aspirin",
+          "rxcui": "1191",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "aspirin",
+      "source_hits": [
+        "1191"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "M02",
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_source_rxcui": "11289",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "11289"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "warfarin",
+          "rxcui": "11289",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "warfarin",
+      "source_hits": [
+        "11289"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "M03",
+      "expected_ingredient_rxcuis": [
+        "6809"
+      ],
+      "expected_source_rxcui": "6809",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "6809"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "metformin",
+          "rxcui": "6809",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "metformin",
+      "source_hits": [
+        "6809"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "M04",
+      "expected_ingredient_rxcuis": [
+        "29046"
+      ],
+      "expected_source_rxcui": "29046",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "29046"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "lisinopril",
+          "rxcui": "29046",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "lisinopril",
+      "source_hits": [
+        "29046"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "M05",
+      "expected_ingredient_rxcuis": [
+        "32968"
+      ],
+      "expected_source_rxcui": "32968",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "32968"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "clopidogrel",
+          "rxcui": "32968",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "clopidogrel",
+      "source_hits": [
+        "32968"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "C01",
+      "expected_ingredient_rxcuis": [
+        "48203",
+        "723"
+      ],
+      "expected_source_rxcui": "19711",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "48203",
+        "723"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "clavulanate",
+          "rxcui": "48203",
+          "tty": "IN"
+        },
+        {
+          "name": "amoxicillin",
+          "rxcui": "723",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "amoxicillin / clavulanate",
+      "source_hits": [
+        "19711"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "C02",
+      "expected_ingredient_rxcuis": [
+        "10180",
+        "10829"
+      ],
+      "expected_source_rxcui": "10831",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "10180",
+        "10829"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "sulfamethoxazole",
+          "rxcui": "10180",
+          "tty": "IN"
+        },
+        {
+          "name": "trimethoprim",
+          "rxcui": "10829",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "sulfamethoxazole / trimethoprim",
+      "source_hits": [
+        "10831"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "C03",
+      "expected_ingredient_rxcuis": [
+        "161",
+        "5489"
+      ],
+      "expected_source_rxcui": "214182",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "161",
+        "5489"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "acetaminophen",
+          "rxcui": "161",
+          "tty": "IN"
+        },
+        {
+          "name": "hydrocodone",
+          "rxcui": "5489",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "acetaminophen / hydrocodone",
+      "source_hits": [
+        "214182"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "C04",
+      "expected_ingredient_rxcuis": [
+        "29046",
+        "5487"
+      ],
+      "expected_source_rxcui": "214618",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "29046",
+        "5487"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "lisinopril",
+          "rxcui": "29046",
+          "tty": "IN"
+        },
+        {
+          "name": "hydrochlorothiazide",
+          "rxcui": "5487",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "lisinopril / hydrochlorothiazide",
+      "source_hits": [
+        "214618"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "N01",
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_source_rxcui": "198440",
+      "independent_label_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fd24d0e0-4f36-42d3-9149-2fb957690305",
+      "method": "official_rxnorm_ndc_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "161"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "acetaminophen",
+          "rxcui": "161",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "49483034101",
+      "source_hits": [
+        "198440"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "N02",
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_source_rxcui": "310965",
+      "independent_label_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?audience=professional&setid=62e8db95-aaef-4b0e-841e-64a0339f3190",
+      "method": "official_rxnorm_ndc_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "5640"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "ibuprofen",
+          "rxcui": "5640",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "00363039312",
+      "source_hits": [
+        "310965"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "N03",
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_source_rxcui": "211874",
+      "independent_label_url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3ca776c2-47ed-5107-e063-6394a90ac5df&version=2",
+      "method": "official_rxnorm_ndc_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "1191"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "aspirin",
+          "rxcui": "1191",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "85237182801",
+      "source_hits": [
+        "211874"
+      ],
+      "verified": true
+    },
+    {
+      "case_id": "U01",
+      "expected_ingredient_rxcuis": [],
+      "method": "prespecified_constructed_negative",
+      "observed_ingredient_rxcuis": [],
+      "source_hits": [],
+      "verified": true
+    },
+    {
+      "case_id": "U02",
+      "expected_ingredient_rxcuis": [],
+      "method": "prespecified_constructed_negative",
+      "observed_ingredient_rxcuis": [],
+      "source_hits": [],
+      "verified": true
+    },
+    {
+      "case_id": "F01",
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_source_rxcui": "1191",
+      "independent_label_url": null,
+      "method": "official_rxnorm_name_plus_related_IN",
+      "observed_ingredient_rxcuis": [
+        "1191"
+      ],
+      "observed_ingredients": [
+        {
+          "name": "aspirin",
+          "rxcui": "1191",
+          "tty": "IN"
+        }
+      ],
+      "reference_value": "aspirin",
+      "source_hits": [
+        "1191"
+      ],
+      "verified": true
+    }
+  ],
+  "metadata": {
+    "expected_api_version": "3.1.353",
+    "expected_release": "06-Jul-2026",
+    "generated_at": "2026-07-15T04:44:09.677062+00:00",
+    "independence_note": "Frozen expected outcomes were checked through separate official-endpoint logic before application execution; most mappings still share the RxNorm vocabulary/service.",
+    "observed_version_payload": {
+      "apiVersion": "3.1.353",
+      "version": "06-Jul-2026"
+    },
+    "version_passed": true
+  },
+  "summary": {
+    "all_references_verified": true,
+    "cases": 30,
+    "failed": 0,
+    "verified": 30
+  }
+}

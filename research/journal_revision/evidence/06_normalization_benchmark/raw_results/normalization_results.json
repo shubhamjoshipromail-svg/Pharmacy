@@ -1,0 +1,963 @@
+{
+  "cases": [
+    {
+      "application_api_call_count": 3,
+      "case_id": "E01",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=1191; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "aspirin",
+        "rxcui": "1191"
+      },
+      "passed": true,
+      "raw_input": "aspirin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E02",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=11289; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "warfarin",
+        "rxcui": "11289"
+      },
+      "passed": true,
+      "raw_input": "warfarin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E03",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=161; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "acetaminophen",
+        "rxcui": "161"
+      },
+      "passed": true,
+      "raw_input": "acetaminophen"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E04",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=5640; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "ibuprofen",
+        "rxcui": "5640"
+      },
+      "passed": true,
+      "raw_input": "ibuprofen"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E05",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=29046; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "29046"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "lisinopril",
+        "rxcui": "29046"
+      },
+      "passed": true,
+      "raw_input": "lisinopril"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E06",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=6809; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "6809"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "metformin",
+        "rxcui": "6809"
+      },
+      "passed": true,
+      "raw_input": "metformin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E07",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=4493; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "4493"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "fluoxetine",
+        "rxcui": "4493"
+      },
+      "passed": true,
+      "raw_input": "fluoxetine"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "E08",
+      "category": "exact_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=36567; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "36567"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "simvastatin",
+        "rxcui": "36567"
+      },
+      "passed": true,
+      "raw_input": "simvastatin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B01",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=11289; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "warfarin",
+        "rxcui": "11289"
+      },
+      "passed": true,
+      "raw_input": "Coumadin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B02",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=161; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "acetaminophen",
+        "rxcui": "161"
+      },
+      "passed": true,
+      "raw_input": "Tylenol"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B03",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=5640; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "ibuprofen",
+        "rxcui": "5640"
+      },
+      "passed": true,
+      "raw_input": "Advil"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B04",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=4493; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "4493"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "fluoxetine",
+        "rxcui": "4493"
+      },
+      "passed": true,
+      "raw_input": "Prozac"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B05",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=36567; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "36567"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "simvastatin",
+        "rxcui": "36567"
+      },
+      "passed": true,
+      "raw_input": "Zocor"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B06",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=32968; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "32968"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "clopidogrel",
+        "rxcui": "32968"
+      },
+      "passed": true,
+      "raw_input": "Plavix"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "B07",
+      "category": "brand",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_brand; rxcui=7646; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "7646"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_brand",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_brand",
+        "preferred_name": "omeprazole",
+        "rxcui": "7646"
+      },
+      "passed": true,
+      "raw_input": "Prilosec"
+    },
+    {
+      "application_api_call_count": 4,
+      "case_id": "M01",
+      "category": "misspelling",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_fuzzy; rxcui=218770; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_fuzzy",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 8.769552380167152,
+        "is_placeholder": false,
+        "normalization_status": "matched_fuzzy",
+        "preferred_name": "218770",
+        "rxcui": "218770"
+      },
+      "passed": false,
+      "raw_input": "asprin"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "M02",
+      "category": "misspelling",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; rxcui=11289; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "11289"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_fuzzy",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "warfarin",
+        "rxcui": "11289"
+      },
+      "passed": false,
+      "raw_input": "warfarine"
+    },
+    {
+      "application_api_call_count": 8,
+      "case_id": "M03",
+      "category": "misspelling_candidate",
+      "database_artifacts": {
+        "aliases": 0,
+        "drugs": 0,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_fuzzy; rxcui=None; candidate_rxcuis=['6809']",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "6809"
+      ],
+      "expected_mode": "candidate_contains",
+      "expected_status": "matched_fuzzy",
+      "observed": {
+        "candidates": [
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          },
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          },
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          },
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          },
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          },
+          {
+            "preferred_name": "metformin",
+            "rank": 1,
+            "rxcui": "6809",
+            "score": 7.830942630767822,
+            "tty": "IN"
+          }
+        ],
+        "confidence_score": 7.830942630767822,
+        "is_placeholder": false,
+        "normalization_status": "matched_fuzzy",
+        "preferred_name": null,
+        "rxcui": null
+      },
+      "passed": true,
+      "raw_input": "metphormin"
+    },
+    {
+      "application_api_call_count": 11,
+      "case_id": "M04",
+      "category": "misspelling",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_fuzzy; rxcui=29046; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "29046"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_fuzzy",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 8.8265962600708,
+        "is_placeholder": false,
+        "normalization_status": "matched_fuzzy",
+        "preferred_name": "lisinopril",
+        "rxcui": "29046"
+      },
+      "passed": true,
+      "raw_input": "lisnopril"
+    },
+    {
+      "application_api_call_count": 9,
+      "case_id": "M05",
+      "category": "misspelling",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_fuzzy; rxcui=32968; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "32968"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_fuzzy",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 8.192180633544922,
+        "is_placeholder": false,
+        "normalization_status": "matched_fuzzy",
+        "preferred_name": "clopidogrel",
+        "rxcui": "32968"
+      },
+      "passed": true,
+      "raw_input": "clopidagrel"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "C01",
+      "category": "multi_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; represented_set=['48203']; expected_set=['48203', '723']",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "48203",
+        "723"
+      ],
+      "expected_mode": "resolved_set",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "clavulanate",
+        "rxcui": "48203"
+      },
+      "passed": false,
+      "raw_input": "amoxicillin / clavulanate"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "C02",
+      "category": "multi_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; represented_set=['10180']; expected_set=['10180', '10829']",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "10180",
+        "10829"
+      ],
+      "expected_mode": "resolved_set",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "sulfamethoxazole",
+        "rxcui": "10180"
+      },
+      "passed": false,
+      "raw_input": "sulfamethoxazole / trimethoprim"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "C03",
+      "category": "multi_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; represented_set=['161']; expected_set=['161', '5489']",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "161",
+        "5489"
+      ],
+      "expected_mode": "resolved_set",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "acetaminophen",
+        "rxcui": "161"
+      },
+      "passed": false,
+      "raw_input": "acetaminophen / hydrocodone"
+    },
+    {
+      "application_api_call_count": 3,
+      "case_id": "C04",
+      "category": "multi_ingredient",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_exact; represented_set=['29046']; expected_set=['29046', '5487']",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "29046",
+        "5487"
+      ],
+      "expected_mode": "resolved_set",
+      "expected_status": "matched_exact",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_exact",
+        "preferred_name": "lisinopril",
+        "rxcui": "29046"
+      },
+      "passed": false,
+      "raw_input": "lisinopril / hydrochlorothiazide"
+    },
+    {
+      "application_api_call_count": 4,
+      "case_id": "N01",
+      "category": "ndc",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_ndc; rxcui=161; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "161"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_ndc",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_ndc",
+        "preferred_name": "acetaminophen",
+        "rxcui": "161"
+      },
+      "passed": true,
+      "raw_input": "49483034101"
+    },
+    {
+      "application_api_call_count": 4,
+      "case_id": "N02",
+      "category": "ndc",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_ndc; rxcui=5640; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "5640"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_ndc",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_ndc",
+        "preferred_name": "ibuprofen",
+        "rxcui": "5640"
+      },
+      "passed": true,
+      "raw_input": "00363039312"
+    },
+    {
+      "application_api_call_count": 4,
+      "case_id": "N03",
+      "category": "ndc",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_ndc; rxcui=1191; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_mode": "resolved_single",
+      "expected_status": "matched_ndc",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 100.0,
+        "is_placeholder": false,
+        "normalization_status": "matched_ndc",
+        "preferred_name": "aspirin",
+        "rxcui": "1191"
+      },
+      "passed": true,
+      "raw_input": "85237182801"
+    },
+    {
+      "application_api_call_count": 6,
+      "case_id": "U01",
+      "category": "unmatched",
+      "database_artifacts": {
+        "aliases": 1,
+        "drugs": 1,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "status=matched_fuzzy; rxcui=835748; placeholder=False",
+      "exception": null,
+      "expected_ingredient_rxcuis": [],
+      "expected_mode": "unmatched_placeholder",
+      "expected_status": "unmatched",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 8.773896614313125,
+        "is_placeholder": false,
+        "normalization_status": "matched_fuzzy",
+        "preferred_name": "835748",
+        "rxcui": "835748"
+      },
+      "passed": false,
+      "raw_input": "not-a-real-drug-zxqv-20260715"
+    },
+    {
+      "application_api_call_count": 0,
+      "case_id": "U02",
+      "category": "empty_input",
+      "database_artifacts": {
+        "aliases": 0,
+        "drugs": 1,
+        "unresolved_entries": 1
+      },
+      "decision_detail": "status=unmatched; rxcui=placeholder:da39a3ee5e6b4b0d3255bfef; placeholder=True",
+      "exception": null,
+      "expected_ingredient_rxcuis": [],
+      "expected_mode": "unmatched_placeholder",
+      "expected_status": "unmatched",
+      "observed": {
+        "candidates": null,
+        "confidence_score": 0.0,
+        "is_placeholder": true,
+        "normalization_status": "unmatched",
+        "preferred_name": "",
+        "rxcui": "placeholder:da39a3ee5e6b4b0d3255bfef"
+      },
+      "passed": true,
+      "raw_input": "   "
+    },
+    {
+      "application_api_call_count": 1,
+      "case_id": "F01",
+      "category": "service_failure",
+      "database_artifacts": {
+        "aliases": 0,
+        "drugs": 0,
+        "unresolved_entries": 0
+      },
+      "decision_detail": "escaped ConnectError: Injected RxNorm connection failure.",
+      "exception": {
+        "message": "Injected RxNorm connection failure.",
+        "type": "ConnectError"
+      },
+      "expected_ingredient_rxcuis": [
+        "1191"
+      ],
+      "expected_mode": "controlled_service_failure",
+      "expected_status": "unmatched",
+      "observed": null,
+      "passed": false,
+      "raw_input": "aspirin"
+    }
+  ],
+  "category_summary": {
+    "brand": {
+      "cases": 7,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "passed": 7
+    },
+    "empty_input": {
+      "cases": 1,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "passed": 1
+    },
+    "exact_ingredient": {
+      "cases": 8,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "passed": 8
+    },
+    "misspelling": {
+      "cases": 4,
+      "failed": 2,
+      "pass_rate": 0.5,
+      "passed": 2
+    },
+    "misspelling_candidate": {
+      "cases": 1,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "passed": 1
+    },
+    "multi_ingredient": {
+      "cases": 4,
+      "failed": 4,
+      "pass_rate": 0.0,
+      "passed": 0
+    },
+    "ndc": {
+      "cases": 3,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "passed": 3
+    },
+    "service_failure": {
+      "cases": 1,
+      "failed": 1,
+      "pass_rate": 0.0,
+      "passed": 0
+    },
+    "unmatched": {
+      "cases": 1,
+      "failed": 1,
+      "pass_rate": 0.0,
+      "passed": 0
+    }
+  },
+  "limitations": [
+    "Purposive 30-case terminology-conformance set; no prevalence weighting or human adjudication.",
+    "Most expected mappings and the application share the official RxNorm vocabulary/service.",
+    "Misspellings are investigator-selected rather than sampled from pharmacy error logs.",
+    "One injected connection-failure shape and one execution environment.",
+    "Terminology conformance is not clinical validation or deployment safety evidence."
+  ],
+  "metadata": {
+    "database": {
+      "credentials_recorded": false,
+      "host": "127.0.0.1",
+      "name": "rxcheck_normalization",
+      "port": 65083,
+      "server_address": "127.0.0.1",
+      "server_version": "16.14"
+    },
+    "environment": {
+      "machine": "arm64",
+      "packages": {
+        "httpx": "0.28.1",
+        "psycopg2-binary": "2.9.12",
+        "pydantic": "2.13.4",
+        "sqlalchemy": "2.0.51"
+      },
+      "platform": "macOS-15.7.7-arm64-arm-64bit",
+      "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]"
+    },
+    "evaluated_source_commit": "4d9d32f6e2ccdb8d32703ce2e0546543273963d7",
+    "fixture_sha256": "e518cc4fa84cd46218663f85842e08f93909702a53f98d1cd7f73e7a033c06ad",
+    "generated_at": "2026-07-15T04:44:27.841735+00:00",
+    "reference_api_version": "3.1.353",
+    "reference_release": "06-Jul-2026",
+    "repository_head_at_execution": "6d2d120b7a35460810e43374c179f02d531d36ca",
+    "runner_sha256": "9e45356eb618e6883dffe2fad5ba07273a1e2481803d4796c2ddef18e3a74064",
+    "schema_setup": "SQLAlchemy Base.metadata.create_all (not Alembic)",
+    "source_sha256": {
+      "app/models/drug.py": "50ce92e686a39a54238c00dc6c702da12cb71e858de79117f96d68c73834f503",
+      "app/models/enums.py": "a1fdd836e520483f7a7430bb6a6b7e74bffa2930985349ca3717b0ecefb723d0",
+      "app/services/normalization.py": "999b09b081470b3c27f3daae4b018f37d4f61ed67d89e56dca681f89d641bd23"
+    }
+  },
+  "summary": {
+    "application_api_calls": 111,
+    "benchmark_passed": false,
+    "completed_cases": 30,
+    "exceptions": 1,
+    "expected_cases": 30,
+    "failed": 8,
+    "official_api_calls_total": 168,
+    "pass_rate": 0.733333,
+    "passed": 22,
+    "reference_cases_failed": 0,
+    "reference_cases_verified": 30
+  }
+}

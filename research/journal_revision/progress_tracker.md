@@ -17,7 +17,8 @@
 | Evidence 02 | Complete; implementation failed contract | 2026-07-15 | Audit LLM response-validator conformance | 3/3 valid controls accepted; only 5/27 invalid cases cleanly rejected; 15 false accepts; 7 unhandled exceptions | Schema validation, source/severity consistency, grounding, hallucination resistance, prompt-injection handling | Methods, Results, Discussion, Limitations, Future Work | No live model/clinical assessment; finite project-defined cases; no remediation tested | Recover source-data provenance from repository/history, then decide whether a credible independent validation set is feasible |
 | Evidence 03 | Partial; full lineage failed | 2026-07-15 | Recover DDInter source provenance and reconcile data claims | Eight official files found and hashed; all byte-identical to current downloads; 222,383 rows, 160,235 unique, 62,148 duplicates; no semantic release or reconstructable import accounting | Data provenance, database counts, DDInter version/coverage, data availability | Data/Implementation Context, Methods, Results, Limitations, Availability | Missing alias snapshot, quarantine rows, import log, semantic release, database row-level reconciliation | Benchmark core-check latency/repeatability in the isolated synthetic environment; list independent clinical/reference validation as externally blocked |
 | Evidence 04 | Complete and pushed | 2026-07-15 | Benchmark core-check latency and repeatability | Commit `285167e`; 720/720 count-correct calls; 0 exceptions/external calls; 8/8 workloads met local p95 and repeatability rules; p95 2.586–245.124 ms | Bounded operational behavior of the deterministic DDI path | Methods, Results, Threats to Validity, Discussion | One machine; synthetic warm-cache sequential core calls; no end-to-end, concurrency, real-data, or clinical inference | Audit selected persistence/traceability semantics before final claim classification |
-| Evidence 05 | Complete; broad contract failed | 2026-07-15 | Audit selected persistence and traceability semantics | 10/15 criteria passed; failures in insufficient-attempt history, duplicate pair count, run source reporting, prior-display reconstruction, and removal-event actor attribution | Audit-oriented persistence, workflow history, provenance snapshots, pair metrics, identity | Architecture/Methods, Results, Discussion, Limitations, Security/Governance | Direct synthetic function-level audit; no auth/read/tamper/concurrency/compliance assessment | Reassess whether any further independent evidence is feasible; then complete the final evidence review |
+| Evidence 05 | Complete and pushed; broad contract failed | 2026-07-15 | Audit selected persistence and traceability semantics | Commit `6d2d120`; 10/15 criteria passed; failures in insufficient-attempt history, duplicate pair count, run source reporting, prior-display reconstruction, and removal-event actor attribution | Audit-oriented persistence, workflow history, provenance snapshots, pair metrics, identity | Architecture/Methods, Results, Discussion, Limitations, Security/Governance | Direct synthetic function-level audit; no auth/read/tamper/concurrency/compliance assessment | Build an independently specified normalization benchmark if a non-circular reference axis is feasible |
+| Evidence 06 | Complete; strict benchmark failed | 2026-07-15 | Benchmark medication normalization against frozen official-reference mappings | References 30/30 verified; application 22/30 strict passes; failures: 2 misspelling/status, 4 combinations, 1 constructed unknown, 1 injected outage | Ingredient-level normalization, explicit non-resolution, combination products, NDCs, failure handling | Methods, Results, Discussion, Limitations, Future Work | Purposive small set; shared RxNorm vocabulary; no expert adjudication or population estimate | Stop empirical expansion; verify related-work/citation support, then perform consolidated evidence review |
 
 ## Evidence 01 execution record
 
@@ -88,7 +89,7 @@ bash research/journal_revision/evidence/04_core_latency_repeatability/scripts/ru
 
 ## Current selection rationale
 
-Evidence 05 completed the last high-value implementation-semantics audit identified in the action register. The next step is to reassess feasibility of an independently specified validation component and related-work verification. If independent clinical/reference evidence cannot be created without circular self-labeling or unavailable expert adjudication, it must be classified as externally blocked before the consolidated evidence review.
+Evidence 06 completed the feasible independently specified validation component and found material failures. Additional self-authored cases would have diminishing publication value; clinical interaction accuracy and human review remain externally blocked. The next bounded task is scholarly rather than empirical: verify citation/related-work support and create a conservative comparison table before the consolidated evidence review.
 
 ## Evidence 05 execution record
 
@@ -106,3 +107,20 @@ bash research/journal_revision/evidence/05_traceability_semantics/scripts/run_au
 - Claim impact: selected completed-run, finding, acknowledgment, and override persistence is supported; complete history/display reconstruction, accurate pair/source reporting, and reliable identity are not.
 - Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
 - Residual risk: authentication, read auditing, immutability, concurrency, retention, compliance, and clinical appropriateness remain untested or unimplemented.
+
+## Evidence 06 execution record
+
+- Files: `research/journal_revision/evidence/06_normalization_benchmark/`.
+- Command:
+
+```bash
+PG_BIN=/tmp/rxcheck-pg16.14/install/bin \
+PYTHON_BIN=/tmp/rxcheck-evidence-venv/bin/python \
+bash research/journal_revision/evidence/06_normalization_benchmark/scripts/run_benchmark.sh
+```
+
+- Pass/fail: FAIL (22/30; runner exit 1 by prespecified strict rule).
+- Files created: frozen cases, protocol, independent verifier/application runner, disposable-cluster runner, reference verification, application results, complete API response log, environment lock, execution/server logs, results, limitations, and manuscript notes.
+- Claim impact: bounded exact/brand/NDC behavior is supported; general ingredient-level resolution, complete combination representation, reliable explicit non-resolution, and outage degradation are not.
+- Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
+- Residual risk: purposive case selection, shared RxNorm service, no real error distribution, no expert adjudication, and no clinical inference.

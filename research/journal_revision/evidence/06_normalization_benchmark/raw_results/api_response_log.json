@@ -1,0 +1,3879 @@
+{
+  "calls": [
+    {
+      "case_id": null,
+      "fetched_at": "2026-07-15T04:44:06.623474+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "apiVersion": "3.1.353",
+        "version": "06-Jul-2026"
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/version.json"
+    },
+    {
+      "case_id": "E01",
+      "fetched_at": "2026-07-15T04:44:06.648548+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "1191"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aspirin&search=2"
+    },
+    {
+      "case_id": "E01",
+      "fetched_at": "2026-07-15T04:44:06.672975+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/1191/related.json?tty=IN"
+    },
+    {
+      "case_id": "E02",
+      "fetched_at": "2026-07-15T04:44:06.754150+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "11289"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=warfarin&search=2"
+    },
+    {
+      "case_id": "E02",
+      "fetched_at": "2026-07-15T04:44:06.775956+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/11289/related.json?tty=IN"
+    },
+    {
+      "case_id": "E03",
+      "fetched_at": "2026-07-15T04:44:06.855992+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "161"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen&search=2"
+    },
+    {
+      "case_id": "E03",
+      "fetched_at": "2026-07-15T04:44:06.880524+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/161/related.json?tty=IN"
+    },
+    {
+      "case_id": "E04",
+      "fetched_at": "2026-07-15T04:44:06.969002+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "5640"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=ibuprofen&search=2"
+    },
+    {
+      "case_id": "E04",
+      "fetched_at": "2026-07-15T04:44:06.993298+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/5640/related.json?tty=IN"
+    },
+    {
+      "case_id": "E05",
+      "fetched_at": "2026-07-15T04:44:07.074411+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "29046"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril&search=2"
+    },
+    {
+      "case_id": "E05",
+      "fetched_at": "2026-07-15T04:44:07.100727+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/29046/related.json?tty=IN"
+    },
+    {
+      "case_id": "E06",
+      "fetched_at": "2026-07-15T04:44:07.182811+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "6809"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin&search=2"
+    },
+    {
+      "case_id": "E06",
+      "fetched_at": "2026-07-15T04:44:07.206286+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/6809/related.json?tty=IN"
+    },
+    {
+      "case_id": "E07",
+      "fetched_at": "2026-07-15T04:44:07.287456+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "4493"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=fluoxetine&search=2"
+    },
+    {
+      "case_id": "E07",
+      "fetched_at": "2026-07-15T04:44:07.313270+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "fluoxetine",
+                  "rxcui": "4493",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/4493/related.json?tty=IN"
+    },
+    {
+      "case_id": "E08",
+      "fetched_at": "2026-07-15T04:44:07.396106+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "36567"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=simvastatin&search=2"
+    },
+    {
+      "case_id": "E08",
+      "fetched_at": "2026-07-15T04:44:07.421115+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "simvastatin",
+                  "rxcui": "36567",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/36567/related.json?tty=IN"
+    },
+    {
+      "case_id": "B01",
+      "fetched_at": "2026-07-15T04:44:07.501045+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "202421"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Coumadin&search=2"
+    },
+    {
+      "case_id": "B01",
+      "fetched_at": "2026-07-15T04:44:07.531740+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/202421/related.json?tty=IN"
+    },
+    {
+      "case_id": "B02",
+      "fetched_at": "2026-07-15T04:44:07.609558+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "202433"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Tylenol&search=2"
+    },
+    {
+      "case_id": "B02",
+      "fetched_at": "2026-07-15T04:44:07.636979+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/202433/related.json?tty=IN"
+    },
+    {
+      "case_id": "B03",
+      "fetched_at": "2026-07-15T04:44:07.713500+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "153010"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Advil&search=2"
+    },
+    {
+      "case_id": "B03",
+      "fetched_at": "2026-07-15T04:44:07.740670+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/153010/related.json?tty=IN"
+    },
+    {
+      "case_id": "B04",
+      "fetched_at": "2026-07-15T04:44:07.821538+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "58827"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Prozac&search=2"
+    },
+    {
+      "case_id": "B04",
+      "fetched_at": "2026-07-15T04:44:07.848472+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "fluoxetine",
+                  "rxcui": "4493",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/58827/related.json?tty=IN"
+    },
+    {
+      "case_id": "B05",
+      "fetched_at": "2026-07-15T04:44:07.928710+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "196503"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Zocor&search=2"
+    },
+    {
+      "case_id": "B05",
+      "fetched_at": "2026-07-15T04:44:07.954621+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "simvastatin",
+                  "rxcui": "36567",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/196503/related.json?tty=IN"
+    },
+    {
+      "case_id": "B06",
+      "fetched_at": "2026-07-15T04:44:08.034939+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "174742"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Plavix&search=2"
+    },
+    {
+      "case_id": "B06",
+      "fetched_at": "2026-07-15T04:44:08.063541+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/174742/related.json?tty=IN"
+    },
+    {
+      "case_id": "B07",
+      "fetched_at": "2026-07-15T04:44:08.143307+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "203345"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=Prilosec&search=2"
+    },
+    {
+      "case_id": "B07",
+      "fetched_at": "2026-07-15T04:44:08.169449+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "omeprazole",
+                  "rxcui": "7646",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/203345/related.json?tty=IN"
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:08.248191+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "1191"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aspirin&search=2"
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:08.272089+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/1191/related.json?tty=IN"
+    },
+    {
+      "case_id": "M02",
+      "fetched_at": "2026-07-15T04:44:08.355156+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "11289"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=warfarin&search=2"
+    },
+    {
+      "case_id": "M02",
+      "fetched_at": "2026-07-15T04:44:08.382842+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/11289/related.json?tty=IN"
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:08.464853+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "6809"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=metformin&search=2"
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:08.490798+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/6809/related.json?tty=IN"
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:08.573491+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "29046"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril&search=2"
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:08.597883+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/29046/related.json?tty=IN"
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:08.688707+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "32968"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=clopidogrel&search=2"
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:08.723355+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/32968/related.json?tty=IN"
+    },
+    {
+      "case_id": "C01",
+      "fetched_at": "2026-07-15T04:44:08.804311+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "19711"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=amoxicillin+%2F+clavulanate&search=2"
+    },
+    {
+      "case_id": "C01",
+      "fetched_at": "2026-07-15T04:44:08.830343+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clavulanate",
+                  "rxcui": "48203",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "amoxicillin",
+                  "rxcui": "723",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/19711/related.json?tty=IN"
+    },
+    {
+      "case_id": "C02",
+      "fetched_at": "2026-07-15T04:44:08.920016+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "10831"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=sulfamethoxazole+%2F+trimethoprim&search=2"
+    },
+    {
+      "case_id": "C02",
+      "fetched_at": "2026-07-15T04:44:08.946648+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "sulfamethoxazole",
+                  "rxcui": "10180",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "trimethoprim",
+                  "rxcui": "10829",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/10831/related.json?tty=IN"
+    },
+    {
+      "case_id": "C03",
+      "fetched_at": "2026-07-15T04:44:09.036563+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "214182"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=acetaminophen+%2F+hydrocodone&search=2"
+    },
+    {
+      "case_id": "C03",
+      "fetched_at": "2026-07-15T04:44:09.072569+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "hydrocodone",
+                  "rxcui": "5489",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/214182/related.json?tty=IN"
+    },
+    {
+      "case_id": "C04",
+      "fetched_at": "2026-07-15T04:44:09.156314+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "214618"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=lisinopril+%2F+hydrochlorothiazide&search=2"
+    },
+    {
+      "case_id": "C04",
+      "fetched_at": "2026-07-15T04:44:09.180691+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "hydrochlorothiazide",
+                  "rxcui": "5487",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/214618/related.json?tty=IN"
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:09.256265+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "198440"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?idtype=NDC&id=49483034101"
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:09.284315+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/198440/related.json?tty=IN"
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:09.372407+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "310965"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?idtype=NDC&id=00363039312"
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:09.398828+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/310965/related.json?tty=IN"
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:09.485987+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "211874"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?idtype=NDC&id=85237182801"
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:09.507188+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/211874/related.json?tty=IN"
+    },
+    {
+      "case_id": "F01",
+      "fetched_at": "2026-07-15T04:44:09.589765+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "1191"
+          ]
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui.json?name=aspirin&search=2"
+    },
+    {
+      "case_id": "F01",
+      "fetched_at": "2026-07-15T04:44:09.625338+00:00",
+      "phase": "reference_verification",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      },
+      "status_code": 200,
+      "url": "https://rxnav.nlm.nih.gov/REST/rxcui/1191/related.json?tty=IN"
+    },
+    {
+      "case_id": "E01",
+      "fetched_at": "2026-07-15T04:44:10.017052+00:00",
+      "params": {
+        "name": "aspirin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "1191"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E01",
+      "fetched_at": "2026-07-15T04:44:10.149829+00:00",
+      "params": {},
+      "path": "rxcui/1191/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "aspirin",
+          "rxcui": "1191",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E01",
+      "fetched_at": "2026-07-15T04:44:10.285728+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/1191/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E02",
+      "fetched_at": "2026-07-15T04:44:10.640448+00:00",
+      "params": {
+        "name": "warfarin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "11289"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E02",
+      "fetched_at": "2026-07-15T04:44:10.771214+00:00",
+      "params": {},
+      "path": "rxcui/11289/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "warfarin",
+          "rxcui": "11289",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E02",
+      "fetched_at": "2026-07-15T04:44:10.902665+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/11289/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E03",
+      "fetched_at": "2026-07-15T04:44:11.128368+00:00",
+      "params": {
+        "name": "acetaminophen",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "161"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E03",
+      "fetched_at": "2026-07-15T04:44:11.265598+00:00",
+      "params": {},
+      "path": "rxcui/161/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "acetaminophen",
+          "rxcui": "161",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E03",
+      "fetched_at": "2026-07-15T04:44:11.405226+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/161/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E04",
+      "fetched_at": "2026-07-15T04:44:11.871079+00:00",
+      "params": {
+        "name": "ibuprofen",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "5640"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E04",
+      "fetched_at": "2026-07-15T04:44:12.003614+00:00",
+      "params": {},
+      "path": "rxcui/5640/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "ibuprofen",
+          "rxcui": "5640",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E04",
+      "fetched_at": "2026-07-15T04:44:12.133752+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/5640/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E05",
+      "fetched_at": "2026-07-15T04:44:12.373204+00:00",
+      "params": {
+        "name": "lisinopril",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "29046"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E05",
+      "fetched_at": "2026-07-15T04:44:12.504019+00:00",
+      "params": {},
+      "path": "rxcui/29046/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "lisinopril",
+          "rxcui": "29046",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E05",
+      "fetched_at": "2026-07-15T04:44:12.634953+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E06",
+      "fetched_at": "2026-07-15T04:44:12.870312+00:00",
+      "params": {
+        "name": "metformin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "6809"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E06",
+      "fetched_at": "2026-07-15T04:44:13.003397+00:00",
+      "params": {},
+      "path": "rxcui/6809/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "metformin",
+          "rxcui": "6809",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E06",
+      "fetched_at": "2026-07-15T04:44:13.134603+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E07",
+      "fetched_at": "2026-07-15T04:44:13.375690+00:00",
+      "params": {
+        "name": "fluoxetine",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "4493"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E07",
+      "fetched_at": "2026-07-15T04:44:13.508432+00:00",
+      "params": {},
+      "path": "rxcui/4493/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "fluoxetine",
+          "rxcui": "4493",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E07",
+      "fetched_at": "2026-07-15T04:44:13.650014+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/4493/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "fluoxetine",
+                  "rxcui": "4493",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "E08",
+      "fetched_at": "2026-07-15T04:44:13.889187+00:00",
+      "params": {
+        "name": "simvastatin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "36567"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "E08",
+      "fetched_at": "2026-07-15T04:44:14.022669+00:00",
+      "params": {},
+      "path": "rxcui/36567/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "simvastatin",
+          "rxcui": "36567",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "E08",
+      "fetched_at": "2026-07-15T04:44:14.155028+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/36567/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "simvastatin",
+                  "rxcui": "36567",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B01",
+      "fetched_at": "2026-07-15T04:44:14.387076+00:00",
+      "params": {
+        "name": "Coumadin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "202421"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B01",
+      "fetched_at": "2026-07-15T04:44:14.513495+00:00",
+      "params": {},
+      "path": "rxcui/202421/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Coumadin",
+          "rxcui": "202421",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B01",
+      "fetched_at": "2026-07-15T04:44:14.644283+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/202421/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B02",
+      "fetched_at": "2026-07-15T04:44:14.879045+00:00",
+      "params": {
+        "name": "Tylenol",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "202433"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B02",
+      "fetched_at": "2026-07-15T04:44:15.011585+00:00",
+      "params": {},
+      "path": "rxcui/202433/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Tylenol",
+          "rxcui": "202433",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B02",
+      "fetched_at": "2026-07-15T04:44:15.140733+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/202433/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B03",
+      "fetched_at": "2026-07-15T04:44:15.393301+00:00",
+      "params": {
+        "name": "Advil",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "153010"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B03",
+      "fetched_at": "2026-07-15T04:44:15.526570+00:00",
+      "params": {},
+      "path": "rxcui/153010/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Advil",
+          "rxcui": "153010",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B03",
+      "fetched_at": "2026-07-15T04:44:15.662729+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/153010/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B04",
+      "fetched_at": "2026-07-15T04:44:15.895960+00:00",
+      "params": {
+        "name": "Prozac",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "58827"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B04",
+      "fetched_at": "2026-07-15T04:44:16.026385+00:00",
+      "params": {},
+      "path": "rxcui/58827/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Prozac",
+          "rxcui": "58827",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B04",
+      "fetched_at": "2026-07-15T04:44:16.157658+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/58827/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "fluoxetine",
+                  "rxcui": "4493",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B05",
+      "fetched_at": "2026-07-15T04:44:16.401576+00:00",
+      "params": {
+        "name": "Zocor",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "196503"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B05",
+      "fetched_at": "2026-07-15T04:44:16.536611+00:00",
+      "params": {},
+      "path": "rxcui/196503/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Zocor",
+          "rxcui": "196503",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B05",
+      "fetched_at": "2026-07-15T04:44:16.669011+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/196503/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "simvastatin",
+                  "rxcui": "36567",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B06",
+      "fetched_at": "2026-07-15T04:44:16.906628+00:00",
+      "params": {
+        "name": "Plavix",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "174742"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B06",
+      "fetched_at": "2026-07-15T04:44:17.045354+00:00",
+      "params": {},
+      "path": "rxcui/174742/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Plavix",
+          "rxcui": "174742",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B06",
+      "fetched_at": "2026-07-15T04:44:17.178338+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/174742/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "B07",
+      "fetched_at": "2026-07-15T04:44:17.415737+00:00",
+      "params": {
+        "name": "Prilosec",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "203345"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "B07",
+      "fetched_at": "2026-07-15T04:44:17.548191+00:00",
+      "params": {},
+      "path": "rxcui/203345/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "Prilosec",
+          "rxcui": "203345",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "BN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "B07",
+      "fetched_at": "2026-07-15T04:44:17.676619+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/203345/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "omeprazole",
+                  "rxcui": "7646",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:17.922125+00:00",
+      "params": {
+        "name": "asprin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:18.059545+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "asprin"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "candidate": [
+            {
+              "rank": "1",
+              "rxaui": "1181183",
+              "rxcui": "218770",
+              "score": "8.769552380167152",
+              "source": "MMSL"
+            }
+          ],
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:18.190808+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/218770/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M01",
+      "fetched_at": "2026-07-15T04:44:18.325606+00:00",
+      "params": {},
+      "path": "rxcui/218770/properties.json",
+      "phase": "application_execution",
+      "response": {}
+    },
+    {
+      "case_id": "M02",
+      "fetched_at": "2026-07-15T04:44:18.559263+00:00",
+      "params": {
+        "name": "warfarine",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "11289"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "M02",
+      "fetched_at": "2026-07-15T04:44:18.689784+00:00",
+      "params": {},
+      "path": "rxcui/11289/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "warfarin",
+          "rxcui": "11289",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "IN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "M02",
+      "fetched_at": "2026-07-15T04:44:18.821348+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/11289/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "warfarin",
+                  "rxcui": "11289",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.059538+00:00",
+      "params": {
+        "name": "metphormin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.201765+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "metphormin"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "candidate": [
+            {
+              "rank": "1",
+              "rxaui": "10328664",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "GS"
+            },
+            {
+              "name": "metformin",
+              "rank": "1",
+              "rxaui": "12251601",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "RXNORM"
+            },
+            {
+              "name": "METFORMIN",
+              "rank": "1",
+              "rxaui": "2628685",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "VANDF"
+            },
+            {
+              "rank": "1",
+              "rxaui": "3605328",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "NDDF"
+            },
+            {
+              "name": "metformin",
+              "rank": "1",
+              "rxaui": "5481094",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "ATC"
+            },
+            {
+              "name": "Metformin",
+              "rank": "1",
+              "rxaui": "8381393",
+              "rxcui": "6809",
+              "score": "7.830942630767822",
+              "source": "DRUGBANK"
+            }
+          ],
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.329987+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.467505+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.595436+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.729749+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.859872+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M03",
+      "fetched_at": "2026-07-15T04:44:19.987055+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/6809/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "metformin",
+                  "rxcui": "6809",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:20.213512+00:00",
+      "params": {
+        "name": "lisnopril",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:20.352952+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "lisnopril"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "candidate": [
+            {
+              "name": "Lisinopril",
+              "rank": "1",
+              "rxaui": "10282780",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "USP"
+            },
+            {
+              "rank": "1",
+              "rxaui": "10325409",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "GS"
+            },
+            {
+              "name": "lisinopril",
+              "rank": "1",
+              "rxaui": "12250571",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "RXNORM"
+            },
+            {
+              "name": "LISINOPRIL",
+              "rank": "1",
+              "rxaui": "2072073",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "VANDF"
+            },
+            {
+              "rank": "1",
+              "rxaui": "3619831",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "NDDF"
+            },
+            {
+              "rank": "1",
+              "rxaui": "434508",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "MMSL"
+            },
+            {
+              "rank": "1",
+              "rxaui": "434516",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "MMSL"
+            },
+            {
+              "name": "lisinopril",
+              "rank": "1",
+              "rxaui": "5480861",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "ATC"
+            },
+            {
+              "name": "Lisinopril",
+              "rank": "1",
+              "rxaui": "8547386",
+              "rxcui": "29046",
+              "score": "8.8265962600708",
+              "source": "DRUGBANK"
+            }
+          ],
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:20.480783+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:20.767912+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:20.898658+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.029150+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.158786+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.289163+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.414697+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.543076+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M04",
+      "fetched_at": "2026-07-15T04:44:21.675948+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/29046/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:21.918506+00:00",
+      "params": {
+        "name": "clopidagrel",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.055064+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "clopidagrel"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "candidate": [
+            {
+              "rank": "1",
+              "rxaui": "10328656",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "GS"
+            },
+            {
+              "name": "CLOPIDOGREL",
+              "rank": "1",
+              "rxaui": "2627672",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "VANDF"
+            },
+            {
+              "rank": "1",
+              "rxaui": "3619778",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "NDDF"
+            },
+            {
+              "rank": "1",
+              "rxaui": "449514",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "MMSL"
+            },
+            {
+              "name": "clopidogrel",
+              "rank": "1",
+              "rxaui": "449515",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "RXNORM"
+            },
+            {
+              "name": "clopidogrel",
+              "rank": "1",
+              "rxaui": "5479411",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "ATC"
+            },
+            {
+              "name": "Clopidogrel",
+              "rank": "1",
+              "rxaui": "8617075",
+              "rxcui": "32968",
+              "score": "8.192180633544922",
+              "source": "DRUGBANK"
+            }
+          ],
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.188343+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.320192+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.446688+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.578356+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.707933+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.837621+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "M05",
+      "fetched_at": "2026-07-15T04:44:22.966633+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/32968/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clopidogrel",
+                  "rxcui": "32968",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "C01",
+      "fetched_at": "2026-07-15T04:44:23.197803+00:00",
+      "params": {
+        "name": "amoxicillin / clavulanate",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "19711"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "C01",
+      "fetched_at": "2026-07-15T04:44:23.327633+00:00",
+      "params": {},
+      "path": "rxcui/19711/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "amoxicillin / clavulanate",
+          "rxcui": "19711",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "MIN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "C01",
+      "fetched_at": "2026-07-15T04:44:23.458743+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/19711/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "clavulanate",
+                  "rxcui": "48203",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "amoxicillin",
+                  "rxcui": "723",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "C02",
+      "fetched_at": "2026-07-15T04:44:23.707463+00:00",
+      "params": {
+        "name": "sulfamethoxazole / trimethoprim",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "10831"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "C02",
+      "fetched_at": "2026-07-15T04:44:23.842197+00:00",
+      "params": {},
+      "path": "rxcui/10831/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "sulfamethoxazole / trimethoprim",
+          "rxcui": "10831",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "MIN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "C02",
+      "fetched_at": "2026-07-15T04:44:23.973349+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/10831/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "sulfamethoxazole",
+                  "rxcui": "10180",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "trimethoprim",
+                  "rxcui": "10829",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "C03",
+      "fetched_at": "2026-07-15T04:44:24.199880+00:00",
+      "params": {
+        "name": "acetaminophen / hydrocodone",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "214182"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "C03",
+      "fetched_at": "2026-07-15T04:44:24.338644+00:00",
+      "params": {},
+      "path": "rxcui/214182/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "acetaminophen / hydrocodone",
+          "rxcui": "214182",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "MIN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "C03",
+      "fetched_at": "2026-07-15T04:44:24.469411+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/214182/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "hydrocodone",
+                  "rxcui": "5489",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "C04",
+      "fetched_at": "2026-07-15T04:44:24.710963+00:00",
+      "params": {
+        "name": "lisinopril / hydrochlorothiazide",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "214618"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "C04",
+      "fetched_at": "2026-07-15T04:44:24.841404+00:00",
+      "params": {},
+      "path": "rxcui/214618/properties.json",
+      "phase": "application_execution",
+      "response": {
+        "properties": {
+          "language": "ENG",
+          "name": "hydrochlorothiazide / lisinopril",
+          "rxcui": "214618",
+          "suppress": "N",
+          "synonym": "",
+          "tty": "MIN",
+          "umlscui": ""
+        }
+      }
+    },
+    {
+      "case_id": "C04",
+      "fetched_at": "2026-07-15T04:44:24.971632+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/214618/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "lisinopril",
+                  "rxcui": "29046",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                },
+                {
+                  "language": "ENG",
+                  "name": "hydrochlorothiazide",
+                  "rxcui": "5487",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:25.192701+00:00",
+      "params": {
+        "name": "49483034101",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:25.322395+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "49483034101"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:25.452016+00:00",
+      "params": {
+        "id": "49483034101",
+        "idtype": "NDC"
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "198440"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "N01",
+      "fetched_at": "2026-07-15T04:44:25.583436+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/198440/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "acetaminophen",
+                  "rxcui": "161",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:25.828024+00:00",
+      "params": {
+        "name": "00363039312",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:25.960412+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "00363039312"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:26.092904+00:00",
+      "params": {
+        "id": "00363039312",
+        "idtype": "NDC"
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "310965"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "N02",
+      "fetched_at": "2026-07-15T04:44:26.226323+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/310965/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "ibuprofen",
+                  "rxcui": "5640",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:26.469198+00:00",
+      "params": {
+        "name": "85237182801",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:26.601971+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "85237182801"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:26.733547+00:00",
+      "params": {
+        "id": "85237182801",
+        "idtype": "NDC"
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {
+          "rxnormId": [
+            "211874"
+          ]
+        }
+      }
+    },
+    {
+      "case_id": "N03",
+      "fetched_at": "2026-07-15T04:44:26.862403+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/211874/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "conceptProperties": [
+                {
+                  "language": "ENG",
+                  "name": "aspirin",
+                  "rxcui": "1191",
+                  "suppress": "N",
+                  "synonym": "",
+                  "tty": "IN",
+                  "umlscui": ""
+                }
+              ],
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.096550+00:00",
+      "params": {
+        "name": "not-a-real-drug-zxqv-20260715",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution",
+      "response": {
+        "idGroup": {}
+      }
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.251453+00:00",
+      "params": {
+        "maxEntries": 5,
+        "term": "not-a-real-drug-zxqv-20260715"
+      },
+      "path": "approximateTerm.json",
+      "phase": "application_execution",
+      "response": {
+        "approximateGroup": {
+          "candidate": [
+            {
+              "rank": "1",
+              "rxaui": "2947793",
+              "rxcui": "835748",
+              "score": "8.773896614313125",
+              "source": "NDDF"
+            },
+            {
+              "name": "TULATHROMYCIN A 485 g in 500 g NOT APPLICABLE POWDER [X]",
+              "rank": "2",
+              "rxaui": "6813622",
+              "rxcui": "1595027",
+              "score": "8.650627139525357",
+              "source": "MTHSPL"
+            }
+          ],
+          "inputTerm": null
+        }
+      }
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.380551+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/835748/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.509058+00:00",
+      "params": {},
+      "path": "rxcui/835748/properties.json",
+      "phase": "application_execution",
+      "response": {}
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.638180+00:00",
+      "params": {
+        "tty": "IN"
+      },
+      "path": "rxcui/1595027/related.json",
+      "phase": "application_execution",
+      "response": {
+        "relatedGroup": {
+          "conceptGroup": [
+            {
+              "tty": "IN"
+            }
+          ],
+          "rxcui": null
+        }
+      }
+    },
+    {
+      "case_id": "U01",
+      "fetched_at": "2026-07-15T04:44:27.767494+00:00",
+      "params": {},
+      "path": "rxcui/1595027/properties.json",
+      "phase": "application_execution",
+      "response": {}
+    },
+    {
+      "case_id": "F01",
+      "fetched_at": "2026-07-15T04:44:27.828782+00:00",
+      "injected_exception": "httpx.ConnectError",
+      "params": {
+        "name": "aspirin",
+        "search": 2
+      },
+      "path": "rxcui.json",
+      "phase": "application_execution"
+    }
+  ]
+}

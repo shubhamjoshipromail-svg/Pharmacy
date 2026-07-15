@@ -26,7 +26,7 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 
 1. [x] **Audit structured-output and hallucination-resistance checks.** Evidence 02 executed 30 cases. The implementation failed: 15 invalid cases were accepted and 7 raised unhandled exceptions.
 2. [x] **Recover source-data provenance from repository and history.** Evidence 03 recovered the exact eight-file manifest, acquisition timestamps, official origins, hashes, and raw profile. Exact semantic release and transformation lineage remain unavailable.
-3. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
+3. [x] **Create one independently specified validation component.** Evidence 06 froze 30 official-reference-derived normalization cases and separately verified all mappings before execution. The application failed 8/30 strict cases; no pharmacist/second-researcher adjudication was available.
 4. [x] **Measure core-check latency and repeatability.** Evidence 04 completed 720 correct calls across eight workloads; all met the local p95/repeatability rules. The result is not a production SLA or clinical validation.
 5. [x] **Audit selected persistence and traceability semantics.** Evidence 05 passed 10/15 criteria but failed the broad contract: attempted insufficient checks are absent, duplicate pair counts overstate distinct pairs, run sources can be wrong, display evidence is not fully snapshotted, and acknowledgment removal uses the default identity.
 6. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
@@ -53,6 +53,15 @@ Under the current file-preservation rules, the application source was not modifi
 - [ ] Bind acknowledgment removal and all review actions to authenticated identities.
 - [ ] Add append-only/tamper-evident controls and read auditing only if a stronger audit claim is intended.
 - [ ] Keep override semantics explicit: current overrides are finding-level records and do not affect later checks.
+
+## Normalization remediation required after Evidence 06
+
+- [ ] Represent and retain all ingredients for multi-ingredient concepts; do not silently select the first related ingredient.
+- [ ] Reject or route approximate candidates that lack active concept properties or a resolvable ingredient.
+- [ ] Separate exact, normalized-exact, fuzzy, candidate, and user-confirmed status semantics.
+- [ ] Convert RxNorm timeouts/network/server errors to explicit visible non-resolution without losing the attempted input.
+- [ ] Rerun the frozen 30-case benchmark after remediation and retain paired before/after results.
+- [ ] Expand with independently sourced real-world errors only if expert review or an appropriate dataset becomes available.
 
 ## Reproducibility work still required
 
