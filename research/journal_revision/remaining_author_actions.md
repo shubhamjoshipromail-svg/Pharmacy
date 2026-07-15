@@ -28,7 +28,7 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 2. [x] **Recover source-data provenance from repository and history.** Evidence 03 recovered the exact eight-file manifest, acquisition timestamps, official origins, hashes, and raw profile. Exact semantic release and transformation lineage remain unavailable.
 3. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
 4. [x] **Measure core-check latency and repeatability.** Evidence 04 completed 720 correct calls across eight workloads; all met the local p95/repeatability rules. The result is not a production SLA or clinical validation.
-5. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
+5. [x] **Audit selected persistence and traceability semantics.** Evidence 05 passed 10/15 criteria but failed the broad contract: attempted insufficient checks are absent, duplicate pair counts overstate distinct pairs, run sources can be wrong, display evidence is not fully snapshotted, and acknowledgment removal uses the default identity.
 6. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
 
 ## Explanation-boundary remediation required after Evidence 02
@@ -43,6 +43,16 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 - [ ] Rerun the frozen 30-case suite after remediation and retain both pre- and post-remediation results.
 
 Under the current file-preservation rules, the application source was not modified. These items remain engineering actions for an explicitly authorized future implementation change.
+
+## Traceability remediation required after Evidence 05
+
+- [ ] Persist below-threshold check attempts or narrow all history claims to completed checks with at least two verified medications.
+- [ ] Deduplicate active RxCUIs before candidate-pair generation and report distinct-row and distinct-pair metrics separately.
+- [ ] Derive run-level sources from actual finding assertions rather than hard-coding DDInter.
+- [ ] Define and persist the exact historical display/evidence snapshot required for later reconstruction.
+- [ ] Bind acknowledgment removal and all review actions to authenticated identities.
+- [ ] Add append-only/tamper-evident controls and read auditing only if a stronger audit claim is intended.
+- [ ] Keep override semantics explicit: current overrides are finding-level records and do not affect later checks.
 
 ## Reproducibility work still required
 

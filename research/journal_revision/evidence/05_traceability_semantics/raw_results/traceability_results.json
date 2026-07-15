@@ -1,0 +1,224 @@
+{
+  "criteria": [
+    {
+      "criterion_id": "T01",
+      "domain": "insufficient_input",
+      "evidence": {},
+      "expected": "A below-threshold invocation returns a controlled warning and zero pairs.",
+      "interpretation": "The core returns a controlled insufficient-input result after excluding the placeholder.",
+      "observed": "warning='Insufficient medications for interaction check \u2014 at least 2 required'; medications=1; pairs=0",
+      "passed": true
+    },
+    {
+      "criterion_id": "T02",
+      "domain": "attempt_history",
+      "evidence": {},
+      "expected": "Every check invocation has a persisted run or attempt record.",
+      "interpretation": "Below-threshold attempts are not persisted, so check history is incomplete for attempted invocations.",
+      "observed": "run_id=''; persisted_patient_runs=0",
+      "passed": false
+    },
+    {
+      "criterion_id": "T03",
+      "domain": "duplicate_finding",
+      "evidence": {},
+      "expected": "Duplicate active medication rows do not create duplicate findings.",
+      "interpretation": "Canonical pair lookup prevents duplicate findings for the repeated RxCUI.",
+      "observed": "returned_interactions=1; returned_summaries=1; persisted_findings=1",
+      "passed": true
+    },
+    {
+      "criterion_id": "T04",
+      "domain": "pair_accounting",
+      "evidence": {},
+      "expected": "Pair count equals unordered pairs of distinct evaluated RxCUIs.",
+      "interpretation": "A same-RxCUI pair is included, so the metric overstates distinct-drug pairs.",
+      "observed": "active_rows=3; distinct_rxcuis=2; expected_distinct_pairs=1; reported_pairs=2",
+      "passed": false
+    },
+    {
+      "criterion_id": "T05",
+      "domain": "source_reporting",
+      "evidence": {},
+      "expected": "Run-level sources equal the union of persisted finding sources.",
+      "interpretation": "The run reports DDInter even though its only finding source is manual.",
+      "observed": "run_sources=['DDInter']; finding_source_union=['manual']",
+      "passed": false
+    },
+    {
+      "criterion_id": "T06",
+      "domain": "medication_snapshot",
+      "evidence": {},
+      "expected": "Completed-run medication snapshot remains unchanged after live row edits.",
+      "interpretation": "The selected medication fields in the JSON snapshot are stable after later edits.",
+      "observed": "snapshot_unchanged=True; snapshot_entries=2",
+      "passed": true
+    },
+    {
+      "criterion_id": "T07",
+      "domain": "finding_snapshot",
+      "evidence": {},
+      "expected": "Selected finding fields remain unchanged after live assertion edits.",
+      "interpretation": "Run-time maximum severity, sources, conflict, and suppression state are stable snapshots.",
+      "observed": "original={'max_severity_at_run': 'major', 'sources_at_run': ['DDInter', 'manual'], 'sources_conflicted': True, 'suppressed_by_ack': False}; observed={'max_severity_at_run': 'major', 'sources_at_run': ['DDInter', 'manual'], 'sources_conflicted': True, 'suppressed_by_ack': False}",
+      "passed": true
+    },
+    {
+      "criterion_id": "T08",
+      "domain": "display_reconstruction",
+      "evidence": {},
+      "expected": "Run/finding snapshots preserve prior displayed evidence details.",
+      "interpretation": "Mechanism, management/effect, evidence URL, source record, and raw payload are live assertion data, not historical finding snapshots.",
+      "observed": "missing_finding_snapshot_fields=['evidence_url', 'management', 'mechanism', 'raw_payload', 'source_record_id']; original_evidence_recoverable_from_snapshots=False",
+      "passed": false
+    },
+    {
+      "criterion_id": "T09",
+      "domain": "acknowledgment_record",
+      "evidence": {},
+      "expected": "Acknowledgment state and creation event persist with tested user and payload.",
+      "interpretation": "The acknowledgment row and selected creation event are persisted.",
+      "observed": "ack_id=1; ack_user=b9faa08b-638d-4538-b743-fdd063eaac3d; event_user=b9faa08b-638d-4538-b743-fdd063eaac3d",
+      "passed": true
+    },
+    {
+      "criterion_id": "T10",
+      "domain": "suppression_snapshot",
+      "evidence": {},
+      "expected": "Same-severity acknowledgment suppresses presentation while preserving the finding and state.",
+      "interpretation": "Suppression state is returned and saved without deleting the interaction finding.",
+      "observed": "returned_suppressed=True; suppressed_count=1; persisted_suppressed=True",
+      "passed": true
+    },
+    {
+      "criterion_id": "T11",
+      "domain": "severity_escalation",
+      "evidence": {},
+      "expected": "Higher current severity resurfaces relative to stored acknowledgment severity.",
+      "interpretation": "The comparison resurfaces the finding when current severity exceeds the stored acknowledgment severity.",
+      "observed": "ack_severity=major; current_severity=contraindicated; suppressed=False",
+      "passed": true
+    },
+    {
+      "criterion_id": "T12",
+      "domain": "acknowledgment_deactivation",
+      "evidence": {},
+      "expected": "Deactivation persists and creates a removal audit event.",
+      "interpretation": "The acknowledgment is retained as inactive and a selected removal event is written.",
+      "observed": "ack_active=False; removal_event_id=2",
+      "passed": true
+    },
+    {
+      "criterion_id": "T13",
+      "domain": "deactivation_identity",
+      "evidence": {},
+      "expected": "Removal event is bound to the tested workflow user.",
+      "interpretation": "The endpoint attributes removal to the default user rather than an authenticated actor or the tested workflow user.",
+      "observed": "tested_user=b9faa08b-638d-4538-b743-fdd063eaac3d; removal_event_user=00000000-0000-0000-0000-000000000001",
+      "passed": false
+    },
+    {
+      "criterion_id": "T14",
+      "domain": "override_record",
+      "evidence": {},
+      "expected": "Override and audit event persist with tested user, action, severity, and note.",
+      "interpretation": "The finding-level override and selected audit event are persisted.",
+      "observed": "override_id=1; override_user=b9faa08b-638d-4538-b743-fdd063eaac3d; severity=contraindicated",
+      "passed": true
+    },
+    {
+      "criterion_id": "T15",
+      "domain": "override_semantics",
+      "evidence": {},
+      "expected": "Override remains attached to original finding and does not silently change a later check.",
+      "interpretation": "Overrides are historical records for one finding; later checks are neither suppressed nor annotated by them.",
+      "observed": "later_suppressed=False; original_finding_overrides=1; later_finding_overrides=0",
+      "passed": true
+    }
+  ],
+  "fixture_ids": {
+    "acknowledgment": 1,
+    "baseline_workflow_finding": 3,
+    "interactions": {
+      "duplicate": "9e8751c9-af77-4dea-87ab-cdf12d0bc15d",
+      "snapshot": "dc8c4cbb-ba32-4286-a411-b416b19627ab",
+      "workflow": "80d8ab9d-5db4-4912-89df-c7ed2eeab4db"
+    },
+    "override": 1,
+    "patients": {
+      "duplicate": "f0557263-ccec-446a-a36e-68def4ae9603",
+      "insufficient": "fc122c4f-c1ad-4d90-abcb-b351887cb83a",
+      "snapshot": "19ca7396-423f-4455-8248-738b5b7b0cf2",
+      "workflow": "880b8c6b-ec02-40f8-9439-31fa195d9224"
+    },
+    "runs": {
+      "duplicate": "95b0f07c-a78e-4351-8d08-7bf0f0825753",
+      "snapshot": "4119c8e4-7766-40f3-9ea8-d6319c97b333",
+      "workflow_baseline": "efcb0111-6b9e-43ec-9439-121f24427281",
+      "workflow_escalated": "63ff6612-ccd2-4801-b984-535dcd940fe0",
+      "workflow_post_override": "fe41719e-4663-4f40-b8e5-d60d94620986",
+      "workflow_suppressed": "d3d11d89-ef92-4a44-aad6-a5396c75cc96"
+    }
+  },
+  "limitations": [
+    "Synthetic fixtures and direct production-function calls, not clinical or authenticated user evaluation.",
+    "One local database environment and one execution.",
+    "No concurrency, retention, tamper, authorization, read-access, or regulatory-compliance test.",
+    "Clinical appropriateness of acknowledgments and overrides is outside scope."
+  ],
+  "metadata": {
+    "database": {
+      "credentials_recorded": false,
+      "host": "127.0.0.1",
+      "name": "rxcheck_traceability",
+      "port": 64851,
+      "server_address": "127.0.0.1",
+      "server_version": "16.14"
+    },
+    "environment": {
+      "machine": "arm64",
+      "packages": {
+        "fastapi": "0.139.0",
+        "psycopg2-binary": "2.9.12",
+        "pydantic": "2.13.4",
+        "sqlalchemy": "2.0.51"
+      },
+      "platform": "macOS-15.7.7-arm64-arm-64bit",
+      "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]"
+    },
+    "evaluated_source_commit": "c33c6581f5b577f10af421e4ebfd311add281317",
+    "external_api_calls": 0,
+    "generated_at": "2026-07-15T04:32:25.892725+00:00",
+    "repository_head_at_execution": "285167e28dd36a6217b309bd1c8aa2df6d457980",
+    "runner_sha256": "575e60674b6fb7d4100114cd1273ac954f93ef8584c6d882a9a14c6af40ae710",
+    "schema_setup": "SQLAlchemy Base.metadata.create_all (not Alembic)",
+    "source_sha256": {
+      "app/api/interactions.py": "5237eddf6f45d4d9a573282ea7c8587bf6b4d63246f2d2b35cad5151ec24edb0",
+      "app/models/audit.py": "f85e2bd23138ffe48c825ca6a275f7bb0495c1ce89b30f6bdbd30472b6d66018",
+      "app/models/check.py": "c59d32579b76cbfdd1b5b7e8f888189b5881b19472bcbbd72c551237cc81af9f",
+      "app/models/interaction.py": "9061d9182564417d962515ad3f5614c4f030413269d26685259f9aeebfef9228",
+      "app/models/patient.py": "f1fb6f7a43f0222d8f4481e98bce3c21548c0ab4a8fa6080c3d2ceec7ac44d96",
+      "app/services/orchestrator.py": "8db8736a50b205558a72dad87ad14160f1d17709a3000f74891ab4ec6659451c"
+    }
+  },
+  "static_scope_observations": [
+    "AuditEvent rows are ordinary mutable database rows; no append-only or tamper-evident control is defined.",
+    "The application has no authentication or route-level authorization binding the supplied/default user IDs to a caller.",
+    "No read-access audit path is implemented."
+  ],
+  "summary": {
+    "audit_contract_passed": false,
+    "criteria_completed": 15,
+    "criteria_expected": 15,
+    "external_api_calls": 0,
+    "failed": 5,
+    "passed": 10
+  },
+  "table_counts_after_audit": {
+    "audit_events": 3,
+    "interaction_acknowledgments": 1,
+    "interaction_check_findings": 6,
+    "interaction_check_runs": 6,
+    "interaction_overrides": 1
+  }
+}

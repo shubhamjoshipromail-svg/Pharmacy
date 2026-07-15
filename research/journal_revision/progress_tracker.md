@@ -16,7 +16,8 @@
 | Evidence 01 | Complete and pushed | 2026-07-15 | Reproduce the 26-scenario architecture evaluation from fresh local PostgreSQL databases | Commit `db6cd98`; three repetitions passed 26/26; identical outcomes; no external APIs reported | Clean-database architecture reproducibility and deterministic/generative boundary | Methods, Results, Threats to Validity, Data/Code Availability | Self-authored synthetic scenarios; empty migration; unpinned dependencies; no real data reconstruction | Audit the LLM output-validation boundary with malformed and adversarial structured outputs |
 | Evidence 02 | Complete; implementation failed contract | 2026-07-15 | Audit LLM response-validator conformance | 3/3 valid controls accepted; only 5/27 invalid cases cleanly rejected; 15 false accepts; 7 unhandled exceptions | Schema validation, source/severity consistency, grounding, hallucination resistance, prompt-injection handling | Methods, Results, Discussion, Limitations, Future Work | No live model/clinical assessment; finite project-defined cases; no remediation tested | Recover source-data provenance from repository/history, then decide whether a credible independent validation set is feasible |
 | Evidence 03 | Partial; full lineage failed | 2026-07-15 | Recover DDInter source provenance and reconcile data claims | Eight official files found and hashed; all byte-identical to current downloads; 222,383 rows, 160,235 unique, 62,148 duplicates; no semantic release or reconstructable import accounting | Data provenance, database counts, DDInter version/coverage, data availability | Data/Implementation Context, Methods, Results, Limitations, Availability | Missing alias snapshot, quarantine rows, import log, semantic release, database row-level reconciliation | Benchmark core-check latency/repeatability in the isolated synthetic environment; list independent clinical/reference validation as externally blocked |
-| Evidence 04 | Complete; pass with limitations | 2026-07-15 | Benchmark core-check latency and repeatability | 720/720 count-correct calls; 0 exceptions/external calls; 8/8 workloads met local p95 and repeatability rules; p95 2.586–245.124 ms | Bounded operational behavior of the deterministic DDI path | Methods, Results, Threats to Validity, Discussion | One machine; synthetic warm-cache sequential core calls; no end-to-end, concurrency, real-data, or clinical inference | Audit selected persistence/traceability semantics before final claim classification |
+| Evidence 04 | Complete and pushed | 2026-07-15 | Benchmark core-check latency and repeatability | Commit `285167e`; 720/720 count-correct calls; 0 exceptions/external calls; 8/8 workloads met local p95 and repeatability rules; p95 2.586–245.124 ms | Bounded operational behavior of the deterministic DDI path | Methods, Results, Threats to Validity, Discussion | One machine; synthetic warm-cache sequential core calls; no end-to-end, concurrency, real-data, or clinical inference | Audit selected persistence/traceability semantics before final claim classification |
+| Evidence 05 | Complete; broad contract failed | 2026-07-15 | Audit selected persistence and traceability semantics | 10/15 criteria passed; failures in insufficient-attempt history, duplicate pair count, run source reporting, prior-display reconstruction, and removal-event actor attribution | Audit-oriented persistence, workflow history, provenance snapshots, pair metrics, identity | Architecture/Methods, Results, Discussion, Limitations, Security/Governance | Direct synthetic function-level audit; no auth/read/tamper/concurrency/compliance assessment | Reassess whether any further independent evidence is feasible; then complete the final evidence review |
 
 ## Evidence 01 execution record
 
@@ -87,4 +88,21 @@ bash research/journal_revision/evidence/04_core_latency_repeatability/scripts/ru
 
 ## Current selection rationale
 
-The next highest-value feasible task is a narrow persistence and traceability semantics audit. The reviews specifically question whether attempted checks, pair counts, sources, acknowledgments, overrides, and evidence snapshots mean what the paper implies. This can be tested without external clinical resources and may support or require narrowing the auditability contribution. A genuinely independent clinical/reference benchmark remains externally blocked.
+Evidence 05 completed the last high-value implementation-semantics audit identified in the action register. The next step is to reassess feasibility of an independently specified validation component and related-work verification. If independent clinical/reference evidence cannot be created without circular self-labeling or unavailable expert adjudication, it must be classified as externally blocked before the consolidated evidence review.
+
+## Evidence 05 execution record
+
+- Files: `research/journal_revision/evidence/05_traceability_semantics/`.
+- Command:
+
+```bash
+PG_BIN=/tmp/rxcheck-pg16.14/install/bin \
+PYTHON_BIN=/tmp/rxcheck-evidence-venv/bin/python \
+bash research/journal_revision/evidence/05_traceability_semantics/scripts/run_audit.sh
+```
+
+- Pass/fail: MIXED / broad contract FAIL (runner exit 1 by prespecified rule).
+- Files created: protocol, guarded audit runner, disposable-cluster runner, raw JSON, environment lock, execution/server logs, results, limitations, and manuscript notes.
+- Claim impact: selected completed-run, finding, acknowledgment, and override persistence is supported; complete history/display reconstruction, accurate pair/source reporting, and reliable identity are not.
+- Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
+- Residual risk: authentication, read auditing, immutability, concurrency, retention, compliance, and clinical appropriateness remain untested or unimplemented.
