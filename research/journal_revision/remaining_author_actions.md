@@ -42,6 +42,20 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 
 The controlling synthesis is `final_evidence_review.md`.
 
+## Manuscript v2 phase
+
+- [x] Create manuscript v2 as a completely new file.
+- [x] Integrate all completed, failed, mixed, and inconclusive Evidence 01–07 results.
+- [x] Replace the unresolved related-work marker with a verified comparison.
+- [x] Create a 34-claim evidence map.
+- [x] Create a section-level manuscript change log.
+- [x] Create a submission-readiness checklist with explicit blockers.
+- [x] Create updated authority-boundary and evidence-flow figure sources.
+- [ ] Render and visually verify figures in the target journal's required formats.
+- [ ] Resolve every author/declaration placeholder.
+- [ ] Obtain pharmacist-informatics, methods, and literature-search review.
+- [ ] Complete security, licensing, ethics, and target-journal actions in `manuscript/submission_readiness_checklist.md`.
+
 ## Citation and related-work actions after Evidence 07
 
 - [x] Verify the bibliographic identity of all 15 current references against primary, publisher, or official records.
@@ -110,4 +124,4 @@ Under the current file-preservation rules, the application source was not modifi
 
 ## Manuscript gate
 
-All feasible technical and bounded scholarly evidence tasks in this cycle are complete, and `final_evidence_review.md` now classifies every major claim. Manuscript v2 drafting may begin as a new file. Submission remains gated by security remediation, rights/licensing, author and ethics declarations, target-journal checks, final quality assurance, and appropriate external review. The combined evidence does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, deployment readiness, explanation grounding, broad traceability, general normalization accuracy, or broad novelty.
+All feasible technical and bounded scholarly evidence tasks in this cycle are complete, and manuscript v2 now applies `final_evidence_review.md` to every major claim. Submission remains gated by security remediation, rights/licensing, author and ethics declarations, target-journal checks, rendered/verified figures, final quality assurance, and appropriate external review. The combined evidence does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, deployment readiness, explanation grounding, broad traceability, general normalization accuracy, or broad novelty.

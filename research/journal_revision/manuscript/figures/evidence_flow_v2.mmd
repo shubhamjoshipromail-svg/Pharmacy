@@ -1,0 +1,32 @@
+flowchart TB
+    e01["E01: 3 x 26 architecture scenarios\nPASS WITH LIMITATIONS"]
+    e02["E02: 30 validator cases\nFAIL"]
+    e03["E03: DDInter provenance\nPARTIAL / FULL LINEAGE FAIL"]
+    e04["E04: 720 core calls\nPASS WITH LIMITATIONS"]
+    e05["E05: 15 traceability criteria\n10 PASS / 5 FAIL"]
+    e06["E06: 30 normalization cases\n22 PASS / 8 FAIL"]
+    e07["E07: citations and related work\nCOMPLETE / NOVELTY NARROWED"]
+
+    e01 --> synthesis["Final evidence review\n61/100\nGO draft / NO-GO submit"]
+    e02 --> synthesis
+    e03 --> synthesis
+    e04 --> synthesis
+    e05 --> synthesis
+    e06 --> synthesis
+    e07 --> synthesis
+
+    synthesis --> full["Fully supported bounded claims"]
+    synthesis --> partial["Partially supported claims"]
+    synthesis --> remove["Claims removed or prohibited"]
+    full --> v2["Journal-ready manuscript v2"]
+    partial --> v2
+    remove --> v2
+
+    classDef pass fill:#d5f5e3,stroke:#196f3d,color:#000;
+    classDef mixed fill:#fcf3cf,stroke:#9a7d0a,color:#000;
+    classDef fail fill:#fadbd8,stroke:#922b21,color:#000;
+    classDef gate fill:#d6eaf8,stroke:#21618c,stroke-width:2px,color:#000;
+    class e01,e04 pass;
+    class e03,e05,e07 mixed;
+    class e02,e06 fail;
+    class synthesis,v2 gate;

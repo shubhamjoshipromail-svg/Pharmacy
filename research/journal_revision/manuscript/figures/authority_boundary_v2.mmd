@@ -1,0 +1,29 @@
+flowchart LR
+    input["Medication input"] --> norm["Normalization workflow"]
+    rxnorm["RxNorm service"] -. "entry-time lookup" .-> norm
+    norm --> resolved{"Resolved concept(s)?"}
+    resolved -->|"yes"| meds["Stored active medications"]
+    resolved -->|"no"| unresolved["Visible unresolved state / exclusion"]
+    norm -. "observed failures: first ingredient, invalid candidate, escaped outage" .-> normfail["Incomplete or unsafe resolution path"]
+
+    meds --> core["Deterministic core checker"]
+    kb["Stored interaction rows and assertions"] --> core
+    context["Selected condition and review state"] --> core
+    core --> finding["Persisted check finding\nAUTHORITATIVE FOR THIS WORKFLOW"]
+    core --> nofinding["No stored finding\nnot evidence of no clinical interaction"]
+
+    finding --> optional{"Explanation requested?"}
+    optional -->|"no"| display["Structured finding display"]
+    optional -->|"yes"| explain["Optional LLM explanation"]
+    labels["Optional OpenFDA excerpts"] -.-> explain
+    llm["Anthropic service"] -.-> explain
+    explain --> checks["Limited parser and custom checks"]
+    checks --> prose["Generated prose\nNON-AUTHORITATIVE"]
+    checks -. "observed false accepts and exceptions" .-> invalid["Validation failure path"]
+
+    classDef authority fill:#d5f5e3,stroke:#196f3d,stroke-width:2px,color:#000;
+    classDef warning fill:#fdebd0,stroke:#b9770e,stroke-width:2px,color:#000;
+    classDef failure fill:#fadbd8,stroke:#922b21,stroke-width:2px,color:#000;
+    class finding authority;
+    class unresolved,nofinding,prose warning;
+    class normfail,invalid failure;

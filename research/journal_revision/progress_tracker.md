@@ -21,6 +21,7 @@
 | Evidence 06 | Complete; strict benchmark failed | 2026-07-15 | Benchmark medication normalization against frozen official-reference mappings | References 30/30 verified; application 22/30 strict passes; failures: 2 misspelling/status, 4 combinations, 1 constructed unknown, 1 injected outage | Ingredient-level normalization, explicit non-resolution, combination products, NDCs, failure handling | Methods, Results, Discussion, Limitations, Future Work | Purposive small set; shared RxNorm vocabulary; no expert adjudication or population estimate | Stop empirical expansion; verify related-work/citation support, then perform consolidated evidence review |
 | Evidence 07 | Complete; broad novelty narrowed | 2026-07-14 | Verify all citations and compare the closest related work | 15/15 reference identities verified; 9 direct and 6 bounded/context-only uses; 6/6 comparison categories covered; prior DDI explanation and hybrid rule-plus-LLM work preclude broad novelty | Citation accuracy, RAG/LLM framing, DDI explanation novelty, provenance positioning, clinical-outcome boundaries | Introduction, Related Work, Discussion, Conclusions, References | Targeted non-systematic review; no duplicate reviewer, librarian, pharmacist, legal review, or exhaustive database search | Perform the consolidated final evidence review and classify every manuscript claim before writing v2 |
 | Final synthesis | Complete | 2026-07-15 | Consolidate Evidence 01–07 and reassess publication readiness | `final_evidence_review.md`; score 61/100; GO for candid manuscript v2, NO-GO for submission or clinical use | Every major architecture, validation, provenance, performance, traceability, normalization, novelty, safety, and availability claim | Entire manuscript | Security/rights/declarations and all external clinical/human validation remain incomplete | Create the new v2 manuscript and its change log, claim map, and submission checklist |
+| Manuscript v2 | Complete | 2026-07-15 | Rewrite the article from the completed evidence record without modifying prior manuscripts | New 6,469-word v2; 313-word abstract; 23 cited references; 34-claim evidence map; change log; no-go checklist; two figure sources | All manuscript claims | Entire manuscript and submission package | Author/declaration, security, rights, external review, rendered figures, and journal-specific checks remain | Obtain author and external reviews, remediate submission blockers, then perform target-journal QA |
 
 ## Evidence 01 execution record
 
@@ -154,3 +155,14 @@ awk -F '\t' 'NF != 8 {print NR ":" NF; bad=1} END {if (!bad) print "all rows hav
 - Manuscript sections: all.
 - Residual risk: the synthesis is based on one research process and the bounded Evidence 01–07 record; external clinical, human-factors, security, legal, rights, ethics, and independent-reproduction work remains.
 - Recommended next action: create manuscript v2 as a new file, then validate it line by line against the synthesis.
+
+## Manuscript v2 execution record
+
+- Files: `research/journal_revision/manuscript/`.
+- Required deliverables: `journal_ready_manuscript_v2.md`, `manuscript_change_log.md`, `claim_to_evidence_map.md`, and `submission_readiness_checklist.md`.
+- Additional figure sources: `figures/authority_boundary_v2.mmd` and `figures/evidence_flow_v2.mmd`.
+- Validation: 23/23 references cited; reference numbering sequential; 34/34 claim-map IDs sequential; 313-word structured abstract; all controlling numerical values present; original manuscript hash unchanged; prior draft, application source, and historical evidence unmodified.
+- Result: manuscript rewrite COMPLETE; submission status remains NO-GO.
+- Claim impact: all positive and negative Evidence 01–07 results are integrated; broad novelty, clinical, safety, grounding, complete-provenance, general-normalization, frugality, and deployment claims are removed.
+- Residual risk: figures are source-only and unrendered; author/declaration placeholders remain; no pharmacist, methods reviewer, librarian, legal/licensing, security, ethics, or journal-specific review is complete.
+- Recommended next action: authors resolve the blocking checklist and commission independent/domain review before submission.

@@ -14,6 +14,10 @@
 
 `final_evidence_review.md` classifies the combined Evidence 01–07 record, updates publication readiness from 46/100 to 61/100, authorizes a candid formative manuscript v2, and retains a no-go decision for submission and clinical use. It is a synthesis of the indexed evidence, not an additional independent evidence unit.
 
+## Manuscript products
+
+The new manuscript package is under `manuscript/` and includes `journal_ready_manuscript_v2.md`, `claim_to_evidence_map.md`, `manuscript_change_log.md`, `submission_readiness_checklist.md`, and two Mermaid figure sources. V2 reports all indexed passes and failures. Its submission checklist remains NO-GO pending security, rights, author/declaration, external-review, figure-rendering, and target-journal actions.
+
 ## Evidence quality note
 
 Evidence 01 is direct executed software evidence with retained raw outputs and environment metadata. Confidence is limited by self-authored scenarios, one machine/platform, synthetic fixtures, schema creation outside Alembic, unpinned repository dependencies, and absence of independently specified clinical cases.
