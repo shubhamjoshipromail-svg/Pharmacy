@@ -12,8 +12,9 @@
 
 | ID | Status | Date | Task | Result | Claim affected | Manuscript section | Residual risk | Recommended next action |
 |---|---|---|---|---|---|---|---|---|
-| Preparation | Complete locally; push blocked | 2026-07-14 | Preserve the six-file journal-readiness review package | Local commit `63fb4c0`; HTTPS push failed because no GitHub credentials were available in the shell | Establishes the review baseline | Author-facing planning materials | Remote branch does not yet contain the commit | Push when an authenticated GitHub path is available |
-| Evidence 01 | Complete | 2026-07-15 | Reproduce the 26-scenario architecture evaluation from fresh local PostgreSQL databases | Three repetitions passed 26/26; identical outcomes; no external APIs reported | Clean-database architecture reproducibility and deterministic/generative boundary | Methods, Results, Threats to Validity, Data/Code Availability | Self-authored synthetic scenarios; empty migration; unpinned dependencies; no real data reconstruction | Audit the LLM output-validation boundary with malformed and adversarial structured outputs |
+| Preparation | Complete and pushed | 2026-07-14 | Preserve the six-file journal-readiness review package | Commit `63fb4c0` on the remote research branch | Establishes the review baseline | Author-facing planning materials | Review conclusions still require executed evidence | Execute the highest-priority reproducibility task |
+| Evidence 01 | Complete and pushed | 2026-07-15 | Reproduce the 26-scenario architecture evaluation from fresh local PostgreSQL databases | Commit `db6cd98`; three repetitions passed 26/26; identical outcomes; no external APIs reported | Clean-database architecture reproducibility and deterministic/generative boundary | Methods, Results, Threats to Validity, Data/Code Availability | Self-authored synthetic scenarios; empty migration; unpinned dependencies; no real data reconstruction | Audit the LLM output-validation boundary with malformed and adversarial structured outputs |
+| Evidence 02 | Complete; implementation failed contract | 2026-07-15 | Audit LLM response-validator conformance | 3/3 valid controls accepted; only 5/27 invalid cases cleanly rejected; 15 false accepts; 7 unhandled exceptions | Schema validation, source/severity consistency, grounding, hallucination resistance, prompt-injection handling | Methods, Results, Discussion, Limitations, Future Work | No live model/clinical assessment; finite project-defined cases; no remediation tested | Recover source-data provenance from repository/history, then decide whether a credible independent validation set is feasible |
 
 ## Evidence 01 execution record
 
@@ -31,6 +32,22 @@ bash research/journal_revision/evidence/01_isolated_architecture_reproduction/sc
 - Temporary-data check: disposable cluster stopped and removed.
 - Publication implication: the 26/26 result is now locally reproduced, but neither clinically validated nor independently reproduced.
 
+## Evidence 02 execution record
+
+- Files: `research/journal_revision/evidence/02_llm_validator_conformance/`.
+- Command:
+
+```bash
+/tmp/rxcheck-evidence-venv/bin/python \
+research/journal_revision/evidence/02_llm_validator_conformance/scripts/run_validator_audit.py \
+  --fixtures research/journal_revision/evidence/02_llm_validator_conformance/fixtures/validator_cases.json \
+  --output research/journal_revision/evidence/02_llm_validator_conformance/raw_results/validator_results.json
+```
+
+- Pass/fail: FAIL (runner exit 1 by prespecified contract).
+- Claim impact: keep the finding-authority boundary; remove or explicitly negate strong output-validation/grounding claims.
+- Residual action: do not treat live generated prose as validated until a remediated implementation passes the suite and receives appropriate human review.
+
 ## Current selection rationale
 
-The next highest-value feasible task is a structured-output and failure-mode audit of the actual LLM parser/validator. It directly tests a central article component, requires no clinical data or paid model call, and can reveal whether the manuscript's “bounded explanation” language is technically proportional to the implementation.
+The next highest-value feasible task is recovery-oriented source-data provenance auditing. Exact DDInter release/files/checksums and import accounting remain submission-critical, and repository/history inspection can determine what is recoverable now versus what requires author-supplied source files.

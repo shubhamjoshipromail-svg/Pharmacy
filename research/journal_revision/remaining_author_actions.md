@@ -24,11 +24,25 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 
 ## Highest-priority feasible research actions
 
-1. [ ] **Audit structured-output and hallucination-resistance checks.** Exercise non-object JSON, missing fields, incorrect field types, wrong drugs, wrong severity, invented sources, unsupported management text, and prompt-injection-shaped strings against the actual parser/validator. Record accepted and rejected cases without calling an LLM.
-2. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
-3. [ ] **Measure core-check latency and repeatability.** Use a specified synthetic workload, warm-up policy, sufficient repetitions, and distribution statistics. Do not generalize to production capacity.
-4. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
-5. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
+1. [x] **Audit structured-output and hallucination-resistance checks.** Evidence 02 executed 30 cases. The implementation failed: 15 invalid cases were accepted and 7 raised unhandled exceptions.
+2. [ ] **Recover source-data provenance from repository and history.** Determine whether the exact DDInter release, named files, checksums, download records, import logs, and quarantine accounting can be recovered without using the unsafe live database.
+3. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
+4. [ ] **Measure core-check latency and repeatability.** Use a specified synthetic workload, warm-up policy, sufficient repetitions, and distribution statistics. Do not generalize to production capacity.
+5. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
+6. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
+
+## Explanation-boundary remediation required after Evidence 02
+
+- [ ] Treat the current validator as failed, not partially validated, in manuscript Results and Limitations.
+- [ ] Do not run or present live-model explanation quality as a positive result until structural enforcement is remediated.
+- [ ] Enforce complete JSON consumption and top-level object type.
+- [ ] Use a strict typed schema before persistence/return, including non-empty text, string-list elements, confidence enumeration, and an additional-field policy.
+- [ ] Validate source names and stored severity against the exact structured context.
+- [ ] Add explicit checks/review for unsupported dosing, mechanisms, effects, foods/conditions, and unknown entities.
+- [ ] Add prompt-injection regression cases and controlled failure behavior.
+- [ ] Rerun the frozen 30-case suite after remediation and retain both pre- and post-remediation results.
+
+Under the current file-preservation rules, the application source was not modified. These items remain engineering actions for an explicitly authorized future implementation change.
 
 ## Reproducibility work still required
 

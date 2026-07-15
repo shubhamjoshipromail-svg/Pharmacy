@@ -1,0 +1,2 @@
+cases=30; valid_accepted=3/3; invalid_controlled_rejected=5/27; false_accepts=15; exceptions=7; contract_passed=False
+validator_exit_code=1
