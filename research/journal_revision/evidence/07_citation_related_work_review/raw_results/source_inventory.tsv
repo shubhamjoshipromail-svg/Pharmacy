@@ -1,0 +1,24 @@
+id	category	short_name	official_or_primary_url	identifier	identity_status	claim_fit	manuscript_action
+R01	existing	Saverno 2011	https://pubmed.ncbi.nlm.nih.gov/21131607/	10.1136/jamia.2010.007609	verified	direct	retain for bounded commercial DDI CDS variability
+R02	existing	Hussain 2019	https://academic.oup.com/jamia/article/26/10/1141/5519579	10.1093/jamia/ocz095	verified	direct	retain; no RxCheck alert-fatigue inference
+R03	existing	Nelson RxNorm 2011	https://pubmed.ncbi.nlm.nih.gov/21515544/	10.1136/amiajnl-2011-000116	verified	direct	retain for terminology context; use Evidence 06 for application performance
+R04	existing	DDInter 2022	https://academic.oup.com/nar/article/50/D1/D1200/6389535	10.1093/nar/gkab880	verified	bounded	separate published resource features from recovered five-column bundle
+R05	existing	DDInter 2.0 2025	https://academic.oup.com/nar/article/53/D1/D1356/7740584	10.1093/nar/gkae726	verified	bounded	do not label recovered bundle as DDInter 2.0
+R06	existing	Lewis RAG 2020	https://proceedings.neurips.cc/paper/2020/hash/6b493230-Abstract.html	NeurIPS 2020	verified	bounded	replace arXiv URL with proceedings; add medical RAG source
+R07	existing	Singhal Med-PaLM 2023	https://www.nature.com/articles/s41586-023-06291-2	10.1038/s41586-023-06291-2	verified	bounded	general capability and limitations only; cite corrected article record
+R08	existing	Labkoff AI-CDS 2024	https://academic.oup.com/jamia/article/31/11/2730/7776823	10.1093/jamia/ocae209	verified	direct	retain as recommendations; no compliance inference
+R09	existing	WHO AI ethics 2021	https://www.who.int/publications/i/item/9789240029200	ISBN 9789240029200	verified	direct	retain as governance context with access date
+R10	existing	Hevner design science 2004	https://doi.org/10.2307/25148625	10.2307/25148625	verified	direct	retain publisher-artifact pages 75-105; note Crossref discrepancy
+R11	existing	Peffers DSRM 2007	https://doi.org/10.2753/MIS0742-1222240302	10.2753/MIS0742-1222240302	verified	direct	retain; do not imply prospective process without author evidence
+R12	existing	Tran frugal innovation 2016	https://pubmed.ncbi.nlm.nih.gov/27383644/	10.1186/s12916-016-0651-1	verified	bounded	concept only; no affordability or low-resource claim
+R13	existing	WHO digital interventions 2019	https://www.who.int/publications/i/item/9789241550505	ISBN 9789241550505	verified	direct	retain as generic evaluation framework with access date
+R14	existing	FDA CDS guidance 2026	https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software	FDA-2017-D-6569	verified	bounded	no RxCheck classification without case-specific analysis
+R15	existing	DDInter terms	https://ddinter.scbdd.com/terms/	CC BY-NC-SA 4.0	verified	direct	retain with access date; author/license review still required
+A01	additional	Payne DDI usability 2015	https://academic.oup.com/jamia/article/22/6/1243/2357568	10.1093/jamia/ocv011	verified	direct	add to related work and template baseline rationale
+A02	additional	Chou contextualized DDI 2021	https://academic.oup.com/jamiaopen/article/4/1/ooab023/6178682	10.1093/jamiaopen/ooab023	verified	direct	add to related work; narrower RxCheck context claim
+A03	additional	ExDDI AAAI 2025	https://ojs.aaai.org/index.php/AAAI/article/view/34709	10.1609/aaai.v39i24.34709	verified	direct	add; natural-language DDI explanation not novel
+A04	additional	MedRAG ACL 2024	https://aclanthology.org/2024.findings-acl.372/	10.18653/v1/2024.findings-acl.372	verified	direct	add for medical RAG context
+A05	additional	FHIR Provenance R4	https://hl7.org/fhir/R4/provenance.html	FHIR 4.0.1	verified	direct	add standards comparison; explicitly state non-conformance
+A06	additional	AHRQ CDS Connect	https://digital.ahrq.gov/health-it-tools-and-resources/clinical-decision-support-cds/	AHRQ program	verified	direct	use for reusable interoperable CDS-artifact context
+A07	additional	Sre hybrid DDI preprint 2026	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6527819	SSRN 6527819	verified	context-only	optional preprint citation; overlap only, not clinical evidence
+A08	additional	Holbrook DDI outcomes 2025	https://academic.oup.com/jamia/article/32/10/1617/8240693	10.1093/jamia/ocaf139	verified	direct	add to delimit all clinical and outcome claims

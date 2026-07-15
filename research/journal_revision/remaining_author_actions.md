@@ -29,7 +29,20 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 3. [x] **Create one independently specified validation component.** Evidence 06 froze 30 official-reference-derived normalization cases and separately verified all mappings before execution. The application failed 8/30 strict cases; no pharmacist/second-researcher adjudication was available.
 4. [x] **Measure core-check latency and repeatability.** Evidence 04 completed 720 correct calls across eight workloads; all met the local p95/repeatability rules. The result is not a production SLA or clinical validation.
 5. [x] **Audit selected persistence and traceability semantics.** Evidence 05 passed 10/15 criteria but failed the broad contract: attempted insufficient checks are absent, duplicate pair counts overstate distinct pairs, run sources can be wrong, display evidence is not fully snapshotted, and acknowledgment removal uses the default identity.
-6. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
+6. [x] **Review citation and related-work support.** Evidence 07 verified 15/15 current reference identities, classified 9 direct and 6 bounded uses, and compared six required categories. The result requires an incremental authority-boundary framing and rejects broad novelty.
+
+## Citation and related-work actions after Evidence 07
+
+- [x] Verify the bibliographic identity of all 15 current references against primary, publisher, or official records.
+- [x] Record claim-fit limits for every existing citation.
+- [x] Compare rule-based DDI CDS, DDI alert presentation, deterministic template baseline, contextualized DDI algorithms, provenance-aware CDS, medical RAG, and natural-language DDI explanation.
+- [ ] Replace the RAG arXiv URL with the official NeurIPS proceedings record in manuscript v2.
+- [ ] Add the closest related-work citations from Evidence 07 and remove the unresolved related-work marker in manuscript v2.
+- [ ] Describe ExDDI as prior natural-language DDI explanation work and distinguish prediction explanations from RxCheck's post-finding prose.
+- [ ] State that a deterministic source-filled template is the missing baseline; do not claim an LLM benefit.
+- [ ] Use FHIR/AHRQ provenance work as context while explicitly stating that RxCheck is not standards-conformant and failed the broad traceability contract.
+- [ ] Present the 2026 hybrid DDI preprint, if cited, as non-peer-reviewed contemporaneous overlap only.
+- [ ] Have a librarian or second researcher update the search for the selected target journal before submission.
 
 ## Explanation-boundary remediation required after Evidence 02
 
@@ -86,4 +99,4 @@ Under the current file-preservation rules, the application source was not modifi
 
 ## Manuscript gate
 
-Do not create manuscript v2 until the feasible technical evidence tasks are complete and `final_evidence_review.md` has classified every major claim. Evidence 01 permits updating the reproducibility result, but it does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, or deployment readiness.
+All feasible technical and bounded scholarly evidence tasks in this cycle are complete. Do not create manuscript v2 until `final_evidence_review.md` has classified every major claim. Evidence 01 permits a narrow reproducibility statement, but the combined evidence does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, deployment readiness, explanation grounding, broad traceability, general normalization accuracy, or broad novelty.

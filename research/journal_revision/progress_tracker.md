@@ -19,6 +19,7 @@
 | Evidence 04 | Complete and pushed | 2026-07-15 | Benchmark core-check latency and repeatability | Commit `285167e`; 720/720 count-correct calls; 0 exceptions/external calls; 8/8 workloads met local p95 and repeatability rules; p95 2.586–245.124 ms | Bounded operational behavior of the deterministic DDI path | Methods, Results, Threats to Validity, Discussion | One machine; synthetic warm-cache sequential core calls; no end-to-end, concurrency, real-data, or clinical inference | Audit selected persistence/traceability semantics before final claim classification |
 | Evidence 05 | Complete and pushed; broad contract failed | 2026-07-15 | Audit selected persistence and traceability semantics | Commit `6d2d120`; 10/15 criteria passed; failures in insufficient-attempt history, duplicate pair count, run source reporting, prior-display reconstruction, and removal-event actor attribution | Audit-oriented persistence, workflow history, provenance snapshots, pair metrics, identity | Architecture/Methods, Results, Discussion, Limitations, Security/Governance | Direct synthetic function-level audit; no auth/read/tamper/concurrency/compliance assessment | Build an independently specified normalization benchmark if a non-circular reference axis is feasible |
 | Evidence 06 | Complete; strict benchmark failed | 2026-07-15 | Benchmark medication normalization against frozen official-reference mappings | References 30/30 verified; application 22/30 strict passes; failures: 2 misspelling/status, 4 combinations, 1 constructed unknown, 1 injected outage | Ingredient-level normalization, explicit non-resolution, combination products, NDCs, failure handling | Methods, Results, Discussion, Limitations, Future Work | Purposive small set; shared RxNorm vocabulary; no expert adjudication or population estimate | Stop empirical expansion; verify related-work/citation support, then perform consolidated evidence review |
+| Evidence 07 | Complete; broad novelty narrowed | 2026-07-14 | Verify all citations and compare the closest related work | 15/15 reference identities verified; 9 direct and 6 bounded/context-only uses; 6/6 comparison categories covered; prior DDI explanation and hybrid rule-plus-LLM work preclude broad novelty | Citation accuracy, RAG/LLM framing, DDI explanation novelty, provenance positioning, clinical-outcome boundaries | Introduction, Related Work, Discussion, Conclusions, References | Targeted non-systematic review; no duplicate reviewer, librarian, pharmacist, legal review, or exhaustive database search | Perform the consolidated final evidence review and classify every manuscript claim before writing v2 |
 
 ## Evidence 01 execution record
 
@@ -89,7 +90,7 @@ bash research/journal_revision/evidence/04_core_latency_repeatability/scripts/ru
 
 ## Current selection rationale
 
-Evidence 06 completed the feasible independently specified validation component and found material failures. Additional self-authored cases would have diminishing publication value; clinical interaction accuracy and human review remain externally blocked. The next bounded task is scholarly rather than empirical: verify citation/related-work support and create a conservative comparison table before the consolidated evidence review.
+Evidence 07 completed the last bounded scholarly task. All technically feasible essential tests and reviews identified for this cycle are now documented. Further progress on clinical correctness, explanation usefulness, usability, outcomes, independent reproduction, licensing, security remediation, and regulatory status requires external expertise or author/provider authority. The next required step is the consolidated evidence-completion review; manuscript v2 remains gated until that review is complete.
 
 ## Evidence 05 execution record
 
@@ -124,3 +125,21 @@ bash research/journal_revision/evidence/06_normalization_benchmark/scripts/run_b
 - Claim impact: bounded exact/brand/NDC behavior is supported; general ingredient-level resolution, complete combination representation, reliable explicit non-resolution, and outage degradation are not.
 - Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
 - Residual risk: purposive case selection, shared RxNorm service, no real error distribution, no expert adjudication, and no clinical inference.
+
+## Evidence 07 execution record
+
+- Files: `research/journal_revision/evidence/07_citation_related_work_review/`.
+- Source-check record: `raw_results/source_inventory.tsv` and `raw_results/search_log.md`.
+- Validation command:
+
+```bash
+awk -F '\t' 'NF != 8 {print NR ":" NF; bad=1} END {if (!bad) print "all rows have 8 fields"}' \
+  research/journal_revision/evidence/07_citation_related_work_review/raw_results/source_inventory.tsv
+```
+
+- Pass/fail: REVIEW COMPLETE; bibliographic identity PASS; broad novelty position FAIL.
+- Files created: protocol, source inventory, search log, results, structured comparison, limitations, and manuscript notes.
+- Claim impact: permits only a modest incremental authority-boundary/design-science contribution; prohibits first/novel claims for DDI checking, RAG, provenance, natural-language DDI explanation, or deterministic/rule-based logic plus LLM explanation.
+- Manuscript sections: Introduction, Related Work, Discussion, Conclusions, and References.
+- Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
+- Residual risk: targeted rather than systematic review, mutable web sources, no second reviewer, and no professional literature, clinical, legal, or regulatory adjudication.
