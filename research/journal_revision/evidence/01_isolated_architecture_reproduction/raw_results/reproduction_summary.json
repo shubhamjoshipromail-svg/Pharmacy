@@ -1,0 +1,62 @@
+{
+  "all_reproduction_assertions_passed": true,
+  "all_runs_26_of_26": true,
+  "generated_at": "2026-07-15T03:52:03.806775+00:00",
+  "run_count": 3,
+  "run_files": [
+    "run_01.json",
+    "run_02.json",
+    "run_03.json"
+  ],
+  "scenario_outcome_agreement": true,
+  "scenario_outcomes": {
+    "acknowledgment_severity_escalation_behavior": true,
+    "acknowledgment_suppression": true,
+    "anthropic_not_required_for_core_checking": true,
+    "canonical_drug_pair_ordering": true,
+    "check_run_persistence": true,
+    "ddsi_absent_after_condition_resolution": true,
+    "ddsi_absent_without_active_condition": true,
+    "ddsi_present_with_matching_active_condition": true,
+    "deterministic_ddi_from_stored_row": true,
+    "dfi_independent_of_condition_profile": true,
+    "duplicate_medication_does_not_duplicate_finding": true,
+    "finding_snapshot_persistence": true,
+    "findings_exist_before_llm_request": true,
+    "inactive_medication_exclusion": true,
+    "llm_explanation_requires_existing_finding": true,
+    "missing_database_interaction_creates_no_finding": true,
+    "openfda_not_required_for_core_checking": true,
+    "override_does_not_suppress_future_finding": true,
+    "override_persistence": true,
+    "placeholder_drug_exclusion": true,
+    "placeholder_visible_but_excluded": true,
+    "rxnorm_not_required_at_check_time": true,
+    "severity_ranking": true,
+    "severity_ranking_with_three_interaction_types": true,
+    "source_assertion_preservation": true,
+    "source_severity_conflict_flag": true
+  },
+  "summaries": [
+    {
+      "failed": 0,
+      "passed": 26,
+      "total_scenarios": 26
+    },
+    {
+      "failed": 0,
+      "passed": 26,
+      "total_scenarios": 26
+    },
+    {
+      "failed": 0,
+      "passed": 26,
+      "total_scenarios": 26
+    }
+  ],
+  "wall_duration_seconds": [
+    0.154543,
+    0.145649,
+    0.155756
+  ]
+}

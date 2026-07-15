@@ -1,0 +1,52 @@
+# Remaining Author Actions After Evidence 01
+
+This file is the active post-evidence action register. The original numbered checklist, `06_remaining_author_actions.md`, remains unchanged as a review baseline.
+
+## Completed in this branch
+
+- [x] Create a disposable local PostgreSQL workflow that never uses the committed remote database URL.
+- [x] Start each evaluation repetition from a fresh empty database.
+- [x] Rerun all 26 architecture scenarios three times.
+- [x] Retain scenario-level JSON, console logs, PostgreSQL lifecycle logs, exact package versions, source hashes, script hashes, timestamps, OS/architecture, and PostgreSQL version.
+- [x] Confirm no external API calls were reported on exercised paths.
+- [x] Stop and delete the temporary database cluster.
+- [x] Confirm the original manuscript and historical evaluation files were not modified.
+
+## Blocking security actions requiring author/provider authority
+
+- [ ] Revoke and rotate the exposed database credential.
+- [ ] Inspect provider/access logs for unauthorized access.
+- [ ] Determine whether the database contains or contained identifiable or real patient data and follow applicable incident-response procedures.
+- [ ] Remove the credential from active source and Git history through an approved coordinated history rewrite.
+- [ ] Run and document a full secret/history scan after remediation.
+
+These actions cannot be completed safely by adding evidence files alone. Until they are completed, the repository must be described as unsafe for clinical or public release use, and no real patient data should be entered.
+
+## Highest-priority feasible research actions
+
+1. [ ] **Audit structured-output and hallucination-resistance checks.** Exercise non-object JSON, missing fields, incorrect field types, wrong drugs, wrong severity, invented sources, unsupported management text, and prompt-injection-shaped strings against the actual parser/validator. Record accepted and rejected cases without calling an LLM.
+2. [ ] **Create one independently specified validation component.** Prefer a transparent 20–50 case reference set or normalization benchmark derived from clearly cited authoritative material and, where possible, reviewed by a pharmacist or second researcher.
+3. [ ] **Measure core-check latency and repeatability.** Use a specified synthetic workload, warm-up policy, sufficient repetitions, and distribution statistics. Do not generalize to production capacity.
+4. [ ] **Audit selected persistence and traceability semantics.** Verify attempted runs below two medications, duplicate medication pair counts, source reporting, acknowledgments, overrides, and evidence snapshots.
+5. [ ] **Review citation and related-work support.** Verify current references and add a structured comparison with rule-based DDI CDS, templated explanations, provenance-aware CDS, and grounded LLM systems.
+
+## Reproducibility work still required
+
+- [ ] Replace the empty migration with a complete, reviewed migration or schema bootstrap artifact without changing the preserved application baseline.
+- [ ] Pin Python and frontend dependencies in a new reproducibility package.
+- [ ] Automate PostgreSQL and Python prerequisite setup or provide a container workflow.
+- [ ] Record the exact DDInter release, access date, license, and source checksums.
+- [ ] Reconstruct import accounting and separate source-derived records from fixtures.
+- [ ] Obtain an independent rerun on a second machine or by a second researcher.
+
+## External or author-supplied items
+
+- [ ] Software-license selection by the copyright holder and third-party data-license review.
+- [ ] Author names, affiliations, ORCIDs, CRediT roles, corresponding-author details, funding, conflicts, and acknowledgments.
+- [ ] Institutional ethics/human-subjects determination.
+- [ ] Pharmacist or methods-reviewer feedback.
+- [ ] Target-journal selection and current formatting/APC/policy check.
+
+## Manuscript gate
+
+Do not create manuscript v2 until the feasible technical evidence tasks are complete and `final_evidence_review.md` has classified every major claim. Evidence 01 permits updating the reproducibility result, but it does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, or deployment readiness.

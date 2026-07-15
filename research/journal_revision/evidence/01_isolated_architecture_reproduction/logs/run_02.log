@@ -1,0 +1,1 @@
+run_02: scenarios=26/26; assertions_passed=True; postgres=16.14; database=rxcheck_evidence_run_02@127.0.0.1:64384

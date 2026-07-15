@@ -1,0 +1,393 @@
+{
+  "evaluation": {
+    "limitations": [
+      "Uses synthetic fixtures rather than clinical cases.",
+      "Evaluates architecture behavior, not clinical correctness or patient outcomes.",
+      "Does not evaluate interaction-source completeness.",
+      "Does not call RxNorm, OpenFDA, or Anthropic.",
+      "Writes clearly labeled synthetic evaluation rows to the configured database.",
+      "Duplicate medication handling is evaluated only for duplicate finding prevention; the pair-count metric can include a same-RxCUI self-pair."
+    ],
+    "metadata": {
+      "database": "configured SQLAlchemy DATABASE_URL",
+      "evaluation_scope": "architecture behavior, not clinical effectiveness",
+      "external_free_apis_called": false,
+      "external_paid_apis_called": false,
+      "fixtures": {
+        "assertion_ids": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "condition_id": 1,
+        "ddi_interaction_id": "68412049-221d-43fd-bd87-e690d2d32b36",
+        "ddsi_interaction_id": "49a6295e-6fa9-4098-ab5e-8b2e7cb02286",
+        "dfi_interaction_id": "127cf212-fd66-4282-a692-2664070fe461",
+        "drug_a_rxcui": "eval-40fff0e5ac-100",
+        "drug_b_rxcui": "eval-40fff0e5ac-200",
+        "drug_c_name": "Evaluation Drug With No Stored Interaction",
+        "drug_c_rxcui": "eval-40fff0e5ac-300",
+        "food_id": 1,
+        "label": "eval-40fff0e5ac",
+        "medication_a_id": "40bf1039-0796-4d9e-8afa-12a3116de0d0",
+        "medication_b_id": "d8eb2e17-1f1c-4df5-a5aa-6cf8023eb1d8",
+        "medication_c_id": "38f140fc-cfab-40af-881f-28e5cefe5896",
+        "patient_id": "fad55fb4-05d0-405c-a5f6-2d7c40811560",
+        "placeholder_medication_id": "b68c01bf-5b77-4375-92c9-fc772617cf01",
+        "placeholder_rxcui": "eval-40fff0e5ac-placeholder",
+        "user_id": "fb0ec318-f2be-4309-8c35-9cf536cd0a1a"
+      },
+      "generated_at": "2026-07-15T03:52:03.672421+00:00"
+    },
+    "scenarios": [
+      {
+        "code_evidence": "app/services/orchestrator.py::run_interaction_check",
+        "evidence": {
+          "interaction_id": "68412049-221d-43fd-bd87-e690d2d32b36",
+          "run_id": "2916e1c0-99f3-4f32-838e-7412205fb898"
+        },
+        "expected": "A stored DDI row produces a finding.",
+        "manuscript_safe_interpretation": "The prototype deterministically returns a DDI fixture stored in its database.",
+        "name": "deterministic_ddi_from_stored_row",
+        "observed": "DDI present=True; run_id=2916e1c0-99f3-4f32-838e-7412205fb898",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py canonical_pairs; app/models/interaction.py interactions_ddi_ordered",
+        "evidence": {},
+        "expected": "Medications entered in reverse order still match one canonical DDI row.",
+        "manuscript_safe_interpretation": "Canonical RxCUI ordering prevents A/B and B/A from producing separate DDI findings.",
+        "name": "canonical_drug_pair_ordering",
+        "observed": "stored_pair=['eval-40fff0e5ac-100', 'eval-40fff0e5ac-200']; occurrences=1",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py active medication query",
+        "evidence": {},
+        "expected": "The inactive medication is not counted or checked.",
+        "manuscript_safe_interpretation": "The orchestrator excludes medication rows where is_active is false.",
+        "name": "inactive_medication_exclusion",
+        "observed": "active_non_placeholder_count=2; inactive_medication_id=38f140fc-cfab-40af-881f-28e5cefe5896",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py filter Drug.is_placeholder.is_(False)",
+        "evidence": {},
+        "expected": "The active placeholder medication is excluded from check counts and DDI pairs.",
+        "manuscript_safe_interpretation": "Unresolved placeholders do not participate in deterministic interaction checking.",
+        "name": "placeholder_drug_exclusion",
+        "observed": "total_medications=2; total_pairs_checked=1",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/models/patient.py::PatientMedication; app/services/orchestrator.py placeholder filter",
+        "evidence": {},
+        "expected": "The placeholder remains stored in the patient medication list while excluded from checks.",
+        "manuscript_safe_interpretation": "The architecture preserves unresolved input for review without treating it as a verified interaction-check concept.",
+        "name": "placeholder_visible_but_excluded",
+        "observed": "placeholder_medication_stored=True; checked_medications=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py DDSI PatientCondition subquery",
+        "evidence": {},
+        "expected": "DDSI is absent before the matching patient condition is recorded.",
+        "manuscript_safe_interpretation": "The DDSI query avoids surfacing the fixture when the matching condition is absent.",
+        "name": "ddsi_absent_without_active_condition",
+        "observed": "DDSI present=False",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py DFI query",
+        "evidence": {},
+        "expected": "DFI appears for an active drug even when the patient has no condition rows.",
+        "manuscript_safe_interpretation": "The prototype treats DFI lookup as drug-based rather than condition-gated.",
+        "name": "dfi_independent_of_condition_profile",
+        "observed": "DFI present=True",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py ranked_items.sort",
+        "evidence": {},
+        "expected": "Findings are ordered from higher to lower severity.",
+        "manuscript_safe_interpretation": "The returned fixture findings are ordered by the implemented severity priority.",
+        "name": "severity_ranking",
+        "observed": "ordered_severities=['major', 'minor']",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/schemas/interaction.py::build_summary",
+        "evidence": {},
+        "expected": "Different assertion severities set sources_conflict=true.",
+        "manuscript_safe_interpretation": "The summary flags disagreement between stored source severities; it does not adjudicate which source is clinically correct.",
+        "name": "source_severity_conflict_flag",
+        "observed": "sources_conflict=True",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/models/interaction.py::InteractionSourceAssertion",
+        "evidence": {
+          "assertion_ids": [
+            1,
+            2
+          ]
+        },
+        "expected": "Both source assertions retain source, raw severity, source ID, and raw payload.",
+        "manuscript_safe_interpretation": "The schema preserves multiple source assertions and their provenance for the fixture interaction.",
+        "name": "source_assertion_preservation",
+        "observed": "assertion_count=2; sources=['DDInter', 'manual']",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/models/check.py::InteractionCheckRun; app/services/orchestrator.py medication_snapshot",
+        "evidence": {},
+        "expected": "The completed check run is stored with the checked medication snapshot.",
+        "manuscript_safe_interpretation": "The prototype persists a run-level record of the non-placeholder active medications evaluated.",
+        "name": "check_run_persistence",
+        "observed": "run_persisted=True; snapshot_size=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/models/check.py::InteractionCheckFinding; app/services/orchestrator.py finding creation",
+        "evidence": {},
+        "expected": "The finding stores run-time severity, source list, and conflict state.",
+        "manuscript_safe_interpretation": "The fixture finding retains selected run-time fields for later review.",
+        "name": "finding_snapshot_persistence",
+        "observed": "severity=major; sources=['DDInter', 'manual']; conflicted=True",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py; app/models/check.py::InteractionCheckFinding",
+        "evidence": {},
+        "expected": "Findings exist with no LLM explanation requested.",
+        "manuscript_safe_interpretation": "Interaction findings are created independently of the optional explanation layer.",
+        "name": "findings_exist_before_llm_request",
+        "observed": "finding_count=2; llm_explanation_ids=[None, None]",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py canonical pair set and database interaction query",
+        "evidence": {},
+        "expected": "A duplicate active medication row does not duplicate the canonical DDI finding.",
+        "manuscript_safe_interpretation": "Duplicate medication rows did not duplicate the fixture finding. The current pair-count metric may still include a same-RxCUI self-pair, so this is not evidence of complete duplicate-medication normalization.",
+        "name": "duplicate_medication_does_not_duplicate_finding",
+        "observed": "DDI_occurrences=1; total_medications=3; total_pairs_checked=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py database-only interaction queries",
+        "evidence": {},
+        "expected": "An active normalized drug with no stored interaction does not create a finding.",
+        "manuscript_safe_interpretation": "The checker does not infer missing interactions from an LLM or external label service.",
+        "name": "missing_database_interaction_creates_no_finding",
+        "observed": "drug_c_mentioned=False; total_medications=3; total_interactions=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py DDSI PatientCondition subquery",
+        "evidence": {},
+        "expected": "DDSI appears after adding the matching active condition.",
+        "manuscript_safe_interpretation": "The DDSI fixture is returned when its matching condition is active for the patient.",
+        "name": "ddsi_present_with_matching_active_condition",
+        "observed": "DDSI present=True",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py ranked_items.sort",
+        "evidence": {},
+        "expected": "DDI major, DDSI moderate, and DFI minor are returned in severity order.",
+        "manuscript_safe_interpretation": "The three fixture interaction types follow the implemented severity ordering.",
+        "name": "severity_ranking_with_three_interaction_types",
+        "observed": "ordered_severities=['major', 'moderate', 'minor']",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py filter PatientCondition.resolved_date.is_(None)",
+        "evidence": {},
+        "expected": "DDSI is absent after the patient condition receives a resolved date.",
+        "manuscript_safe_interpretation": "Resolved conditions are excluded from the DDSI fixture query.",
+        "name": "ddsi_absent_after_condition_resolution",
+        "observed": "DDSI present=False",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/models/audit.py::InteractionOverride; app/api/interactions.py::override_finding",
+        "evidence": {},
+        "expected": "An override row is persisted for an existing finding.",
+        "manuscript_safe_interpretation": "The prototype persists override metadata for later review.",
+        "name": "override_persistence",
+        "observed": "override_id=1; finding_id=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py does not query InteractionOverride",
+        "evidence": {},
+        "expected": "The overridden interaction remains an unsuppressed finding in a later check.",
+        "manuscript_safe_interpretation": "Current overrides are audit records and do not automatically alter future check behavior.",
+        "name": "override_does_not_suppress_future_finding",
+        "observed": "DFI present=True; suppressed=False",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py acknowledgment severity comparison",
+        "evidence": {},
+        "expected": "An acknowledgment below the current major severity does not suppress the DDI.",
+        "manuscript_safe_interpretation": "The implemented comparison resurfaces a finding when current severity exceeds the stored acknowledgment severity.",
+        "name": "acknowledgment_severity_escalation_behavior",
+        "observed": "ack_severity=moderate; current_severity=major; suppressed=False",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py acknowledgment suppression",
+        "evidence": {},
+        "expected": "An acknowledgment at current severity marks the DDI suppressed without deleting it.",
+        "manuscript_safe_interpretation": "Acknowledgment changes presentation state while preserving the finding in the result and database.",
+        "name": "acknowledgment_suppression",
+        "observed": "DDI present=True; suppressed=True; suppressed_count=1",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/api/interactions.py::get_finding_or_404 and explain_finding",
+        "evidence": {},
+        "expected": "A nonexistent finding is rejected before explanation generation.",
+        "manuscript_safe_interpretation": "The explanation endpoint is structurally tied to persisted findings and cannot start from an arbitrary drug pair.",
+        "name": "llm_explanation_requires_existing_finding",
+        "observed": "HTTP 404: Finding not found",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py has no Anthropic dependency",
+        "evidence": {},
+        "expected": "Core checking completes when the LLM explanation function is replaced with a failing sentinel.",
+        "manuscript_safe_interpretation": "The deterministic check path does not require Anthropic; this does not evaluate explanation quality.",
+        "name": "anthropic_not_required_for_core_checking",
+        "observed": "total_interactions_found=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py has no OpenFDA dependency",
+        "evidence": {},
+        "expected": "Core checking completes when OpenFDA citation fetching is replaced with a failing sentinel.",
+        "manuscript_safe_interpretation": "OpenFDA is optional explanation context, not a source of interaction existence.",
+        "name": "openfda_not_required_for_core_checking",
+        "observed": "total_interactions_found=2",
+        "passed": true
+      },
+      {
+        "code_evidence": "app/services/orchestrator.py consumes stored RxCUIs and does not call normalize_drug_name",
+        "evidence": {},
+        "expected": "Core checking completes when normalization is replaced with a failing sentinel.",
+        "manuscript_safe_interpretation": "Once medications are normalized and stored, the check path does not require a live RxNorm call.",
+        "name": "rxnorm_not_required_at_check_time",
+        "observed": "total_interactions_found=2",
+        "passed": true
+      }
+    ],
+    "summary": {
+      "failed": 0,
+      "passed": 26,
+      "total_scenarios": 26
+    }
+  },
+  "post_run_row_counts": {
+    "audit_events": 1,
+    "conditions": 1,
+    "drugs": 4,
+    "foods": 1,
+    "interaction_acknowledgments": 2,
+    "interaction_check_findings": 23,
+    "interaction_check_runs": 11,
+    "interaction_overrides": 1,
+    "interaction_source_assertions": 4,
+    "interactions": 3,
+    "patient_conditions": 1,
+    "patient_medications": 5,
+    "patients": 1,
+    "users": 1
+  },
+  "reproduction_assertions": {
+    "all_26_scenarios_passed": true,
+    "empty_database_before_setup": true,
+    "expected_schema_created": true,
+    "loopback_server_verified": true,
+    "loopback_url_guard_passed": true,
+    "no_free_external_apis_called": true,
+    "no_paid_external_apis_called": true
+  },
+  "reproduction_metadata": {
+    "completed_at": "2026-07-15T03:52:03.673531+00:00",
+    "created_tables": [
+      "audit_events",
+      "conditions",
+      "drug_aliases",
+      "drug_external_ids",
+      "drugs",
+      "foods",
+      "interaction_acknowledgments",
+      "interaction_check_findings",
+      "interaction_check_runs",
+      "interaction_overrides",
+      "interaction_source_assertions",
+      "interactions",
+      "llm_explanations",
+      "patient_conditions",
+      "patient_identifiers",
+      "patient_medications",
+      "patients",
+      "source_coverage_checks",
+      "unresolved_drug_entries",
+      "users"
+    ],
+    "database": {
+      "credentials_recorded": false,
+      "host": "127.0.0.1",
+      "name": "rxcheck_evidence_run_03",
+      "port": 64384,
+      "server_address": "127.0.0.1",
+      "server_version": "16.14"
+    },
+    "environment": {
+      "machine": "arm64",
+      "packages": {
+        "anthropic": "0.116.0",
+        "fastapi": "0.139.0",
+        "psycopg2-binary": "2.9.12",
+        "pydantic": "2.13.4",
+        "pydantic-settings": "2.14.2",
+        "sqlalchemy": "2.0.51"
+      },
+      "platform": "macOS-15.7.7-arm64-arm-64bit",
+      "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]"
+    },
+    "evaluated_source_commit": "5038106ada9c66fb2cd1fc0e33c8322553b4d699",
+    "evidence_script_sha256": {
+      "run_isolated_evaluation.py": "f532a240fb32c564e4e46e24920ae8ed0f3de90d74f7d976e73d0b860515b89c",
+      "run_repetitions.sh": "b81f1ea267cd512ef0c62bc85a3969870934c2eaebed51d873099f17175d6348",
+      "summarize_repetitions.py": "b6415d0d6c6034dc689757c4017a0f81a090a58397c94b81853d2f6829f11c07"
+    },
+    "missing_expected_tables": [],
+    "preexisting_tables": [],
+    "repository_head_at_execution": "63fb4c043e6e16561f6cc9a46eaa152584de83b0",
+    "run_id": "run_03",
+    "schema_setup": "SQLAlchemy Base.metadata.create_all (not Alembic)",
+    "source_sha256": {
+      "app/api/interactions.py": "5237eddf6f45d4d9a573282ea7c8587bf6b4d63246f2d2b35cad5151ec24edb0",
+      "app/db/session.py": "e8ebee5523006944c81a93480d66062a60e54c339f91943b5b8b25b22636bf72",
+      "app/models/audit.py": "f85e2bd23138ffe48c825ca6a275f7bb0495c1ce89b30f6bdbd30472b6d66018",
+      "app/models/check.py": "c59d32579b76cbfdd1b5b7e8f888189b5881b19472bcbbd72c551237cc81af9f",
+      "app/models/drug.py": "50ce92e686a39a54238c00dc6c702da12cb71e858de79117f96d68c73834f503",
+      "app/models/interaction.py": "9061d9182564417d962515ad3f5614c4f030413269d26685259f9aeebfef9228",
+      "app/models/patient.py": "f1fb6f7a43f0222d8f4481e98bce3c21548c0ab4a8fa6080c3d2ceec7ac44d96",
+      "app/schemas/interaction.py": "5dee8a045cb642965bce57c2429496868b9475bac4a12c48189ca147da0d0ee1",
+      "app/services/orchestrator.py": "8db8736a50b205558a72dad87ad14160f1d17709a3000f74891ab4ec6659451c",
+      "paper/rxcheck_manuscript_0.1v.md": "6b8345842c90d38025a58fc3e587bdb0476fcc1026fba691a69b299b9041f879",
+      "requirements.txt": "533caae6fb404e4dade14118fe8ed4201f7854f5aa9c39d4998ef91da2c7995d",
+      "research/evaluate_rxcheck.py": "82b4f15087fd91d4cdc3b9eb29a000932a8968d97e6ad1346f74ef347d8b9b06"
+    },
+    "started_at": "2026-07-15T03:52:03.529306+00:00",
+    "unexpected_tables": [],
+    "wall_duration_seconds": 0.155756,
+    "working_tree_status_at_execution": "?? research/journal_revision/evidence/"
+  }
+}

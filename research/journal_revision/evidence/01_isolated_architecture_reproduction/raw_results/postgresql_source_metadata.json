@@ -1,0 +1,15 @@
+{
+  "archive": "postgresql-16.14.tar.bz2",
+  "archive_retained_in_repository": false,
+  "build_location": "/tmp/rxcheck-pg16.14",
+  "configure_flags": [
+    "--without-readline",
+    "--without-zlib",
+    "--without-icu"
+  ],
+  "download_url": "https://ftp.postgresql.org/pub/source/v16.14/postgresql-16.14.tar.bz2",
+  "expected_sha256_url": "https://ftp.postgresql.org/pub/source/v16.14/postgresql-16.14.tar.bz2.sha256",
+  "publisher_checksum_matched": true,
+  "sha256": "f6d077142737920858ce958ccdb75c6ee137a63b5b0853c70693d401ac7e3471",
+  "version": "16.14"
+}

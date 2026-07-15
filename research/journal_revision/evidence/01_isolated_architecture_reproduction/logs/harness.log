@@ -1,0 +1,4 @@
+run_01: scenarios=26/26; assertions_passed=True; postgres=16.14; database=rxcheck_evidence_run_01@127.0.0.1:64384
+run_02: scenarios=26/26; assertions_passed=True; postgres=16.14; database=rxcheck_evidence_run_02@127.0.0.1:64384
+run_03: scenarios=26/26; assertions_passed=True; postgres=16.14; database=rxcheck_evidence_run_03@127.0.0.1:64384
+repetitions=3; all_runs_26_of_26=True; scenario_outcome_agreement=True; pass=True
