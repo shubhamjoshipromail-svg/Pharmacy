@@ -31,6 +31,17 @@ These actions cannot be completed safely by adding evidence files alone. Until t
 5. [x] **Audit selected persistence and traceability semantics.** Evidence 05 passed 10/15 criteria but failed the broad contract: attempted insufficient checks are absent, duplicate pair counts overstate distinct pairs, run sources can be wrong, display evidence is not fully snapshotted, and acknowledgment removal uses the default identity.
 6. [x] **Review citation and related-work support.** Evidence 07 verified 15/15 current reference identities, classified 9 direct and 6 bounded uses, and compared six required categories. The result requires an incremental authority-boundary framing and rejects broad novelty.
 
+## Final evidence-completion status
+
+- [x] Consolidate all completed, failed, mixed, and inconclusive Evidence 01–07 results.
+- [x] Classify fully supported, partially supported, and prohibited manuscript claims.
+- [x] Record remaining external-validation and author-authority needs.
+- [x] Update publication readiness to 61/100 with category-level rationale.
+- [x] Record GO for manuscript v2 drafting and NO-GO for submission/clinical use.
+- [x] Specify exact manuscript changes and a twelve-step revision order.
+
+The controlling synthesis is `final_evidence_review.md`.
+
 ## Citation and related-work actions after Evidence 07
 
 - [x] Verify the bibliographic identity of all 15 current references against primary, publisher, or official records.
@@ -99,4 +110,4 @@ Under the current file-preservation rules, the application source was not modifi
 
 ## Manuscript gate
 
-All feasible technical and bounded scholarly evidence tasks in this cycle are complete. Do not create manuscript v2 until `final_evidence_review.md` has classified every major claim. Evidence 01 permits a narrow reproducibility statement, but the combined evidence does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, deployment readiness, explanation grounding, broad traceability, general normalization accuracy, or broad novelty.
+All feasible technical and bounded scholarly evidence tasks in this cycle are complete, and `final_evidence_review.md` now classifies every major claim. Manuscript v2 drafting may begin as a new file. Submission remains gated by security remediation, rights/licensing, author and ethics declarations, target-journal checks, final quality assurance, and appropriate external review. The combined evidence does not permit claims of clinical validation, safety, completeness, full reproducibility, affordability, deployment readiness, explanation grounding, broad traceability, general normalization accuracy, or broad novelty.

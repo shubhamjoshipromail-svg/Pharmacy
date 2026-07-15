@@ -20,6 +20,7 @@
 | Evidence 05 | Complete and pushed; broad contract failed | 2026-07-15 | Audit selected persistence and traceability semantics | Commit `6d2d120`; 10/15 criteria passed; failures in insufficient-attempt history, duplicate pair count, run source reporting, prior-display reconstruction, and removal-event actor attribution | Audit-oriented persistence, workflow history, provenance snapshots, pair metrics, identity | Architecture/Methods, Results, Discussion, Limitations, Security/Governance | Direct synthetic function-level audit; no auth/read/tamper/concurrency/compliance assessment | Build an independently specified normalization benchmark if a non-circular reference axis is feasible |
 | Evidence 06 | Complete; strict benchmark failed | 2026-07-15 | Benchmark medication normalization against frozen official-reference mappings | References 30/30 verified; application 22/30 strict passes; failures: 2 misspelling/status, 4 combinations, 1 constructed unknown, 1 injected outage | Ingredient-level normalization, explicit non-resolution, combination products, NDCs, failure handling | Methods, Results, Discussion, Limitations, Future Work | Purposive small set; shared RxNorm vocabulary; no expert adjudication or population estimate | Stop empirical expansion; verify related-work/citation support, then perform consolidated evidence review |
 | Evidence 07 | Complete; broad novelty narrowed | 2026-07-14 | Verify all citations and compare the closest related work | 15/15 reference identities verified; 9 direct and 6 bounded/context-only uses; 6/6 comparison categories covered; prior DDI explanation and hybrid rule-plus-LLM work preclude broad novelty | Citation accuracy, RAG/LLM framing, DDI explanation novelty, provenance positioning, clinical-outcome boundaries | Introduction, Related Work, Discussion, Conclusions, References | Targeted non-systematic review; no duplicate reviewer, librarian, pharmacist, legal review, or exhaustive database search | Perform the consolidated final evidence review and classify every manuscript claim before writing v2 |
+| Final synthesis | Complete | 2026-07-15 | Consolidate Evidence 01–07 and reassess publication readiness | `final_evidence_review.md`; score 61/100; GO for candid manuscript v2, NO-GO for submission or clinical use | Every major architecture, validation, provenance, performance, traceability, normalization, novelty, safety, and availability claim | Entire manuscript | Security/rights/declarations and all external clinical/human validation remain incomplete | Create the new v2 manuscript and its change log, claim map, and submission checklist |
 
 ## Evidence 01 execution record
 
@@ -143,3 +144,13 @@ awk -F '\t' 'NF != 8 {print NR ":" NF; bad=1} END {if (!bad) print "all rows hav
 - Manuscript sections: Introduction, Related Work, Discussion, Conclusions, and References.
 - Original-file check: original manuscript hash unchanged; no application source or historical research file modified.
 - Residual risk: targeted rather than systematic review, mutable web sources, no second reviewer, and no professional literature, clinical, legal, or regulatory adjudication.
+
+## Final evidence-review execution record
+
+- File: `research/journal_revision/final_evidence_review.md`.
+- Validation: all ten required synthesis sections present; score table arithmetic verified at 61/100; original manuscript hash unchanged.
+- Result: GO to draft manuscript v2; NO-GO for submission, clinical use, real patient data, or regulatory/safety claims.
+- Claim impact: establishes the controlling full/partial/remove classifications for manuscript v2.
+- Manuscript sections: all.
+- Residual risk: the synthesis is based on one research process and the bounded Evidence 01–07 record; external clinical, human-factors, security, legal, rights, ethics, and independent-reproduction work remains.
+- Recommended next action: create manuscript v2 as a new file, then validate it line by line against the synthesis.
