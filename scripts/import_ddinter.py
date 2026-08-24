@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import uuid
 from collections import Counter
 from datetime import datetime
@@ -10,7 +11,6 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import Json, execute_values
 
-DATABASE_URL = "postgresql://postgres:REDACTED@redacted.invalid:5432/railway"
 DDINTER_DIR = Path("/Users/shubhamjoshi/Desktop/pharmacy/ddinter")
 CSV_FILES = [
     DDINTER_DIR / "ddinter_downloads_code_A.csv",
@@ -24,6 +24,12 @@ CSV_FILES = [
 ]
 BATCH_SIZE = 10_000
 
+
+def require_database_url() -> str:
+    database_url = os.getenv("DATABASE_URL")
+    if not database_url:
+        raise RuntimeError("DATABASE_URL is required; refusing to run without it")
+    return database_url
 
 def normalize_name(value: str) -> str:
     return str(value).strip().lower()
@@ -259,9 +265,10 @@ def fetch_hub_scores(cur) -> list[tuple[str, int]]:
 
 def main() -> None:
     start_time = datetime.utcnow()
+    database_url = require_database_url()
     combined = load_csvs()
 
-    with psycopg2.connect(DATABASE_URL) as conn:
+    with psycopg2.connect(database_url) as conn:
         with conn.cursor() as cur:
             alias_map = load_alias_map(cur)
             resolved_rows, quarantine_rows, severity_counter = resolve_rows(combined, alias_map)

@@ -832,9 +832,8 @@ Production environment variables:
 | `ANTHROPIC_API_KEY` | Only for explanations | Enables LLM explanation endpoint |
 | `ANTHROPIC_MODEL` | Optional | Anthropic model name |
 
-Important deployment note:
-
-Database credentials were hardcoded during prototyping in some config/script files. Rotate those credentials before any public or production use, and rely only on environment variables.
+Security note: database credentials are supplied only through `DATABASE_URL`.
+The application and data-import tooling fail closed when it is missing.
 
 ---
 

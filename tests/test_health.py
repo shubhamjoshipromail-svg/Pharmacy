@@ -1,6 +1,9 @@
+from unittest.mock import patch
+
 from fastapi.testclient import TestClient
 
-from app.main import app
+with patch("sqlalchemy.sql.schema.MetaData.create_all"):
+    from app.main import app
 
 
 def test_health_check():

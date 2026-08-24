@@ -1,13 +1,9 @@
-import os
-
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = os.getenv(
-        "DATABASE_URL",
-        "postgresql://postgres:REDACTED@redacted.invalid:5432/railway",
-    )
+    # Intentionally required: never fall back to a shared credential.
+    DATABASE_URL: str
     APP_NAME: str = "Drug Interaction Tracker"
     DEBUG: bool = True
     ANTHROPIC_API_KEY: str = ""
