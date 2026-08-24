@@ -31,6 +31,7 @@ def require_database_url() -> str:
         raise RuntimeError("DATABASE_URL is required; refusing to run without it")
     return database_url
 
+
 def normalize_name(value: str) -> str:
     return str(value).strip().lower()
 
