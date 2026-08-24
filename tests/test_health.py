@@ -7,8 +7,8 @@ with patch("sqlalchemy.sql.schema.MetaData.create_all"):
 
 
 def test_health_check():
-    client = TestClient(app)
-    response = client.get("/health")
+    with TestClient(app) as client:
+        response = client.get("/health")
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok", "app": "Drug Interaction Tracker"}

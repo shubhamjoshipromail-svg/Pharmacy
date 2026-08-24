@@ -34,7 +34,8 @@ app.include_router(interactions_router, prefix="/api/v1")
 @app.on_event("startup")
 def print_registered_routes() -> None:
     print("Registered routes:")
-    for route in sorted(app.routes, key=lambda item: item.path):
+    routes_with_paths = (route for route in app.routes if hasattr(route, "path"))
+    for route in sorted(routes_with_paths, key=lambda item: item.path):
         methods = ",".join(sorted(route.methods)) if getattr(route, "methods", None) else ""
         print(f"{methods:20} {route.path}")
 
